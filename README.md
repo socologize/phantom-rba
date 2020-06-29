@@ -1,7 +1,7 @@
 # FAQ
 
-## What is RBA?
-A concept of alerting on just anomalous behavior using Splunk Enterprise Security
+## What is Risk-Based Alerting (RBA)?
+A method of alerting on anomalous behavior using Splunk Enterprise Security.
 
 https://rbaallday.com
 
