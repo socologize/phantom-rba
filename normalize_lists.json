@@ -1,0 +1,35 @@
+{
+    "create_time": "2020-06-29T19:01:30.012757+00:00",
+    "custom_function_id": "ad0ae2e5767f81f47ba2c740dc58bd04266892d2",
+    "description": "Takes in an object that may be a single element or a list and normalizes the output. Data can be accessed by items.*.<object_type>. Object_type defaults to 'object_type'",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "item",
+            "name": "var",
+            "placeholder": "A single element or list"
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "item",
+            "name": "object_type",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [],
+            "data_path": "items",
+            "description": ""
+        },
+        {
+            "contains_type": [],
+            "data_path": "items.*.object_type",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.9.33071"
+}
