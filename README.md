@@ -22,9 +22,9 @@ Phantom 4.9 is a prerequisite and will work on any Phantom release after 4.9. Th
 ## How do I get started?
 - Navigate to Administration Settings > Source Control
 - To configure Phantom to read from this repo provide the following information:
-  - REPO URL: *https://github.com/shelbertITW/rba*
+  - REPO URL: *https://github.com/shelbertITW/phantom-rba*
   - Repo Name: *\<your choice\>*
-  - Repo Name: *master*
+  - Branch Name: *master*
   - Read Only: *Check*
 - Navigate to Playbooks. 
 - Choose Playbooks and/or Custom Functions
