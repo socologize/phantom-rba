@@ -28,7 +28,7 @@ def decode_base64(input_string=None, artifact_id=None, **kwargs):
             input_string += '=='
             
         decoded_string = b64decode(input_string).replace('\x00','')
-        outputs['decoded_string'] = decoded_string.replace('"','\"')
+        outputs['decoded_string'] = decoded_string
         outputs['artifact_id'] = artifact_id
             
     # Return a JSON-serializable object
