@@ -1,0 +1,27 @@
+{
+    "create_time": "2020-07-10T20:19:05.676627+00:00",
+    "custom_function_id": "52eb7f823e1b77ed24f2aa6e0284209523bd38fe",
+    "description": "Decodes provided base64 string",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Base64 encoded text",
+            "input_type": "item",
+            "name": "input_string",
+            "placeholder": "base64_text"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "decoded_string",
+            "description": "Base64 decoded string"
+        }
+    ],
+    "platform_version": "4.9.33071"
+}
