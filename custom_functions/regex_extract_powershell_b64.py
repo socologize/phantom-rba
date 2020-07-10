@@ -14,10 +14,10 @@ def regex_extract_powershell_b64(input_string=None, **kwargs):
     import re
     from base64 import b64decode
     outputs = {}
-
+    pattern = '\-[eE^]{1,2}[NnCcOoDdEeMmAa^]+\s+([^\s]+)'
     if input_string:
-        if re.search('\-[eE^]{1,2}[NnCcOoDdEeMmAa^]+\s+([^\s]+)',input_string):
-            captured_string = re.search('\-[eE^]{1,2}[NnCcOoDdEeMmAa^]+\s+([^\s]+)',input_string).group(1)
+        if re.search(pattern,str(input_string)):
+            captured_string = re.search(pattern,str(input_string)).group(1)
             outputs['extracted_string'] = captured_string
         else:
             phantom.debug("No base64 encoding detected")
