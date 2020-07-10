@@ -7,7 +7,6 @@
             "clean": true,
             "code_block": "from dateutil.parser import parse\nfrom django.utils.dateparse import parse_datetime\nimport re\nimport random",
             "description": "",
-            "hash": "263a659f7737137ab47d9e92ab02b2e94a8664cc",
             "joint": {
                 "cells": [
                     {
