@@ -1,12 +1,14 @@
-def regex_extract_powershell_b64(input_string=None, **kwargs):
+def regex_extract_powershell_b64(input_string=None, artifact_id=None, **kwargs):
     """
     Detects -enc flag and extracts base64. Based on Unit42 research.
     
     Args:
         input_string (CEF type: *): A powershell cmdline that may contain encoding flag
+        artifact_id (CEF type: phantom artifact id): Phantom Artifact ID
     
     Returns a JSON-serializable object that implements the configured data paths:
         extracted_string (CEF type: *): Base 64 extracted from input_string. Empty if extraction failed.
+        artifact_id (CEF type: phantom artifact id): Phantom Artifact ID
     """
     ############################ Custom Code Goes Below This Line #################################
     import json
@@ -19,6 +21,7 @@ def regex_extract_powershell_b64(input_string=None, **kwargs):
         if re.search(pattern,str(input_string)):
             captured_string = re.search(pattern,str(input_string)).group(1)
             outputs['extracted_string'] = captured_string
+            outputs['artifact_id'] = artifact_id
         else:
             phantom.debug("No base64 encoding detected")
             

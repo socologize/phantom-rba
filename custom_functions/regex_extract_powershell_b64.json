@@ -1,5 +1,5 @@
 {
-    "create_time": "2020-07-10T21:18:17.950951+00:00",
+    "create_time": "2020-07-10T21:25:18.658688+00:00",
     "custom_function_id": "89d8a6717db59a2127503672af35e13b1d4a2110",
     "description": "Detects -enc flag and extracts base64. Based on Unit42 research.",
     "draft_mode": false,
@@ -12,6 +12,15 @@
             "input_type": "item",
             "name": "input_string",
             "placeholder": "powershell.exe  -enc <base64>"
+        },
+        {
+            "contains_type": [
+                "phantom artifact id"
+            ],
+            "description": "Phantom Artifact ID",
+            "input_type": "list",
+            "name": "artifact_id",
+            "placeholder": "123"
         }
     ],
     "outputs": [
@@ -21,6 +30,13 @@
             ],
             "data_path": "extracted_string",
             "description": "Base 64 extracted from input_string. Empty if extraction failed."
+        },
+        {
+            "contains_type": [
+                "phantom artifact id"
+            ],
+            "data_path": "artifact_id",
+            "description": "Phantom Artifact ID"
         }
     ],
     "platform_version": "4.9.33071"
