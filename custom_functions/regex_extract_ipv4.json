@@ -1,0 +1,27 @@
+{
+    "create_time": "2020-07-10T20:26:40.629616+00:00",
+    "custom_function_id": "c7a55f792f667f9c47c589064bf4836c9dff87f5",
+    "description": "Takes a single input and attempts to extract all IPv4 addresses from it using regex.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "An input string that may contain an arbitrary number of ipv4 addresses",
+            "input_type": "list",
+            "name": "input_string",
+            "placeholder": "192.0.2.1"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "data_path": "*.ipv4",
+            "description": "Extracted ipv4 addresses"
+        }
+    ],
+    "platform_version": "4.9.33071"
+}
