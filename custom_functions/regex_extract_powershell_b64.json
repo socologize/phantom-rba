@@ -1,0 +1,27 @@
+{
+    "create_time": "2020-07-10T20:15:48.252675+00:00",
+    "custom_function_id": "89d8a6717db59a2127503672af35e13b1d4a2110",
+    "description": "Detects -enc flag and extracts base64. Based on Unit42 research.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "A powershell cmdline that may contain encoding flag",
+            "input_type": "item",
+            "name": "input_string",
+            "placeholder": "powershell.exe  -enc <base64>"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "extracted_string",
+            "description": "Base 64 extracted from input_string. Empty if extraction failed."
+        }
+    ],
+    "platform_version": "4.9.33071"
+}
