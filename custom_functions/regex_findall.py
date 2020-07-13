@@ -1,10 +1,11 @@
-def regex_findall(input_string=None, input_pattern=None, **kwargs):
+def regex_findall(input_string=None, input_pattern=None, artifact_id=None, **kwargs):
     """
-    Custom function implementation of re.find_all. Takes an input_string and a regex_pattern and returns matches (up to 9).
+    Custom function implementation of re.find_all. Takes an input_string and a regex_pattern and returns matches (up to 8).
     
     Args:
         input_string (CEF type: *): A string to run regex against
         input_pattern (CEF type: *): Regex pattern goes here
+        artifact_id
     
     Returns a JSON-serializable object that implements the configured data paths:
         all (CEF type: *): Entire result of re.findall
@@ -16,7 +17,7 @@ def regex_findall(input_string=None, input_pattern=None, **kwargs):
         group6 (CEF type: *)
         group7 (CEF type: *)
         group8 (CEF type: *)
-        group9 (CEF type: *)
+        artifact_id (CEF type: *)
     """
     ############################ Custom Code Goes Below This Line #################################
     import json
@@ -29,11 +30,12 @@ def regex_findall(input_string=None, input_pattern=None, **kwargs):
     
     result = re.findall(pattern, input_string)
     outputs['all'] = result
+    outputs['artifact_id'] = artifact_id
     phantom.debug('Number of capture groups: {}'.format(len(result)))
-    if len(result) > 9:
+    if len(result) > 8:
         phantom.debug('Number of capture groups greater than allowable output size of 9. Returning first 9')
         incrementer = 1
-        for capture_group in result[:9]:
+        for capture_group in result[:8]:
             outputs['group' + str(incrementer)] = capture_group
             incrementer += 1
     elif result:
