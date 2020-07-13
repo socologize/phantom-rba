@@ -18,7 +18,7 @@ def ip_reputation_1(action=None, success=None, container=None, results=None, han
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'ip_reputation_1' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_3:cf_rba_master_normalize_lists_1:custom_function_result.data.ip'])
+    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_3:cf_rba_master_normalize_lists_1:custom_function_result.data.item'])
 
     parameters = []
     
@@ -60,7 +60,7 @@ def file_reputation_1(action=None, success=None, container=None, results=None, h
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'file_reputation_1' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_2:cf_rba_master_normalize_lists_1:custom_function_result.data.hash'])
+    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_2:cf_rba_master_normalize_lists_1:custom_function_result.data.item'])
 
     parameters = []
     
@@ -214,7 +214,7 @@ def detonate_url_1(action=None, success=None, container=None, results=None, hand
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'detonate_url_1' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_4:cf_rba_master_normalize_lists_1:custom_function_result.data.url'])
+    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_4:cf_rba_master_normalize_lists_1:custom_function_result.data.item'])
 
     parameters = []
     
