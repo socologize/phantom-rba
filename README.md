@@ -29,3 +29,7 @@ Phantom 4.9 is a prerequisite and will work on any Phantom release after 4.9. Th
 - Navigate to Playbooks. 
 - Choose Playbooks and/or Custom Functions
 - Select "Update from Source Control"
+
+## Prerequisites
+- Phantom 4.9
+- Phantom Helper App (hosted at shelbertITW/phantom-rba/apps/)
