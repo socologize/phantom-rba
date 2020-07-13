@@ -7,8 +7,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'cf_local_normalize_lists_1' block
-    cf_local_normalize_lists_1(container=container)
+    # call 'cf_rba_master_normalize_lists_1' block
+    cf_rba_master_normalize_lists_1(container=container)
 
     return
 
@@ -18,7 +18,7 @@ def ip_reputation_1(action=None, success=None, container=None, results=None, han
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'ip_reputation_1' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_3:cf_local_normalize_lists_1:custom_function_result.data.items.*.ip'])
+    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_3:cf_rba_master_normalize_lists_1:custom_function_result.data.ip'])
 
     parameters = []
     
@@ -39,7 +39,7 @@ def domain_reputation_1(action=None, success=None, container=None, results=None,
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'domain_reputation_1' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_local_normalize_lists_1:custom_function_result.data.items.*.domain'])
+    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_normalize_lists_1:custom_function_result.data.domain'])
 
     parameters = []
     
@@ -60,7 +60,7 @@ def file_reputation_1(action=None, success=None, container=None, results=None, h
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'file_reputation_1' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_2:cf_local_normalize_lists_1:custom_function_result.data.items.*.hash'])
+    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_2:cf_rba_master_normalize_lists_1:custom_function_result.data.hash'])
 
     parameters = []
     
@@ -109,8 +109,8 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
     return
 
-def cf_local_normalize_lists_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
-    phantom.debug('cf_local_normalize_lists_1() called')
+def cf_rba_master_normalize_lists_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+    phantom.debug('cf_rba_master_normalize_lists_1() called')
 
     container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.threat_object', 'artifact:*.cef.threat_object_type', 'artifact:*.id'])
 
@@ -131,44 +131,8 @@ def cf_local_normalize_lists_1(action=None, success=None, container=None, result
     ## Custom Code End
     ################################################################################    
 
-    # call custom function "local/normalize_lists", returns the custom_function_run_id
-    phantom.custom_function(custom_function='local/normalize_lists', parameters=parameters, name='cf_local_normalize_lists_1', callback=cf_community_debug_1)
-
-    return
-
-def cf_community_debug_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
-    phantom.debug('cf_community_debug_1() called')
-
-    custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_local_normalize_lists_1:custom_function_result.data.items'], action_results=results )
-
-    parameters = []
-
-    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]
-
-    parameters.append({
-        'input_1': custom_function_result_0_0,
-        'input_2': None,
-        'input_3': None,
-        'input_4': None,
-        'input_5': None,
-        'input_6': None,
-        'input_7': None,
-        'input_8': None,
-        'input_9': None,
-        'input_10': None,
-    })
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################    
-
-    # call custom function "community/debug", returns the custom_function_run_id
-    phantom.custom_function(custom_function='community/debug', parameters=parameters, name='cf_community_debug_1', callback=filter_3)
+    # call custom function "rba-master/normalize_lists", returns the custom_function_run_id
+    phantom.custom_function(custom_function='rba-master/normalize_lists', parameters=parameters, name='cf_rba_master_normalize_lists_1', callback=filter_3)
 
     return
 
@@ -180,7 +144,7 @@ def filter_3(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         action_results=results,
         conditions=[
-            ["cf_local_normalize_lists_1:custom_function_result.data.items.*.domain", "!=", ""],
+            ["cf_rba_master_normalize_lists_1:custom_function_result.data.items", "!=", ""],
         ],
         name="filter_3:condition_1")
 
@@ -193,7 +157,7 @@ def filter_3(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         action_results=results,
         conditions=[
-            ["cf_local_normalize_lists_1:custom_function_result.data.items.*.hash", "!=", ""],
+            ["cf_rba_master_normalize_lists_1:custom_function_result.data.items.*.hash", "!=", ""],
         ],
         name="filter_3:condition_2")
 
@@ -206,7 +170,7 @@ def filter_3(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         action_results=results,
         conditions=[
-            ["cf_local_normalize_lists_1:custom_function_result.data.items.*.ip", "!=", ""],
+            ["cf_rba_master_normalize_lists_1:custom_function_result.data.items.*.ip", "!=", ""],
         ],
         name="filter_3:condition_3")
 
@@ -219,13 +183,28 @@ def filter_3(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         action_results=results,
         conditions=[
-            ["cf_local_normalize_lists_1:custom_function_result.data.items.*.url", "!=", ""],
+            ["cf_rba_master_normalize_lists_1:custom_function_result.data.items.*.url", "!=", ""],
         ],
         name="filter_3:condition_4")
 
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_4 or matched_results_4:
         detonate_url_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_4, filtered_results=matched_results_4)
+
+    # collect filtered artifact ids for 'if' condition 5
+    matched_artifacts_5, matched_results_5 = phantom.condition(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["cf_rba_master_normalize_lists_1:custom_function_result.data.items.*.command", "!=", ""],
+            ["cf_rba_master_normalize_lists_1:custom_function_result.data.items.*.process", "!=", ""],
+        ],
+        logical_operator='or',
+        name="filter_3:condition_5")
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_5 or matched_results_5:
+        playbook_rba_master_RBA_Investigate_command_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_5, filtered_results=matched_results_5)
 
     return
 
@@ -235,7 +214,7 @@ def detonate_url_1(action=None, success=None, container=None, results=None, hand
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'detonate_url_1' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_4:cf_local_normalize_lists_1:custom_function_result.data.items.*.url'])
+    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_4:cf_rba_master_normalize_lists_1:custom_function_result.data.url'])
 
     parameters = []
     
@@ -278,6 +257,14 @@ def add_note_2(action=None, success=None, container=None, results=None, handle=N
     note_content = formatted_data_1
     note_format = "markdown"
     phantom.add_note(container=container, note_type="general", title=note_title, content=note_content, note_format=note_format)
+
+    return
+
+def playbook_rba_master_RBA_Investigate_command_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+    phantom.debug('playbook_rba_master_RBA_Investigate_command_1() called')
+    
+    # call playbook "rba-master/RBA Investigate - command", returns the playbook_run_id
+    playbook_run_id = phantom.playbook(playbook="rba-master/RBA Investigate - command", container=container)
 
     return
 
