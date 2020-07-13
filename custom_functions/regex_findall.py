@@ -33,7 +33,7 @@ def regex_findall(input_string=None, input_pattern=None, artifact_id=None, **kwa
     outputs['artifact_id'] = artifact_id
     phantom.debug('Number of capture groups: {}'.format(len(result)))
     if len(result) > 8:
-        phantom.debug('Number of capture groups greater than allowable output size of 9. Returning first 9')
+        phantom.debug('Number of capture groups greater than allowable output size of 8. Returning first 8')
         incrementer = 1
         for capture_group in result[:8]:
             outputs['group' + str(incrementer)] = capture_group
