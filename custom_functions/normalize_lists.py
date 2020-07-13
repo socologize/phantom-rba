@@ -7,22 +7,22 @@ def normalize_lists(input_item=None, object_type=None, **kwargs):
         object_type
     
     Returns a JSON-serializable object that implements the configured data paths:
-        item
-        object_type
+        *.item
+        *.object_type
     """
     ############################ Custom Code Goes Below This Line #################################
     import json
     import phantom.rules as phantom
     
-    outputs = {}
-
+    outputs = []
+    
     if input_item and type(input_item) == list and object_type:
         for item in input_item:
-            outputs['item'] = item
-            outputs['object_type'] = object_type
+            outputs.append({'item': item})
+            outputs.append({'object_type': object_type})
     elif input_item and object_type:
-        outputs['item'] = input_item
-        outputs['object_type'] = object_type
+        outputs.append({'item': input_item})
+        outputs.append({'object_type': object_type})
     
         
     # Return a JSON-serializable object
