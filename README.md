@@ -16,10 +16,9 @@ Splunk Phantom playbooks that string together investigative and generic function
 
 Playbooks can be difficult to implement as-is due to unique organizational requirements. In many cases you may wish to just download the custom_function and use the playbooks as starting ideas.
 
-## Will this work with my environment?
-Phantom 4.9 is a prerequisite and will work on any Phantom release after 4.9. The playbooks are also designed in tandem with the configurations used in SA-RBA and will work out-of-the-box if following those configurations.
-
 ## How do I get started?
+
+### Connect to Repo
 - Navigate to Administration Settings > Source Control
 - To configure Phantom to read from this repo provide the following information:
   - REPO URL: *https://github.com/shelbertITW/phantom-rba*
@@ -30,6 +29,19 @@ Phantom 4.9 is a prerequisite and will work on any Phantom release after 4.9. Th
 - Choose Playbooks and/or Custom Functions
 - Select "Update from Source Control"
 
-## Prerequisites
+## Will this work with my environment?
+The playbooks are designed in tandem with the configurations used in SA-RBA and have been tested against those configurations. To use the playbooks as-is, please check the directions below for apps and assets.
+
+Custom functions are far more modular, and do not have any dependancies. They can be downloaded and used in any playbook.
+
+### Prerequisites
 - Phantom 4.9
-- Phantom Helper App (hosted at shelbertITW/phantom-rba/apps/)
+
+### Mapping Assets
+When downloading external playbooks, Phantom requires that you map your assets to the assets used within a Playbook. This process is easy thanks to the "auto-resolve" functionality of each Playbook. 
+
+You will have to navigate to each downloaded Playbook (Playbooks > Repo Label > <Your Repo Name>), and open the playbook. Once you have opened the playbook, you will need to follow the auto-resolve steps. 
+
+### Playbook App Integrations
+- Custom Phantom Helper App (hosted at shelbertITW/phantom-rba/apps/)
+- VirusTotal
