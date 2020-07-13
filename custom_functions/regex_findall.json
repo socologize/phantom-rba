@@ -1,0 +1,99 @@
+{
+    "create_time": "2020-07-13T17:06:16.435424+00:00",
+    "custom_function_id": "54303d157fd92df066ded3c955387fe3ed315621",
+    "description": "Custom function implementation of re.find_all. Takes an input_string and a regex_pattern and returns matches (up to 9).",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "A string to run regex against",
+            "input_type": "item",
+            "name": "input_string",
+            "placeholder": "text"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Regex pattern goes here",
+            "input_type": "list",
+            "name": "input_pattern",
+            "placeholder": "[rR][eE][gG][eE][xX]+"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "all",
+            "description": "Entire result of re.findall"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group1",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group2",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group3",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group4",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group5",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group6",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group7",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group8",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group9",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.9.33071"
+}
