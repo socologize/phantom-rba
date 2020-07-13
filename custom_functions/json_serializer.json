@@ -1,0 +1,36 @@
+{
+    "create_time": "2020-07-13T17:44:23.678599+00:00",
+    "custom_function_id": "33bc31f18ab7277450221457820adcdbf60426b8",
+    "description": "Takes a key and a value and serializes it into a json dictionary to be used wherever a pre-formatted json required",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "To be used as json key",
+            "input_type": "item",
+            "name": "input_key",
+            "placeholder": "my_dict_key"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "To be used as a json value",
+            "input_type": "item",
+            "name": "input_value",
+            "placeholder": "my_dict_value"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "json",
+            "description": "json key:value"
+        }
+    ],
+    "platform_version": "4.9.33071"
+}
