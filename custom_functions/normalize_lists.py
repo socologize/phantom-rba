@@ -18,7 +18,7 @@ def normalize_lists(input_item=None, object_type=None, **kwargs):
 
     if input_item and type(input_item) == list and object_type:
         for item in input_item:
-            outputs['item'] = 'item'
+            outputs['item'] = item
             outputs['object_type'] = object_type
     elif input_item and object_type:
         outputs['item'] = input_item
