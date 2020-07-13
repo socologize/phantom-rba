@@ -28,17 +28,15 @@ def regex_findall(input_string=None, input_pattern=None, **kwargs):
     pattern = '{}'.format(input_pattern)
     
     result = re.findall(pattern, input_string)
-    
+    outputs['all'] = result
     phantom.debug('Number of capture groups: {}'.format(len(result)))
     if len(result) > 9:
         phantom.debug('Number of capture groups greater than allowable output size of 9. Returning first 9')
-        outputs['all'] = result[:9]
         incrementer = 1
         for capture_group in result[:9]:
             outputs['group' + str(incrementer)] = capture_group
             incrementer += 1
     elif result:
-        outputs['all'] = result
         incrementer = 1
         for capture_group in result:
             outputs['group' + str(incrementer)] = capture_group
