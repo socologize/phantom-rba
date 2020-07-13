@@ -144,7 +144,7 @@ def filter_3(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         action_results=results,
         conditions=[
-            ["cf_rba_master_normalize_lists_1:custom_function_result.data.items", "!=", ""],
+            ["cf_rba_master_normalize_lists_1:custom_function_result.data.*.domain", "!=", ""],
         ],
         name="filter_3:condition_1")
 
