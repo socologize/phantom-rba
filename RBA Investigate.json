@@ -7,7 +7,6 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "193afdef777dadb2be140d08068c104ae4565fd0",
             "joint": {
                 "cells": [
                     {
@@ -8936,7 +8935,8 @@
     "create_time": "2020-07-13T17:57:21.077779+00:00",
     "draft_mode": false,
     "labels": [
-        "events"
+        "events",
+        "notable"
     ],
     "tags": []
 }
