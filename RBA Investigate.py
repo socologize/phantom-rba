@@ -18,7 +18,7 @@ def ip_reputation_1(action=None, success=None, container=None, results=None, han
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'ip_reputation_1' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_3:cf_rba_master_normalize_lists_1:custom_function_result.data.item'])
+    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_3:cf_rba_master_normalize_lists_1:custom_function_result.data.*.item'])
 
     parameters = []
     
@@ -39,7 +39,7 @@ def domain_reputation_1(action=None, success=None, container=None, results=None,
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'domain_reputation_1' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_normalize_lists_1:custom_function_result.data.item'])
+    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_normalize_lists_1:custom_function_result.data.*.item'])
 
     parameters = []
     
@@ -60,7 +60,7 @@ def file_reputation_1(action=None, success=None, container=None, results=None, h
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'file_reputation_1' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_2:cf_rba_master_normalize_lists_1:custom_function_result.data.item'])
+    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_2:cf_rba_master_normalize_lists_1:custom_function_result.data.*.item'])
 
     parameters = []
     
@@ -144,7 +144,7 @@ def filter_3(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         action_results=results,
         conditions=[
-            ["cf_rba_master_normalize_lists_1:custom_function_result.data.object_type", "==", "domain"],
+            ["cf_rba_master_normalize_lists_1:custom_function_result.data.*.object_type", "==", "domain"],
         ],
         name="filter_3:condition_1")
 
@@ -157,7 +157,7 @@ def filter_3(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         action_results=results,
         conditions=[
-            ["cf_rba_master_normalize_lists_1:custom_function_result.data.object_type", "==", "file_hash"],
+            ["cf_rba_master_normalize_lists_1:custom_function_result.data.*.object_type", "==", "file_hash"],
         ],
         name="filter_3:condition_2")
 
@@ -170,7 +170,7 @@ def filter_3(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         action_results=results,
         conditions=[
-            ["cf_rba_master_normalize_lists_1:custom_function_result.data.object_type", "==", "ip"],
+            ["cf_rba_master_normalize_lists_1:custom_function_result.data.*.object_type", "==", "ip"],
         ],
         name="filter_3:condition_3")
 
@@ -183,7 +183,7 @@ def filter_3(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         action_results=results,
         conditions=[
-            ["cf_rba_master_normalize_lists_1:custom_function_result.data.object_type", "==", "url"],
+            ["cf_rba_master_normalize_lists_1:custom_function_result.data.*.object_type", "==", "url"],
         ],
         name="filter_3:condition_4")
 
@@ -196,7 +196,7 @@ def filter_3(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         action_results=results,
         conditions=[
-            ["cf_rba_master_normalize_lists_1:custom_function_result.data.object_type", "==", "process"],
+            ["cf_rba_master_normalize_lists_1:custom_function_result.data.*.object_type", "==", "process"],
             ["cf_rba_master_normalize_lists_1:custom_function_result.data.object_type", "==", "command"],
         ],
         logical_operator='or',
@@ -214,7 +214,7 @@ def detonate_url_1(action=None, success=None, container=None, results=None, hand
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'detonate_url_1' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_4:cf_rba_master_normalize_lists_1:custom_function_result.data.item'])
+    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_4:cf_rba_master_normalize_lists_1:custom_function_result.data.*.item'])
 
     parameters = []
     
