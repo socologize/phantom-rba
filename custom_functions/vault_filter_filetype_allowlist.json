@@ -1,0 +1,50 @@
+{
+    "create_time": "2020-07-14T16:41:20.554475+00:00",
+    "custom_function_id": "6702ad19fa8ef7ccc4bee01de8b9f46147ff80ce",
+    "description": "Input a list of file content types, vault ids and the name of a custom_list that contains safe file types. Output vauld ids where the filetype is NOT present in the custom_list. ",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Supports Content-Type from Vault Artifact",
+            "input_type": "list",
+            "name": "filetype",
+            "placeholder": "image/png; name=\"image.png\"\u2029"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "The name of a custom list that will be used as the list of domains to filter the URL against. Only the first column of the custom list will be used. Example: https://web.example.com/ will be parsed as web.example.com and matched to values inside my_custom_list.",
+            "input_type": "item",
+            "name": "filetype_allowlist",
+            "placeholder": "my_custom_list"
+        },
+        {
+            "contains_type": [
+                "vault id"
+            ],
+            "description": "Vault ID",
+            "input_type": "list",
+            "name": "vault_id",
+            "placeholder": "artifact:*.cef.vaultId"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "vault id"
+            ],
+            "data_path": "*.filtered_vault_id",
+            "description": "Only vault_id's where the content-type is not found within the custom list"
+        },
+        {
+            "contains_type": [],
+            "data_path": "*.filtered_content_type",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.9.33071"
+}
