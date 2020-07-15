@@ -26,6 +26,8 @@ def normalize_lists(input_item=None, object_type=None, **kwargs):
         outputs.append({'item': input_item})
         outputs.append({'object_type': object_type})
     
+    phantom.debug('Input: "{}" - Output: "{}"'.format(input_item,outputs))
+    
         
     # Return a JSON-serializable object
     assert json.dumps(outputs)  # Will raise an exception if the :outputs: object is not JSON-serializable
