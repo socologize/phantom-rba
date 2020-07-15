@@ -17,10 +17,12 @@ def normalize_lists(input_item=None, object_type=None, **kwargs):
     outputs = []
     
     if input_item and type(input_item) == list and object_type:
+        phantom.debug('"{}" is a list, looping through'.format(input_item))
         for item in input_item:
             outputs.append({'item': item})
             outputs.append({'object_type': object_type})
     elif input_item and object_type:
+        phantom.debug('"{}" is not a list, adding item as-is'.format(input_item))
         outputs.append({'item': input_item})
         outputs.append({'object_type': object_type})
     
