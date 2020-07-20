@@ -31,19 +31,33 @@ def regex_findall(input_string=None, input_pattern=None, artifact_id=None, **kwa
     result = re.findall(pattern, input_string)
     outputs['all'] = result
     outputs['artifact_id'] = artifact_id
-    phantom.debug('Number of capture groups: {}'.format(len(result)))
-    if len(result) > 8:
-        phantom.debug('Number of capture groups greater than allowable output size of 8. Returning first 8')
+    if input_string:
+        
+        result = re.findall(pattern, input_string)
         incrementer = 1
-        for capture_group in result[:8]:
-            outputs['group' + str(incrementer)] = capture_group
-            incrementer += 1
-    elif result:
-        incrementer = 1
-        for capture_group in result:
-            outputs['group' + str(incrementer)] = capture_group
-            incrementer += 1
-    
+        outputs['all'] = result
+        
+        if len(result) > 9:
+            phantom.debug('Number of capture groups greater than allowable output size of 8. Returning first 8')
+            for capture_group in result[:8]:
+                if type(capture_group) == tuple:
+                    for item in capture_group:
+                        outputs['group' + str(incrementer)] = item
+                        incrementer += 1
+                else:
+                    outputs['group' + str(incrementer)] = capture_group
+                    incrementer +=1
+                    
+        elif result:
+            for capture_group in result:
+                if type(capture_group) == tuple:
+                    for item in capture_group:
+                        outputs['group' + str(incrementer)] = item
+                        incrementer += 1
+                else:
+                    outputs['group' + str(incrementer)] = capture_group
+                    incrementer += 1
+                    
     # Return a JSON-serializable object
     assert json.dumps(outputs)  # Will raise an exception if the :outputs: object is not JSON-serializable
     return outputs
