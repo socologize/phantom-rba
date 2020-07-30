@@ -1,0 +1,39 @@
+{
+    "create_time": "2020-07-30T20:00:46.864148+00:00",
+    "custom_function_id": "f0a383f73aa9982df2520257d7d2ce2c96581b0c",
+    "description": "",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "list",
+            "name": "search_json",
+            "placeholder": "search_results.data"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "*.artifact.cef",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "*.artifact.tags",
+            "description": ""
+        },
+        {
+            "contains_type": [],
+            "data_path": "*.artifact.name",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.9.33071"
+}
