@@ -1,0 +1,70 @@
+{
+    "create_time": "2020-07-30T17:20:57.907293+00:00",
+    "custom_function_id": "29d5744e54580363e0e14c3ffb817702f3f7e4bf",
+    "description": "Adds an artifact and updates that artifact with provided tags",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "cef",
+            "placeholder": "artifact.cef"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "tags",
+            "placeholder": "artifact.tags"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "severity",
+            "placeholder": "\"informational\""
+        },
+        {
+            "contains_type": [
+                "phantom container id"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "container_id",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "label",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "name",
+            "placeholder": "artifact.name"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [],
+            "data_path": "id",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.9.33071"
+}
