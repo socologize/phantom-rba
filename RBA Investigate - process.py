@@ -12,9 +12,9 @@ def on_start(container):
 
     return
 
-def cf_rba_master_regex_extract_ipv4_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
-    phantom.debug('cf_rba_master_regex_extract_ipv4_1() called')
-
+def cf_community_regex_extract_ipv4_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('cf_community_regex_extract_ipv4_1() called')
+    
     custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string'], action_results=results )
 
     parameters = []
@@ -34,18 +34,18 @@ def cf_rba_master_regex_extract_ipv4_1(action=None, success=None, container=None
     ## Custom Code End
     ################################################################################    
 
-    # call custom function "rba-master/regex_extract_ipv4", returns the custom_function_run_id
-    phantom.custom_function(custom_function='rba-master/regex_extract_ipv4', parameters=parameters, name='cf_rba_master_regex_extract_ipv4_1', callback=subnet_filter)
+    # call custom function "community/regex_extract_ipv4", returns the custom_function_run_id
+    phantom.custom_function(custom_function='community/regex_extract_ipv4', parameters=parameters, name='cf_community_regex_extract_ipv4_1', callback=subnet_filter)
 
     return
 
-def ip_reputation_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+def ip_reputation_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('ip_reputation_1() called')
-    
+        
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'ip_reputation_1' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:subnet_filter:condition_1:cf_rba_master_regex_extract_ipv4_1:custom_function_result.data.*.ipv4'])
+    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:subnet_filter:condition_1:cf_community_regex_extract_ipv4_1:custom_function_result.data.*.ipv4'])
 
     parameters = []
     
@@ -60,7 +60,7 @@ def ip_reputation_1(action=None, success=None, container=None, results=None, han
 
     return
 
-def subnet_filter(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+def subnet_filter(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('subnet_filter() called')
 
     # collect filtered artifact ids for 'if' condition 1
@@ -68,9 +68,9 @@ def subnet_filter(action=None, success=None, container=None, results=None, handl
         container=container,
         action_results=results,
         conditions=[
-            ["cf_rba_master_regex_extract_ipv4_1:custom_function_result.data.*.ipv4", "not in", "10.0.0.0/8"],
-            ["cf_rba_master_regex_extract_ipv4_1:custom_function_result.data.*.ipv4", "not in", "172.16.0.0/12"],
-            ["cf_rba_master_regex_extract_ipv4_1:custom_function_result.data.*.ipv4", "not in", "192.168.0.0/16"],
+            ["cf_community_regex_extract_ipv4_1:custom_function_result.data.*.ipv4", "not in", "10.0.0.0/8"],
+            ["cf_community_regex_extract_ipv4_1:custom_function_result.data.*.ipv4", "not in", "172.16.0.0/12"],
+            ["cf_community_regex_extract_ipv4_1:custom_function_result.data.*.ipv4", "not in", "192.168.0.0/16"],
         ],
         logical_operator='and',
         name="subnet_filter:condition_1")
@@ -81,9 +81,9 @@ def subnet_filter(action=None, success=None, container=None, results=None, handl
 
     return
 
-def cf_rba_master_regex_extract_powershell_b64_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+def cf_rba_master_regex_extract_powershell_b64_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('cf_rba_master_regex_extract_powershell_b64_1() called')
-
+    
     container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.threat_object', 'artifact:*.id'])
 
     parameters = []
@@ -108,7 +108,7 @@ def cf_rba_master_regex_extract_powershell_b64_1(action=None, success=None, cont
 
     return
 
-def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('decision_1() called')
 
     # check for 'if' condition 1
@@ -127,16 +127,16 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     return
 
-def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_1() called')
 
     phantom.pin(container=container, data="Encoded Powershell Detected", message="Risk Item", pin_type="card", pin_style="red", name=None)
 
     return
 
-def cf_rba_master_decode_base64_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+def cf_rba_master_decode_base64_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('cf_rba_master_decode_base64_1() called')
-
+    
     custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id', 'cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.extracted_string'], action_results=results )
 
     parameters = []
@@ -164,12 +164,12 @@ def cf_rba_master_decode_base64_1(action=None, success=None, container=None, res
 def cf_rba_master_decode_base64_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
     phantom.debug('cf_rba_master_decode_base64_1_callback() called')
     
-    cf_rba_master_regex_extract_ipv4_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    cf_community_regex_extract_ipv4_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
     filter_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
 
     return
 
-def filter_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+def filter_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('filter_3() called')
 
     # collect filtered artifact ids for 'if' condition 1
@@ -187,9 +187,9 @@ def filter_3(action=None, success=None, container=None, results=None, handle=Non
 
     return
 
-def cf_rba_master_json_serializer_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+def cf_rba_master_json_serializer_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('cf_rba_master_json_serializer_1() called')
-
+    
     filtered_custom_function_results_data_0 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string'])
     literal_values_0 = [
         [
@@ -220,9 +220,9 @@ def cf_rba_master_json_serializer_1(action=None, success=None, container=None, r
 
     return
 
-def update_artifact_fields_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+def update_artifact_fields_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('update_artifact_fields_2() called')
-    
+        
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'update_artifact_fields_2' call
@@ -244,7 +244,7 @@ def update_artifact_fields_2(action=None, success=None, container=None, results=
 
     return
 
-def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_2() called')
     
     template = """{{ \"cef\" :  {0} }}"""
