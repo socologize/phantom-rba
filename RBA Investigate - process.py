@@ -247,7 +247,7 @@ def update_artifact_fields_2(action=None, success=None, container=None, results=
 def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_2() called')
     
-    template = """{0}"""
+    template = """{{\"cef\": {0}}}"""
 
     # parameter list for template variable replacement
     parameters = [
