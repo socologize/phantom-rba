@@ -222,7 +222,9 @@ def cf_rba_master_json_serializer_1(action=None, success=None, container=None, r
 
 def update_artifact_fields_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('update_artifact_fields_2() called')
-
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
     # collect data for 'update_artifact_fields_2' call
     filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id'])
     formatted_data_1 = phantom.get_format_data(name='format_2')
@@ -245,7 +247,7 @@ def update_artifact_fields_2(action=None, success=None, container=None, results=
 def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_2() called')
     
-    template = """{{ \"cef\" :  {0} }}"""
+    template = """{0}"""
 
     # parameter list for template variable replacement
     parameters = [
@@ -254,7 +256,7 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_2")
 
-    cf_community_debug_1(container=container)
+    update_artifact_fields_2(container=container)
 
     return
 

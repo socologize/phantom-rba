@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "b867dbd2f72f051afc543fea7dbee9e7bdb06029",
+            "hash": "c366fbceedf503bd2af2d56a3c5bbbea2ad4c73b",
             "joint": {
                 "cells": [
                     {
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 314,
-                        "line_start": 301,
+                        "line_end": 316,
+                        "line_start": 303,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -2969,178 +2969,6 @@
                         "z": 233
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".format": {
-                                "text": "format 2"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"{{ \\\"cef\\\" :  {0} }}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"cf_rba_master_json_serializer_1:custom_function_result.data.json\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    cf_community_debug_1(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "json_serializer",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "acf47bf6-87c1-4f22-a4e4-4f2523267e94",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 261,
-                        "line_start": 245,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 2,
-                        "order": 12,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "cf_rba_master_json_serializer_1:custom_function_result.data.json"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1300,
-                            "y": 220
-                        },
-                        "previous_function": "",
-                        "previous_name": "format_2",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "{{ \"cef\" :  {0} }}",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 234
-                    },
-                    {
                         "action": "update artifact fields",
                         "action_type": "generic",
                         "active": false,
@@ -3267,7 +3095,7 @@
                             },
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#E6984E"
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -3311,7 +3139,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -3329,14 +3157,14 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def update_artifact_fields_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_artifact_fields_2() called')\n\n    # collect data for 'update_artifact_fields_2' call\n    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id'])\n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    parameters = []\n    \n    # build parameters list for 'update_artifact_fields_2' call\n    for filtered_custom_function_results_item_1 in filtered_custom_function_results_data_1:\n        if filtered_custom_function_results_item_1[0]:\n            parameters.append({\n                'data': formatted_data_1,\n                'overwrite': False,\n                'artifact_id': filtered_custom_function_results_item_1[0],\n            })\n\n    phantom.act(action=\"update artifact fields\", parameters=parameters, assets=['phantom_helper'], name=\"update_artifact_fields_2\")\n\n    return",
+                        "block_code": "def update_artifact_fields_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_artifact_fields_2() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_artifact_fields_2' call\n    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id'])\n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    parameters = []\n    \n    # build parameters list for 'update_artifact_fields_2' call\n    for filtered_custom_function_results_item_1 in filtered_custom_function_results_data_1:\n        if filtered_custom_function_results_item_1[0]:\n            parameters.append({\n                'data': formatted_data_1,\n                'overwrite': False,\n                'artifact_id': filtered_custom_function_results_item_1[0],\n            })\n\n    phantom.act(action=\"update artifact fields\", parameters=parameters, assets=['phantom_helper'], name=\"update_artifact_fields_2\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "color": "",
                         "connected_to_start": false,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "json_serializer",
+                        "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -3354,7 +3182,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 245,
+                        "line_end": 247,
                         "line_start": 223,
                         "message": "Configuring now",
                         "name": "update artifact fields",
@@ -3433,50 +3261,11 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "warn",
+                        "status": "",
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 235
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "f9032dc3-7800-4cee-b7a5-80815c1aba36",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "acf47bf6-87c1-4f22-a4e4-4f2523267e94",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "37776780-8052-483b-a967-941440c30c9e",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 236
+                        "z": 241
                     },
                     {
                         ".scmName/text": "community",
@@ -3487,7 +3276,7 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#5C6773"
+                                "stroke": "#E6984E"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -3537,7 +3326,10 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
                             },
                             "g.notes": {
                                 "display": "block"
@@ -3593,9 +3385,9 @@
                             }
                         },
                         "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "json_serializer",
-                        "connection_type": "action",
+                        "connected_to_start": false,
+                        "connection_name": "",
+                        "connection_type": "",
                         "currentVersion": true,
                         "customCodeEndLineOffset": 7,
                         "customCodeStartLine": 28,
@@ -3622,8 +3414,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 301,
-                        "line_start": 261,
+                        "line_end": 303,
+                        "line_start": 263,
                         "message": "Configuring now",
                         "name": "debug",
                         "notes": "",
@@ -3685,8 +3477,8 @@
                             }
                         },
                         "position": {
-                            "x": 1560,
-                            "y": 220
+                            "x": 1600,
+                            "y": 420
                         },
                         "previous_function": "",
                         "previous_name": "cf_community_debug_1",
@@ -3861,12 +3653,223 @@
                             "width": 180
                         },
                         "state": "repo",
-                        "status": "",
+                        "status": "warn",
                         "title": "custom function",
                         "type": "coa.CustomFunctionBlock",
                         "userGeneratedCode": "    # Write your custom code here...",
                         "warn": false,
-                        "z": 238
+                        "z": 242
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "fc58747b-9722-4ef7-9ba3-7072ebaa5710",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "acf47bf6-87c1-4f22-a4e4-4f2523267e94",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "83a671dc-d337-40b5-bb92-143d2ccd8329",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 244
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".format": {
+                                "text": "format 2"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"cf_rba_master_json_serializer_1:custom_function_result.data.json\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    update_artifact_fields_2(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "json_serializer",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "acf47bf6-87c1-4f22-a4e4-4f2523267e94",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 263,
+                        "line_start": 247,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 2,
+                        "order": 12,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "cf_rba_master_json_serializer_1:custom_function_result.data.json"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1300,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_2",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "{0}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 245
                     }
                 ]
             },
@@ -3876,7 +3879,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-19T19:31:32.002918+00:00",
+    "create_time": "2020-08-19T19:33:39.251480+00:00",
     "draft_mode": false,
     "labels": [
         "*"
