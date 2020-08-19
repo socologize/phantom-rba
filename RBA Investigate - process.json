@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "226edcaaa9157d2bfad88cc8cee7120e515ccf14",
+            "hash": "b867dbd2f72f051afc543fea7dbee9e7bdb06029",
             "joint": {
                 "cells": [
                     {
@@ -217,12 +217,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 276,
-                        "line_start": 263,
+                        "line_end": 314,
+                        "line_start": 301,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 13,
+                        "order": 14,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -1311,45 +1311,6 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "d776c0e8-595f-435c-b368-96e3f9b90cff",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "acf47bf6-87c1-4f22-a4e4-4f2523267e94",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "83a671dc-d337-40b5-bb92-143d2ccd8329",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 212
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
                         "id": "0a90132c-6776-45aa-be94-ea504227c284",
                         "router": {
                             "name": "metro"
@@ -1752,724 +1713,6 @@
                         },
                         "type": "link",
                         "z": 224
-                    },
-                    {
-                        ".scmName/text": "rba-master",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {},
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".customFunction": {
-                                "text": "json_serializer"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".scmName": {
-                                "text": "rba-master"
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            ".title-info": {
-                                "text": ""
-                            },
-                            "g.branch image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def cf_rba_master_json_serializer_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_json_serializer_1() called')\n    \n    filtered_custom_function_results_data_0 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string'])\n    literal_values_0 = [\n        [\n            \"decodedString\",\n        ],\n    ]\n\n    parameters = []\n\n    for item0 in literal_values_0:\n        for item1 in filtered_custom_function_results_data_0:\n            parameters.append({\n                'input_key': item0[0],\n                'input_value': item1[0],\n            })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/json_serializer\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/json_serializer', parameters=parameters, name='cf_rba_master_json_serializer_1', callback=format_2)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "cfDisplayPath": "rba-master/json_serializer",
-                        "cfInputs": {
-                            "input_key": {
-                                "collectionType": "literal_values",
-                                "dataPath": "decodedString",
-                                "paramName": "item0[0]",
-                                "type": "item"
-                            },
-                            "input_value": {
-                                "collectionType": "filtered_custom_function_results_data",
-                                "dataPath": "filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string",
-                                "paramName": "item1[0]",
-                                "type": "item"
-                            }
-                        },
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "decode_base64",
-                        "connection_type": "action",
-                        "currentVersion": true,
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 21,
-                        "customFunction": "rba-master/json_serializer",
-                        "customFunctionId": null,
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "draftMode": false,
-                        "existingCF": true,
-                        "functionBlock": "custom function",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "9c754db1-8920-4905-b83a-ff7df0a60764",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "input_key-0": "decodedString",
-                        "input_value-1": "filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string",
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 223,
-                        "line_start": 190,
-                        "message": "Configuring now",
-                        "name": "json_serializer",
-                        "notes": "",
-                        "number": 1,
-                        "order": 10,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1060,
-                            "y": 220
-                        },
-                        "previous_function": "",
-                        "previous_name": "cf_rba_master_json_serializer_1",
-                        "selectedCustomFunction": {
-                            "description": "Takes a key and a value and serializes it into a json dictionary to be used wherever a pre-formatted json required",
-                            "draftMode": false,
-                            "id": 188,
-                            "inputs": [
-                                {
-                                    "_pretty_custom_function": "json_serializer",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 188,
-                                    "description": "To be used as json key",
-                                    "id": 288,
-                                    "input_type": "item",
-                                    "name": "input_key",
-                                    "placeholder": "my_dict_key"
-                                },
-                                {
-                                    "_pretty_custom_function": "json_serializer",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 188,
-                                    "description": "To be used as a json value",
-                                    "id": 289,
-                                    "input_type": "item",
-                                    "name": "input_value",
-                                    "placeholder": "my_dict_value"
-                                }
-                            ],
-                            "name": "json_serializer",
-                            "outputs": [
-                                {
-                                    "_pretty_custom_function": "json_serializer",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 188,
-                                    "data_path": "json",
-                                    "description": "json key:value",
-                                    "id": 384
-                                }
-                            ],
-                            "playbooks": {
-                                "draft_playbooks": [],
-                                "draft_version_id": null,
-                                "playbooks": []
-                            },
-                            "scmId": 11,
-                            "scmName": "rba-master"
-                        },
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "repo",
-                        "status": "",
-                        "title": "custom function",
-                        "type": "coa.CustomFunctionBlock",
-                        "userGeneratedCode": "    # Write your custom code here...",
-                        "warn": false,
-                        "z": 225
-                    },
-                    {
-                        "action": "update artifact fields",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "artifact_id": "filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id",
-                            "data": "format_2:formatted_data",
-                            "overwrite": "False"
-                        },
-                        "angle": 0,
-                        "app": "Phantom",
-                        "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "update artifact fields",
-                                "actions": [
-                                    "no op",
-                                    "set current phase",
-                                    "update task",
-                                    "modify indicator tag",
-                                    "get indicator",
-                                    "update list",
-                                    "get action result",
-                                    "create container",
-                                    "import container",
-                                    "export container",
-                                    "deflate item",
-                                    "add artifact",
-                                    "find listitem",
-                                    "add listitem",
-                                    "find artifacts",
-                                    "update artifact tags",
-                                    "add workbook",
-                                    "add note",
-                                    "update artifact",
-                                    "update artifact fields",
-                                    "get user",
-                                    "list playbooks",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "Phantom",
-                                "app_version": "2.1.42",
-                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                                "asset_name": "phantom_helper",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "artifact_id": "filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id",
-                                    "data": "format_2:formatted_data",
-                                    "overwrite": "False"
-                                },
-                                "has_app": true,
-                                "id": 9,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "phantom_helper",
-                                "output": [
-                                    {
-                                        "column_name": "Status",
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.artifact_id",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.overwrite",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Message",
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    }
-                                ],
-                                "parameters": {
-                                    "artifact_id": {
-                                        "data_type": "numeric",
-                                        "default": null,
-                                        "description": "artifact_id",
-                                        "key": "artifact_id",
-                                        "primary": true,
-                                        "required": true
-                                    },
-                                    "data": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "update data (json formatted)",
-                                        "key": "data",
-                                        "required": true
-                                    },
-                                    "overwrite": {
-                                        "data_type": "boolean",
-                                        "default": null,
-                                        "description": "overwrite existing",
-                                        "key": "overwrite",
-                                        "required": false
-                                    }
-                                },
-                                "product_name": "Phantom",
-                                "product_vendor": "Phantom",
-                                "targets": "9",
-                                "type": "information"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "update artifact fields"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def update_artifact_fields_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_artifact_fields_2() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_artifact_fields_2' call\n    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id'])\n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    parameters = []\n    \n    # build parameters list for 'update_artifact_fields_2' call\n    for filtered_custom_function_results_item_1 in filtered_custom_function_results_data_1:\n        if filtered_custom_function_results_item_1[0]:\n            parameters.append({\n                'data': formatted_data_1,\n                'overwrite': False,\n                'artifact_id': filtered_custom_function_results_item_1[0],\n            })\n\n    phantom.act(action=\"update artifact fields\", parameters=parameters, assets=['phantom_helper'], name=\"update_artifact_fields_2\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "json_serializer",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "83a671dc-d337-40b5-bb92-143d2ccd8329",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 247,
-                        "line_start": 223,
-                        "message": "Configuring now",
-                        "name": "update artifact fields",
-                        "notes": "",
-                        "number": 2,
-                        "order": 11,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1540,
-                            "y": 220
-                        },
-                        "previous_function": "",
-                        "previous_name": "update_artifact_fields_2",
-                        "required_params": {
-                            "artifact_id": true,
-                            "data": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 227
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".format": {
-                                "text": "format 2"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"{{ \\\"cef\\\" :  {0} }}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"cf_rba_master_json_serializer_1:custom_function_result.data.json\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    update_artifact_fields_2(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "json_serializer",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "acf47bf6-87c1-4f22-a4e4-4f2523267e94",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 263,
-                        "line_start": 247,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 2,
-                        "order": 12,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "cf_rba_master_json_serializer_1:custom_function_result.data.json"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1300,
-                            "y": 220
-                        },
-                        "previous_function": "",
-                        "previous_name": "format_2",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "{{ \"cef\" :  {0} }}",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 228
                     },
                     {
                         ".scmName/text": "community",
@@ -3477,6 +2720,1153 @@
                         "type": "coa.Filter",
                         "warn": "",
                         "z": 232
+                    },
+                    {
+                        ".scmName/text": "rba-master",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".customFunction": {
+                                "text": "json_serializer"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "rba-master"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def cf_rba_master_json_serializer_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_json_serializer_1() called')\n    \n    filtered_custom_function_results_data_0 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string'])\n    literal_values_0 = [\n        [\n            \"decodedString\",\n        ],\n    ]\n\n    parameters = []\n\n    for item0 in literal_values_0:\n        for item1 in filtered_custom_function_results_data_0:\n            parameters.append({\n                'input_key': item0[0],\n                'input_value': item1[0],\n            })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/json_serializer\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/json_serializer', parameters=parameters, name='cf_rba_master_json_serializer_1', callback=format_2)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "rba-master/json_serializer",
+                        "cfInputs": {
+                            "input_key": {
+                                "collectionType": "literal_values",
+                                "dataPath": "decodedString",
+                                "paramName": "item0[0]",
+                                "type": "item"
+                            },
+                            "input_value": {
+                                "collectionType": "filtered_custom_function_results_data",
+                                "dataPath": "filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string",
+                                "paramName": "item1[0]",
+                                "type": "item"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "decode_base64",
+                        "connection_type": "action",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 21,
+                        "customFunction": "rba-master/json_serializer",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "9c754db1-8920-4905-b83a-ff7df0a60764",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "input_key-0": "decodedString",
+                        "input_value-1": "filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string",
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 223,
+                        "line_start": 190,
+                        "message": "Configuring now",
+                        "name": "json_serializer",
+                        "notes": "",
+                        "number": 1,
+                        "order": 10,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1060,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "cf_rba_master_json_serializer_1",
+                        "selectedCustomFunction": {
+                            "description": "Takes a key and a value and serializes it into a json dictionary to be used wherever a pre-formatted json required",
+                            "draftMode": false,
+                            "id": 188,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "json_serializer",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 188,
+                                    "description": "To be used as json key",
+                                    "id": 288,
+                                    "input_type": "item",
+                                    "name": "input_key",
+                                    "placeholder": "my_dict_key"
+                                },
+                                {
+                                    "_pretty_custom_function": "json_serializer",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 188,
+                                    "description": "To be used as a json value",
+                                    "id": 289,
+                                    "input_type": "item",
+                                    "name": "input_value",
+                                    "placeholder": "my_dict_value"
+                                }
+                            ],
+                            "name": "json_serializer",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "json_serializer",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 188,
+                                    "data_path": "json",
+                                    "description": "json key:value",
+                                    "id": 384
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": []
+                            },
+                            "scmId": 11,
+                            "scmName": "rba-master"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 233
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".format": {
+                                "text": "format 2"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"{{ \\\"cef\\\" :  {0} }}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"cf_rba_master_json_serializer_1:custom_function_result.data.json\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    cf_community_debug_1(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "json_serializer",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "acf47bf6-87c1-4f22-a4e4-4f2523267e94",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 261,
+                        "line_start": 245,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 2,
+                        "order": 12,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "cf_rba_master_json_serializer_1:custom_function_result.data.json"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1300,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_2",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "{{ \"cef\" :  {0} }}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 234
+                    },
+                    {
+                        "action": "update artifact fields",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "artifact_id": "filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id",
+                            "data": "format_2:formatted_data",
+                            "overwrite": "False"
+                        },
+                        "angle": 0,
+                        "app": "Phantom",
+                        "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "update artifact fields",
+                                "actions": [
+                                    "no op",
+                                    "set current phase",
+                                    "update task",
+                                    "modify indicator tag",
+                                    "get indicator",
+                                    "update list",
+                                    "get action result",
+                                    "create container",
+                                    "import container",
+                                    "export container",
+                                    "deflate item",
+                                    "add artifact",
+                                    "find listitem",
+                                    "add listitem",
+                                    "find artifacts",
+                                    "update artifact tags",
+                                    "add workbook",
+                                    "add note",
+                                    "update artifact",
+                                    "update artifact fields",
+                                    "get user",
+                                    "list playbooks",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Phantom",
+                                "app_version": "2.1.42",
+                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                                "asset_name": "phantom_helper",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "artifact_id": "filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id",
+                                    "data": "format_2:formatted_data",
+                                    "overwrite": "False"
+                                },
+                                "has_app": true,
+                                "id": 9,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantom_helper",
+                                "output": [
+                                    {
+                                        "column_name": "Status",
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.artifact_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.overwrite",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Message",
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    }
+                                ],
+                                "parameters": {
+                                    "artifact_id": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "artifact_id",
+                                        "key": "artifact_id",
+                                        "primary": true,
+                                        "required": true
+                                    },
+                                    "data": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "update data (json formatted)",
+                                        "key": "data",
+                                        "required": true
+                                    },
+                                    "overwrite": {
+                                        "data_type": "boolean",
+                                        "default": null,
+                                        "description": "overwrite existing",
+                                        "key": "overwrite",
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "Phantom",
+                                "product_vendor": "Phantom",
+                                "targets": "9",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "update artifact fields"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#E6984E"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def update_artifact_fields_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_artifact_fields_2() called')\n\n    # collect data for 'update_artifact_fields_2' call\n    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id'])\n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    parameters = []\n    \n    # build parameters list for 'update_artifact_fields_2' call\n    for filtered_custom_function_results_item_1 in filtered_custom_function_results_data_1:\n        if filtered_custom_function_results_item_1[0]:\n            parameters.append({\n                'data': formatted_data_1,\n                'overwrite': False,\n                'artifact_id': filtered_custom_function_results_item_1[0],\n            })\n\n    phantom.act(action=\"update artifact fields\", parameters=parameters, assets=['phantom_helper'], name=\"update_artifact_fields_2\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": false,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "83a671dc-d337-40b5-bb92-143d2ccd8329",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 245,
+                        "line_start": 223,
+                        "message": "Configuring now",
+                        "name": "update artifact fields",
+                        "notes": "",
+                        "number": 2,
+                        "order": 11,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1820,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "update_artifact_fields_2",
+                        "required_params": {
+                            "artifact_id": true,
+                            "data": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "warn",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 235
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "f9032dc3-7800-4cee-b7a5-80815c1aba36",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "acf47bf6-87c1-4f22-a4e4-4f2523267e94",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "37776780-8052-483b-a967-941440c30c9e",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 236
+                    },
+                    {
+                        ".scmName/text": "community",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".customFunction": {
+                                "text": "debug"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "community"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def cf_community_debug_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_community_debug_1() called')\n    \n    formatted_data_0 = [\n        [\n            phantom.get_format_data(name=\"format_2\"),\n        ],\n    ]\n\n    parameters = []\n\n    formatted_data_0_0 = [item[0] for item in formatted_data_0]\n\n    parameters.append({\n        'input_1': formatted_data_0_0,\n        'input_2': None,\n        'input_3': None,\n        'input_4': None,\n        'input_5': None,\n        'input_6': None,\n        'input_7': None,\n        'input_8': None,\n        'input_9': None,\n        'input_10': None,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"community/debug\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='community/debug', parameters=parameters, name='cf_community_debug_1')\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "community/debug",
+                        "cfInputs": {
+                            "input_1": {
+                                "collectionType": "formatted_data",
+                                "dataPath": "format_2:formatted_data",
+                                "paramName": "formatted_data_0_0",
+                                "type": "list"
+                            },
+                            "input_10": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_2": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_3": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_4": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_5": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_6": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_7": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_8": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_9": {
+                                "dataPath": "",
+                                "type": "list"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "json_serializer",
+                        "connection_type": "action",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 28,
+                        "customFunction": "community/debug",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "37776780-8052-483b-a967-941440c30c9e",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "input_1-0": "format_2:formatted_data",
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 301,
+                        "line_start": 261,
+                        "message": "Configuring now",
+                        "name": "debug",
+                        "notes": "",
+                        "number": 1,
+                        "order": 13,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1560,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "cf_community_debug_1",
+                        "selectedCustomFunction": {
+                            "description": "Print debug messages with the type and value of 0-10 different inputs. This is useful for checking the values of input data or the outputs of other playbook blocks.",
+                            "draftMode": false,
+                            "id": 1,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 1,
+                                    "input_type": "list",
+                                    "name": "input_1",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 2,
+                                    "input_type": "list",
+                                    "name": "input_2",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 3,
+                                    "input_type": "list",
+                                    "name": "input_3",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 4,
+                                    "input_type": "list",
+                                    "name": "input_4",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 5,
+                                    "input_type": "list",
+                                    "name": "input_5",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 6,
+                                    "input_type": "list",
+                                    "name": "input_6",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 7,
+                                    "input_type": "list",
+                                    "name": "input_7",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 8,
+                                    "input_type": "list",
+                                    "name": "input_8",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 9,
+                                    "input_type": "list",
+                                    "name": "input_9",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 10,
+                                    "input_type": "list",
+                                    "name": "input_10",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "name": "debug",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [],
+                                    "custom_function": 1,
+                                    "data_path": "*.input_name",
+                                    "description": "The variable name used for this input, such as input_1 or input_7",
+                                    "id": 1
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "data_path": "*.value",
+                                    "description": "The string representation of the value of this input",
+                                    "id": 2
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        ""
+                                    ],
+                                    "custom_function": 1,
+                                    "data_path": "*.types",
+                                    "description": "The string representation of the type of this input, such as \"<type 'list'>\"",
+                                    "id": 3
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": []
+                            },
+                            "scmId": 1,
+                            "scmName": "community"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 238
                     }
                 ]
             },
@@ -3486,7 +3876,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-19T19:29:28.218625+00:00",
+    "create_time": "2020-08-19T19:31:32.002918+00:00",
     "draft_mode": false,
     "labels": [
         "*"

@@ -222,9 +222,7 @@ def cf_rba_master_json_serializer_1(action=None, success=None, container=None, r
 
 def update_artifact_fields_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('update_artifact_fields_2() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
+
     # collect data for 'update_artifact_fields_2' call
     filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id'])
     formatted_data_1 = phantom.get_format_data(name='format_2')
@@ -256,7 +254,47 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_2")
 
-    update_artifact_fields_2(container=container)
+    cf_community_debug_1(container=container)
+
+    return
+
+def cf_community_debug_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('cf_community_debug_1() called')
+    
+    formatted_data_0 = [
+        [
+            phantom.get_format_data(name="format_2"),
+        ],
+    ]
+
+    parameters = []
+
+    formatted_data_0_0 = [item[0] for item in formatted_data_0]
+
+    parameters.append({
+        'input_1': formatted_data_0_0,
+        'input_2': None,
+        'input_3': None,
+        'input_4': None,
+        'input_5': None,
+        'input_6': None,
+        'input_7': None,
+        'input_8': None,
+        'input_9': None,
+        'input_10': None,
+    })
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################    
+
+    # call custom function "community/debug", returns the custom_function_run_id
+    phantom.custom_function(custom_function='community/debug', parameters=parameters, name='cf_community_debug_1')
 
     return
 
