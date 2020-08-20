@@ -22,7 +22,7 @@ Playbooks can be difficult to implement as-is due to unique organizational requi
 - Navigate to Administration Settings > Source Control
 - To configure Phantom to read from this repo provide the following information:
   - REPO URL: *https://github.com/kelby-shelton/phantom-rba*
-  - Repo Name: *<your_choice>*
+  - Repo Name: *rba-master*
   - Branch Name: *master*
   - Read Only: *Check*
 - Navigate to Playbooks. 
