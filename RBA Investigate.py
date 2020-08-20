@@ -16,6 +16,9 @@ def on_start(container):
     # call 'decision_3' block
     decision_3(container=container)
 
+    # call 'decision_4' block
+    decision_4(container=container)
+
     return
 
 def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
@@ -30,13 +33,13 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        playbook_rba_master_RBA_Investigate_ip_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        playbook_rba_master_rba_master_RBA_Investigate_ip_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     return
 
-def playbook_rba_master_RBA_Investigate_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_rba_master_RBA_Investigate_ip_1() called')
+def playbook_rba_master_rba_master_RBA_Investigate_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_rba_master_rba_master_RBA_Investigate_ip_1() called')
     
     # call playbook "rba-master/RBA Investigate - ip", returns the playbook_run_id
     playbook_run_id = phantom.playbook(playbook="rba-master/RBA Investigate - ip", container=container)
@@ -55,13 +58,13 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        playbook_rba_master_RBA_Investigate_domain_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        playbook_rba_master_rba_master_RBA_Investigate_domain_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     return
 
-def playbook_rba_master_RBA_Investigate_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_rba_master_RBA_Investigate_domain_1() called')
+def playbook_rba_master_rba_master_RBA_Investigate_domain_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_rba_master_rba_master_RBA_Investigate_domain_1() called')
     
     # call playbook "rba-master/RBA Investigate - domain", returns the playbook_run_id
     playbook_run_id = phantom.playbook(playbook="rba-master/RBA Investigate - domain", container=container)
@@ -82,16 +85,41 @@ def decision_3(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        playbook_rba_master_RBA_Investigate_process_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        playbook_rba_master_rba_master_RBA_Investigate_process_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     return
 
-def playbook_rba_master_RBA_Investigate_process_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_rba_master_RBA_Investigate_process_1() called')
+def playbook_rba_master_rba_master_RBA_Investigate_process_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_rba_master_rba_master_RBA_Investigate_process_1() called')
     
     # call playbook "rba-master/RBA Investigate - process", returns the playbook_run_id
     playbook_run_id = phantom.playbook(playbook="rba-master/RBA Investigate - process", container=container)
+
+    return
+
+def playbook_rba_master_RBA_Investigate_file_hash_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_rba_master_RBA_Investigate_file_hash_1() called')
+    
+    # call playbook "rba-master/RBA Investigate - file_hash", returns the playbook_run_id
+    playbook_run_id = phantom.playbook(playbook="rba-master/RBA Investigate - file_hash", container=container)
+
+    return
+
+def decision_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('decision_4() called')
+
+    # check for 'if' condition 1
+    matched = phantom.decision(
+        container=container,
+        conditions=[
+            ["artifact:*.cef.threat_object_type", "==", "file_hash"],
+        ])
+
+    # call connected blocks if condition 1 matched
+    if matched:
+        playbook_rba_master_RBA_Investigate_file_hash_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        return
 
     return
 
