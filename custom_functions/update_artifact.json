@@ -1,0 +1,37 @@
+{
+    "create_time": "2020-08-20T19:30:51.863637+00:00",
+    "custom_function_id": "a5a0ece6a01ce4e9fd4601c1c1e1a21ebf3f6161",
+    "description": "Update artifact with a valid json dictionary. See Phantom Artifact REST API for valid dictionary.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "ID of artifact to update",
+            "input_type": "item",
+            "name": "artifact_id",
+            "placeholder": "artifact:id"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "JSON formatted data. See artifact REST api",
+            "input_type": "item",
+            "name": "data",
+            "placeholder": "{\"cef\": {JSON} }"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Optional: Leave blank for False",
+            "input_type": "item",
+            "name": "overwrite",
+            "placeholder": "True or blank"
+        }
+    ],
+    "outputs": [],
+    "platform_version": "4.9.34514"
+}
