@@ -96,10 +96,10 @@ def parse_risk_results(search_json=None, **kwargs):
                     tags.append(match[1])
                 tags=list(set(tags))
             
-            # build output
+            # build output - source must exist
             if 'source' in artifact_json.keys():
                 name = artifact_json.pop('source')
-                outputs.append({'artifact': {'cef': artifact_json, 'tags': tags, 'name': name}})
+                outputs.append({'artifact': {'cef': json.dumps(artifact_json), 'tags': tags, 'name': name}})
 
 
     # Return a JSON-serializable object
