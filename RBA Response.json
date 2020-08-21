@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "import urlparse\nimport datetime",
             "description": "",
-            "hash": "5e53df04f79b0a76703aa4f68208167b62e2176e",
+            "hash": "3a6892ea2825c07116451db44c1f5a553df92a0b",
             "joint": {
                 "cells": [
                     {
@@ -1421,197 +1421,6 @@
                         },
                         "type": "link",
                         "z": 511
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".functionBlock": {
-                                "text": "get run data"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn_grey.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def get_run_data(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_run_data() called')\n    \n    results_data_1 = phantom.collect2(container=container, datapath=['prompt_1:action_result.summary.responses'], action_results=results)\n    results_item_1_0 = [item[0] for item in results_data_1]\n\n    get_run_data__output = None\n    get_run_data__responses = None\n    get_run_data__now = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    get_run_data__output = phantom.get_run_data(key='pairings')\n    get_run_data__responses = results_item_1_0\n    get_run_data__now = str(datetime.datetime.now())\n    ################################################\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='get_run_data:output', value=json.dumps(get_run_data__output))\n    phantom.save_run_data(key='get_run_data:responses', value=json.dumps(get_run_data__responses))\n    phantom.save_run_data(key='get_run_data:now', value=json.dumps(get_run_data__now))\n    cf_rba_master_dynamic_prompt_pairing_1(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "prompt",
-                        "connection_type": "action",
-                        "customCodeEndLineOffset": 9,
-                        "customCodeStartLine": 13,
-                        "custom_callback": "",
-                        "custom_code": "def get_run_data(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('get_run_data() called')\n    results_data_1 = phantom.collect2(container=container, datapath=['prompt_1:action_result.summary.responses'], action_results=results)\n    results_item_1_0 = [item[0] for item in results_data_1]\n\n    get_run_data__output = None\n    get_run_data__responses = None\n    get_run_data__now = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    get_run_data__output = phantom.get_run_data(key='pairings')\n    get_run_data__responses = results_item_1_0\n    get_run_data__now = str(datetime.datetime.now())\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='get_run_data:output', value=json.dumps(get_run_data__output))\n    phantom.save_run_data(key='get_run_data:responses', value=json.dumps(get_run_data__responses))\n    phantom.save_run_data(key='get_run_data:now', value=json.dumps(get_run_data__now))\n    cf_local_dynamic_prompt_pairing_1(container=container)\n\n    return",
-                        "custom_join": "",
-                        "custom_name": "get run data",
-                        "description": "",
-                        "functionBlock": "custom function",
-                        "has_custom": true,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "8e39edde-68eb-4dc9-9819-4cf37af38c38",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 106,
-                        "legacy": true,
-                        "line_end": 104,
-                        "line_start": 75,
-                        "message": "Configuring now",
-                        "name": "custom function",
-                        "notes": "",
-                        "number": 1,
-                        "order": 4,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "outputVariables": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "output"
-                            },
-                            {
-                                "position": 1,
-                                "type": "",
-                                "value": "responses"
-                            },
-                            {
-                                "position": 2,
-                                "type": "",
-                                "value": "now"
-                            }
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "prompt_1:action_result.summary.responses"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 520,
-                            "y": 80
-                        },
-                        "previous_function": "",
-                        "previous_name": "get_run_data",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "custom function",
-                        "status": "deprecating",
-                        "title": "custom function",
-                        "type": "coa.FunctionBlock",
-                        "userGeneratedCode": "\n    get_run_data__output = phantom.get_run_data(key='pairings')\n    get_run_data__responses = results_item_1_0\n    get_run_data__now = str(datetime.datetime.now())\n    ################################################",
-                        "warn": false,
-                        "z": 513
                     },
                     {
                         "attrs": {
@@ -3125,6 +2934,197 @@
                     {
                         "active": false,
                         "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".functionBlock": {
+                                "text": "get run data"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn_grey.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def get_run_data(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_run_data() called')\n    \n    results_data_1 = phantom.collect2(container=container, datapath=['prompt_1:action_result.summary.responses'], action_results=results)\n    results_item_1_0 = [item[0] for item in results_data_1]\n\n    get_run_data__output = None\n    get_run_data__responses = None\n    get_run_data__now = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    get_run_data__output = phantom.get_run_data(key='pairings')\n    get_run_data__responses = results_item_1_0\n    get_run_data__now = str(datetime.datetime.now())\n    ################################################\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='get_run_data:output', value=json.dumps(get_run_data__output))\n    phantom.save_run_data(key='get_run_data:responses', value=json.dumps(get_run_data__responses))\n    phantom.save_run_data(key='get_run_data:now', value=json.dumps(get_run_data__now))\n    cf_rba_master_dynamic_prompt_pairing_1(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "prompt",
+                        "connection_type": "action",
+                        "customCodeEndLineOffset": 9,
+                        "customCodeStartLine": 13,
+                        "custom_callback": "",
+                        "custom_code": "def get_run_data(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('get_run_data() called')\n    results_data_1 = phantom.collect2(container=container, datapath=['prompt_1:action_result.summary.responses'], action_results=results)\n    results_item_1_0 = [item[0] for item in results_data_1]\n\n    get_run_data__output = None\n    get_run_data__responses = None\n    get_run_data__now = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    get_run_data__output = phantom.get_run_data(key='pairings')\n    get_run_data__responses = results_item_1_0\n    get_run_data__now = str(datetime.datetime.now())\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='get_run_data:output', value=json.dumps(get_run_data__output))\n    phantom.save_run_data(key='get_run_data:responses', value=json.dumps(get_run_data__responses))\n    phantom.save_run_data(key='get_run_data:now', value=json.dumps(get_run_data__now))\n    cf_local_dynamic_prompt_pairing_1(container=container)\n\n    return",
+                        "custom_join": "",
+                        "custom_name": "get run data",
+                        "description": "",
+                        "functionBlock": "custom function",
+                        "has_custom": true,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "8e39edde-68eb-4dc9-9819-4cf37af38c38",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 106,
+                        "legacy": true,
+                        "line_end": 104,
+                        "line_start": 75,
+                        "message": "Configuring now",
+                        "name": "custom function",
+                        "notes": "",
+                        "number": 1,
+                        "order": 4,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "outputVariables": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "output"
+                            },
+                            {
+                                "position": 1,
+                                "type": "",
+                                "value": "responses"
+                            },
+                            {
+                                "position": 2,
+                                "type": "",
+                                "value": "now"
+                            }
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "prompt_1:action_result.summary.responses"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 520,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "get_run_data",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "custom function",
+                        "status": "deprecating",
+                        "title": "custom function",
+                        "type": "coa.FunctionBlock",
+                        "userGeneratedCode": "\n    get_run_data__output = phantom.get_run_data(key='pairings')\n    get_run_data__responses = results_item_1_0\n    get_run_data__now = str(datetime.datetime.now())\n    ################################################",
+                        "warn": false,
+                        "z": 532
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
                         "approver": "admin",
                         "approver_display": "admin",
                         "attrs": {
@@ -3179,7 +3179,7 @@
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
-                        "custom_code": "def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('prompt_1() called')\n    \n    # set user variable to a user or role. Defaults to \"admin\" if no user present\n    user = container.get('owner', 'admin')\n    \n    # message variables for phantom.prompt call\n    message = \"\"\"The following items were identified as malicious. Please review the evidence and decide which items you would like to take action on (Yes/No).\"\"\"\n    threat_object = [item[0] for item in phantom.collect2(container=container, datapath=['filtered-data:filter_1:condition_1:artifact:*.cef.threat_object'])]\n    threat_object_type = [item[0] for item in phantom.collect2(container=container, datapath=['filtered-data:filter_1:condition_1:artifact:*.cef.threat_object_type'])]\n\n    # dynamic response builder\n    response_types = []\n    pairings = []\n    for thr_obj,thr_obj_type in zip(threat_object,threat_object_type):\n          if thr_obj:\n                response_types.append({\n                    \"prompt\": \"Block {}\".format(thr_obj),\n                    \"options\": {\n                        \"type\": \"list\",\n                        \"choices\": [\n                            \"Yes\",\n                            \"No\",\n                        ]\n                    },\n                })\n                pairings.append({thr_obj_type: thr_obj})\n    \n    phantom.save_run_data(value=json.dumps(pairings), key='pairings', auto=True)\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_1\", response_types=response_types, callback=get_run_data)\n\n    return",
+                        "custom_code": "def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('prompt_1() called')\n    \n    # set user variable to a user or role. Defaults to \"admin\" if no user present\n    user = container.get('owner_name', 'admin')\n    \n    # message variables for phantom.prompt call\n    message = \"\"\"The following items were identified as malicious. Please review the evidence and decide which items you would like to take action on (Yes/No).\"\"\"\n    threat_object = [item[0] for item in phantom.collect2(container=container, datapath=['filtered-data:filter_1:condition_1:artifact:*.cef.threat_object'])]\n    threat_object_type = [item[0] for item in phantom.collect2(container=container, datapath=['filtered-data:filter_1:condition_1:artifact:*.cef.threat_object_type'])]\n\n    # dynamic response builder\n    response_types = []\n    pairings = []\n    for thr_obj,thr_obj_type in zip(threat_object,threat_object_type):\n          if thr_obj:\n                response_types.append({\n                    \"prompt\": \"Block {}\".format(thr_obj),\n                    \"options\": {\n                        \"type\": \"list\",\n                        \"choices\": [\n                            \"Yes\",\n                            \"No\",\n                        ]\n                    },\n                })\n                pairings.append({thr_obj_type: thr_obj})\n    \n    phantom.save_run_data(value=json.dumps(pairings), key='pairings', auto=True)\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_1\", response_types=response_types, callback=get_run_data)\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "description": "",
@@ -3299,7 +3299,7 @@
                         "status": "",
                         "type": "coa.Prompt",
                         "warn": false,
-                        "z": 531
+                        "z": 533
                     }
                 ]
             },
@@ -3309,7 +3309,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T14:35:20.871430+00:00",
+    "create_time": "2020-08-21T14:40:24.493835+00:00",
     "draft_mode": false,
     "labels": [
         "*"

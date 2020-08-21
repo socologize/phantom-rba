@@ -42,7 +42,7 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
     phantom.debug('prompt_1() called')
     
     # set user variable to a user or role. Defaults to "admin" if no user present
-    user = container.get('owner', 'admin')
+    user = container.get('owner_name', 'admin')
     
     # message variables for phantom.prompt call
     message = """The following items were identified as malicious. Please review the evidence and decide which items you would like to take action on (Yes/No)."""
