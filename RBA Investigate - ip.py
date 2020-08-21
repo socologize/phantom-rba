@@ -115,7 +115,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 def cf_rba_master_update_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('cf_rba_master_update_artifact_1() called')
     
-    filtered_artifacts_data_0 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:artifact:*.id'])
+    filtered_artifacts_data_0 = phantom.collect2(container=container, datapath=['filtered-data:filter_2:condition_2:artifact:*.id'])
     literal_values_0 = [
         [
             "{ \"cef\": {\"automation_flag\": \"true\"}}",
