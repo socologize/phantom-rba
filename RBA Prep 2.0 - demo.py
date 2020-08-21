@@ -27,7 +27,8 @@ def format_splunk_query(action=None, success=None, container=None, results=None,
     phantom.debug('format_splunk_query() called')
     
     template = """index=risk risk_object=\"{0}\"
-earliest=1486653000.000000000 latest=1573053000.000000000 | eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | foreach * [| eval <<FIELD>>=replace(<<FIELD>>,\"\\\"\",\"\\\\\\\\\\\"\")]"""
+earliest={1}
+latest={2}  | eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | foreach * [| eval <<FIELD>>=replace(<<FIELD>>,\"\\\\\\\\\",\"\\\\\\\\\\\\\\\\\") | eval <<FIELD>>=replace(<<FIELD>>,\"\\\"\",\"\\\\\\\\\\\"\") ]"""
 
     # parameter list for template variable replacement
     parameters = [
