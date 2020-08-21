@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "from dateutil.parser import parse\nfrom django.utils.dateparse import parse_datetime\nimport re\nimport random",
             "description": "",
-            "hash": "df824302ec34109d03e474841d407f937e324cbe",
+            "hash": "e9db4623031336e1d276b125bb58c7f6ac9ed097",
             "joint": {
                 "cells": [
                     {
@@ -2721,255 +2721,6 @@
                         "z": 1454
                     },
                     {
-                        ".scmName/text": "rba-master",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {},
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".customFunction": {
-                                "text": "parse_risk_results"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".scmName": {
-                                "text": "rba-master"
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            ".title-info": {
-                                "text": ""
-                            },
-                            "g.branch image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def cf_rba_master_parse_risk_results_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_parse_risk_results_1() called')\n    \n    action_results_data_0 = phantom.collect2(container=container, datapath=['fetch_risk_rules:action_result.data', 'fetch_risk_rules:action_result.parameter.context.artifact_id'], action_results=results )\n\n    parameters = []\n\n    action_results_data_0_0 = [item[0] for item in action_results_data_0]\n\n    parameters.append({\n        'search_json': action_results_data_0_0,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/parse_risk_results\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/parse_risk_results', parameters=parameters, name='cf_rba_master_parse_risk_results_1', callback=cf_rba_master_add_artifact_with_tags_1)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "cfDisplayPath": "rba-master/parse_risk_results",
-                        "cfInputs": {
-                            "search_json": {
-                                "collectionType": "action_results_data",
-                                "dataPath": "fetch_risk_rules:action_result.data",
-                                "paramName": "action_results_data_0_0",
-                                "type": "list"
-                            }
-                        },
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "fetch risk rules",
-                        "connection_type": "action",
-                        "currentVersion": true,
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 15,
-                        "customFunction": "rba-master/parse_risk_results",
-                        "customFunctionId": null,
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "draftMode": false,
-                        "existingCF": true,
-                        "functionBlock": "custom function",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "dfdfc536-6885-40cf-8fd0-77b1577cc189",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 251,
-                        "line_start": 224,
-                        "message": "Configuring now",
-                        "name": "parse_risk_results",
-                        "notes": "",
-                        "number": 1,
-                        "order": 13,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 180,
-                            "y": 220
-                        },
-                        "previous_function": "",
-                        "previous_name": "cf_rba_master_parse_risk_results_1",
-                        "search_json-0": "fetch_risk_rules:action_result.data",
-                        "selectedCustomFunction": {
-                            "description": "",
-                            "draftMode": false,
-                            "id": 358,
-                            "inputs": [
-                                {
-                                    "_pretty_custom_function": "parse_risk_results",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 358,
-                                    "description": "",
-                                    "id": 682,
-                                    "input_type": "list",
-                                    "name": "search_json",
-                                    "placeholder": "search_results.data"
-                                }
-                            ],
-                            "name": "parse_risk_results",
-                            "outputs": [
-                                {
-                                    "_pretty_custom_function": "parse_risk_results",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 358,
-                                    "data_path": "*.artifact.cef",
-                                    "description": "",
-                                    "id": 1168
-                                },
-                                {
-                                    "_pretty_custom_function": "parse_risk_results",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 358,
-                                    "data_path": "*.artifact.tags",
-                                    "description": "",
-                                    "id": 1169
-                                },
-                                {
-                                    "_pretty_custom_function": "parse_risk_results",
-                                    "contains_type": [],
-                                    "custom_function": 358,
-                                    "data_path": "*.artifact.name",
-                                    "description": "",
-                                    "id": 1170
-                                }
-                            ],
-                            "playbooks": {
-                                "draft_playbooks": [],
-                                "draft_version_id": null,
-                                "playbooks": []
-                            },
-                            "scmId": 11,
-                            "scmName": "rba-master"
-                        },
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "repo",
-                        "status": "",
-                        "title": "custom function",
-                        "type": "coa.CustomFunctionBlock",
-                        "userGeneratedCode": "    # Write your custom code here...",
-                        "warn": false,
-                        "z": 1456
-                    },
-                    {
                         "action": "update artifact fields",
                         "action_type": "generic",
                         "active": false,
@@ -3623,6 +3374,255 @@
                         "z": 1461
                     },
                     {
+                        ".scmName/text": "rba-master",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".customFunction": {
+                                "text": "parse_risk_results"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "rba-master"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def cf_rba_master_parse_risk_results_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_parse_risk_results_1() called')\n    \n    action_results_data_0 = phantom.collect2(container=container, datapath=['fetch_risk_rules:action_result.data', 'fetch_risk_rules:action_result.parameter.context.artifact_id'], action_results=results )\n\n    parameters = []\n\n    action_results_data_0_0 = [item[0] for item in action_results_data_0]\n\n    parameters.append({\n        'search_json': action_results_data_0_0,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/parse_risk_results\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/parse_risk_results', parameters=parameters, name='cf_rba_master_parse_risk_results_1', callback=cf_rba_master_add_artifact_with_tags_1)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "rba-master/parse_risk_results",
+                        "cfInputs": {
+                            "search_json": {
+                                "collectionType": "action_results_data",
+                                "dataPath": "fetch_risk_rules:action_result.data",
+                                "paramName": "action_results_data_0_0",
+                                "type": "list"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "fetch risk rules",
+                        "connection_type": "action",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 15,
+                        "customFunction": "rba-master/parse_risk_results",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "dfdfc536-6885-40cf-8fd0-77b1577cc189",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 251,
+                        "line_start": 224,
+                        "message": "Configuring now",
+                        "name": "parse_risk_results",
+                        "notes": "",
+                        "number": 1,
+                        "order": 13,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 180,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "cf_rba_master_parse_risk_results_1",
+                        "search_json-0": "fetch_risk_rules:action_result.data",
+                        "selectedCustomFunction": {
+                            "description": "",
+                            "draftMode": false,
+                            "id": 358,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "parse_risk_results",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 358,
+                                    "description": "",
+                                    "id": 682,
+                                    "input_type": "list",
+                                    "name": "search_json",
+                                    "placeholder": "search_results.data"
+                                }
+                            ],
+                            "name": "parse_risk_results",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "parse_risk_results",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 358,
+                                    "data_path": "*.artifact.cef",
+                                    "description": "",
+                                    "id": 1168
+                                },
+                                {
+                                    "_pretty_custom_function": "parse_risk_results",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 358,
+                                    "data_path": "*.artifact.tags",
+                                    "description": "",
+                                    "id": 1169
+                                },
+                                {
+                                    "_pretty_custom_function": "parse_risk_results",
+                                    "contains_type": [],
+                                    "custom_function": 358,
+                                    "data_path": "*.artifact.name",
+                                    "description": "",
+                                    "id": 1170
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": []
+                            },
+                            "scmId": 11,
+                            "scmName": "rba-master"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 1468
+                    },
+                    {
                         "action": "run query",
                         "action_type": "investigate",
                         "active": false,
@@ -4031,7 +4031,7 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 1466
+                        "z": 1469
                     },
                     {
                         "active": false,
@@ -4093,7 +4093,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def format_splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_splunk_query() called')\n    \n    template = \"\"\"index=risk risk_object=\\\"{0}\\\"\nearliest={1}\nlatest={2}  | eval source=replace(source,\\\"\\\\w+\\\\s+-\\\\s+\\\\w+\\\\s+-\\\\s+([^-]+)\\\\s+-.*\\\",\\\"\\\\1\\\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | eval source=replace(source,\\\"\\\\w+\\\\s+-\\\\s+\\\\w+\\\\s+-\\\\s+([^-]+)\\\\s+-.*\\\",\\\"\\\\1\\\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | foreach * [| eval <<FIELD>>=replace(<<FIELD>>,\\\"\\\\\\\\\\\\\\\\\\\",\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\") ]\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.risk_object\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.info_min_time\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.info_max_time\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_splunk_query\")\n\n    fetch_risk_rules(container=container)\n\n    return",
+                        "block_code": "def format_splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_splunk_query() called')\n    \n    template = \"\"\"index=risk risk_object=\\\"{0}\\\"\nearliest={1}\nlatest={2}  | eval source=replace(source,\\\"\\\\w+\\\\s+-\\\\s+\\\\w+\\\\s+-\\\\s+([^-]+)\\\\s+-.*\\\",\\\"\\\\1\\\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | eval source=replace(source,\\\"\\\\w+\\\\s+-\\\\s+\\\\w+\\\\s+-\\\\s+([^-]+)\\\\s+-.*\\\",\\\"\\\\1\\\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.risk_object\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.info_min_time\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.info_max_time\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_splunk_query\")\n\n    fetch_risk_rules(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -4209,11 +4209,11 @@
                         },
                         "state": "format",
                         "status": "",
-                        "template": "index=risk risk_object=\"{0}\"\nearliest={1}\nlatest={2}  | eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | foreach * [| eval <<FIELD>>=replace(<<FIELD>>,\"\\\\\\\\\",\"\\\\\\\\\\\\\\\\\") ]",
+                        "template": "index=risk risk_object=\"{0}\"\nearliest={1}\nlatest={2}  | eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time",
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 1467
+                        "z": 1470
                     }
                 ]
             },
@@ -4223,7 +4223,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T15:28:01.006269+00:00",
+    "create_time": "2020-08-21T15:51:15.301444+00:00",
     "draft_mode": false,
     "labels": [
         "notable"
