@@ -7,7 +7,6 @@
             "clean": true,
             "code_block": "from dateutil.parser import parse\nfrom django.utils.dateparse import parse_datetime\nimport re\nimport random",
             "description": "",
-            "hash": "369c81eab8da1e4091e12d4826a1c61bd79ecfff",
             "joint": {
                 "cells": [
                     {
@@ -4196,7 +4195,6 @@
     "create_time": "2020-08-21T14:44:50.717453+00:00",
     "draft_mode": false,
     "labels": [
-        "events",
         "notable"
     ],
     "tags": []
