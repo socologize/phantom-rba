@@ -83,7 +83,7 @@ def parse_risk_results(search_json=None, **kwargs):
 
         # Parse through threat_objects
         if 'threat_object' in artifact_json.keys():
-            artifact_json['threat_object'] = re.sub(r'(\[\w|\]\w|\{\w|\}\w|\"\w|\\\w)', r'\\\1', artifact_json['threat_object'])
+            artifact_json['threat_object'] = json.dumps(artifact_json['threat_object'][1:-1])
 
         # Extract tags
         if 'rule_attack_tactic_technique' in artifact_json.keys():
