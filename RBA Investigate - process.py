@@ -104,15 +104,7 @@ def cf_rba_master_regex_extract_powershell_b64_1(action=None, success=None, cont
     ################################################################################    
 
     # call custom function "rba-master/regex_extract_powershell_b64", returns the custom_function_run_id
-    phantom.custom_function(custom_function='rba-master/regex_extract_powershell_b64', parameters=parameters, name='cf_rba_master_regex_extract_powershell_b64_1', callback=cf_rba_master_regex_extract_powershell_b64_1_callback)
-
-    return
-
-def cf_rba_master_regex_extract_powershell_b64_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
-    phantom.debug('cf_rba_master_regex_extract_powershell_b64_1_callback() called')
-    
-    decision_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-    filter_4(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    phantom.custom_function(custom_function='rba-master/regex_extract_powershell_b64', parameters=parameters, name='cf_rba_master_regex_extract_powershell_b64_1', callback=filter_4)
 
     return
 
@@ -122,7 +114,6 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     # check for 'if' condition 1
     matched = phantom.decision(
         container=container,
-        action_results=results,
         conditions=[
             ["cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.extracted_string", "!=", ""],
         ])

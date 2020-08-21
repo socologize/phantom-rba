@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "aaa8697fc5544c821089aa60f80d83b4cbb408ff",
+            "hash": "f00c55d345eeb6d8b0c67fd708dd4798cd6d8db0",
             "joint": {
                 "cells": [
                     {
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 364,
-                        "line_start": 351,
+                        "line_end": 355,
+                        "line_start": 342,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -370,46 +370,6 @@
                         },
                         "type": "link",
                         "z": 88
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "29234387-604a-400f-bab9-ff4e67ffb5d8",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "bdb92159-2e24-418b-b073-1fc65ec2ab60",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "ada3bc84-a2ab-48f0-8b72-5c2bb3a82579",
-                            "port": "in",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 106
                     },
                     {
                         "attrs": {
@@ -1733,8 +1693,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 231,
-                        "line_start": 198,
+                        "line_end": 222,
+                        "line_start": 189,
                         "message": "Configuring now",
                         "name": "json_serializer",
                         "notes": "",
@@ -1988,8 +1948,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 247,
-                        "line_start": 231,
+                        "line_end": 238,
+                        "line_start": 222,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -2147,7 +2107,7 @@
                         },
                         "block_code": "def cf_rba_master_decode_base64_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_decode_base64_1() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id', 'cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.extracted_string'], action_results=results )\n\n    parameters = []\n\n    for item0 in custom_function_result_0:\n        parameters.append({\n            'artifact_id': item0[0],\n            'input_string': item0[1],\n        })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/decode_base64\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/decode_base64', parameters=parameters, name='cf_rba_master_decode_base64_1', callback=cf_rba_master_decode_base64_1_callback)\n\n    return",
                         "callback_code": "def cf_rba_master_decode_base64_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('cf_rba_master_decode_base64_1_callback() called')\n    \n    cf_community_regex_extract_ipv4_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n    filter_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
-                        "callback_start": 172,
+                        "callback_start": 163,
                         "callsback": true,
                         "cfDisplayPath": "rba-master/decode_base64",
                         "cfInputs": {
@@ -2193,8 +2153,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 180,
-                        "line_start": 145,
+                        "line_end": 171,
+                        "line_start": 136,
                         "message": "Configuring now",
                         "name": "decode_base64",
                         "notes": "",
@@ -2473,8 +2433,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 145,
-                        "line_start": 136,
+                        "line_end": 136,
+                        "line_start": 127,
                         "message": "Configuring now",
                         "name": "pin",
                         "notes": "",
@@ -2624,8 +2584,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 198,
-                        "line_start": 180,
+                        "line_end": 189,
+                        "line_start": 171,
                         "name": "filter",
                         "notes": "",
                         "number": 3,
@@ -2839,8 +2799,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 281,
-                        "line_start": 247,
+                        "line_end": 272,
+                        "line_start": 238,
                         "message": "Configuring now",
                         "name": "update_artifact",
                         "notes": "",
@@ -3066,8 +3026,8 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def cf_rba_master_regex_extract_powershell_b64_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_regex_extract_powershell_b64_1() called')\n    \n    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.threat_object', 'artifact:*.id'])\n\n    parameters = []\n\n    for item0 in container_data_0:\n        parameters.append({\n            'artifact_id': item0[1],\n            'input_string': item0[0],\n        })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/regex_extract_powershell_b64\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/regex_extract_powershell_b64', parameters=parameters, name='cf_rba_master_regex_extract_powershell_b64_1', callback=cf_rba_master_regex_extract_powershell_b64_1_callback)\n\n    return",
-                        "callback_code": "def cf_rba_master_regex_extract_powershell_b64_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('cf_rba_master_regex_extract_powershell_b64_1_callback() called')\n    \n    decision_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n    filter_4(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
+                        "block_code": "def cf_rba_master_regex_extract_powershell_b64_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_regex_extract_powershell_b64_1() called')\n    \n    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.threat_object', 'artifact:*.id'])\n\n    parameters = []\n\n    for item0 in container_data_0:\n        parameters.append({\n            'artifact_id': item0[1],\n            'input_string': item0[0],\n        })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/regex_extract_powershell_b64\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/regex_extract_powershell_b64', parameters=parameters, name='cf_rba_master_regex_extract_powershell_b64_1', callback=filter_4)\n\n    return",
+                        "callback_code": "",
                         "callback_start": 111,
                         "callsback": true,
                         "cfDisplayPath": "rba-master/regex_extract_powershell_b64",
@@ -3114,7 +3074,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 119,
+                        "line_end": 111,
                         "line_start": 84,
                         "message": "Configuring now",
                         "name": "regex_extract_powershell_b64",
@@ -3262,7 +3222,7 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#637282",
+                                "stroke": "#E6984E",
                                 "transform": "rotate(45 30 70)"
                             },
                             ".inPorts>.port-0>.port-body": {
@@ -3292,7 +3252,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -3304,13 +3264,13 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_1() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.extracted_string\", \"!=\", \"\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        return\n\n    return",
+                        "block_code": "def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_1() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        conditions=[\n            [\"cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.extracted_string\", \"!=\", \"\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        return\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "regex_extract_powershell_b64",
-                        "connection_type": "action",
+                        "connection_name": "",
+                        "connection_type": "",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -3328,8 +3288,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 136,
-                        "line_start": 119,
+                        "line_end": 127,
+                        "line_start": 111,
                         "name": "decision",
                         "notes": "",
                         "number": 1,
@@ -3416,7 +3376,7 @@
                             "width": 82
                         },
                         "state": "decision",
-                        "status": "",
+                        "status": "warn",
                         "type": "coa.Decision",
                         "warn": "",
                         "z": 294
@@ -3529,8 +3489,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 315,
-                        "line_start": 297,
+                        "line_end": 306,
+                        "line_start": 288,
                         "name": "filter",
                         "notes": "",
                         "number": 4,
@@ -3700,8 +3660,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 290,
-                        "line_end": 297,
-                        "line_start": 281,
+                        "line_end": 288,
+                        "line_start": 272,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -3837,7 +3797,7 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#0083FF"
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -3972,8 +3932,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 351,
-                        "line_start": 315,
+                        "line_end": 342,
+                        "line_start": 306,
                         "message": "Configuring now",
                         "name": "debug",
                         "notes": "",
@@ -4211,7 +4171,7 @@
                             "width": 180
                         },
                         "state": "repo",
-                        "status": "active",
+                        "status": "",
                         "title": "custom function",
                         "type": "coa.CustomFunctionBlock",
                         "userGeneratedCode": "    # Write your custom code here...",
@@ -4226,7 +4186,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T12:58:03.853406+00:00",
+    "create_time": "2020-08-21T13:00:23.766802+00:00",
     "draft_mode": false,
     "labels": [
         "*"
