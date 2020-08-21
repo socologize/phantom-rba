@@ -66,6 +66,7 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_1 or matched_results_1:
         format_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+        filter_5(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
     return
 
@@ -140,9 +141,9 @@ def whois_epoch(action=None, success=None, container=None, results=None, handle=
         for item1 in literal_values_0:
             parameters.append({
                 'input_datetime': item0[0],
-                'input_format_string': item1[0],
-                'modification_unit': None,
                 'amount_to_modify': None,
+                'modification_unit': None,
+                'input_format_string': item1[0],
                 'output_format_string': item1[0],
             })
     ################################################################################
@@ -173,9 +174,9 @@ def minus_thirty(action=None, success=None, container=None, results=None, handle
     ]
     literal_values_0 = [
         [
-            "%Y-%m-%d %H:%M:%S.%f+00",
-            "days",
             -30,
+            "days",
+            "%Y-%m-%d %H:%M:%S.%f+00",
         ],
     ]
 
@@ -185,9 +186,9 @@ def minus_thirty(action=None, success=None, container=None, results=None, handle
         for item1 in literal_values_0:
             parameters.append({
                 'input_datetime': item0[0],
-                'input_format_string': item1[0],
+                'amount_to_modify': item1[0],
                 'modification_unit': item1[1],
-                'amount_to_modify': item1[2],
+                'input_format_string': item1[2],
                 'output_format_string': None,
             })
     ################################################################################
@@ -291,6 +292,7 @@ def filter_4(action=None, success=None, container=None, results=None, handle=Non
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_1 or matched_results_1:
         format_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+        filter_6(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
     return
 
@@ -407,6 +409,110 @@ def join_decision_3(action=None, success=None, container=None, results=None, han
         # call connected block "decision_3"
         decision_3(container=container, handle=handle)
     
+    return
+
+def filter_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('filter_5() called')
+
+    # collect filtered artifact ids for 'if' condition 1
+    matched_artifacts_1, matched_results_1 = phantom.condition(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["filtered-data:filter_2:condition_1:domain_reputation_1:action_result.parameter.domain", "==", "artifact:*.cef.threat_object"],
+        ],
+        name="filter_5:condition_1")
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_1 or matched_results_1:
+        cf_rba_master_update_artifact_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+
+    return
+
+def cf_rba_master_update_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('cf_rba_master_update_artifact_1() called')
+    
+    filtered_artifacts_data_0 = phantom.collect2(container=container, datapath=['filtered-data:filter_5:condition_1:artifact:*.id'])
+    literal_values_0 = [
+        [
+            "{ \"cef\": {\"automation_flag\": \"true\"}}",
+        ],
+    ]
+
+    parameters = []
+
+    for item0 in filtered_artifacts_data_0:
+        for item1 in literal_values_0:
+            parameters.append({
+                'artifact_id': item0[0],
+                'data': item1[0],
+                'overwrite': None,
+            })
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################    
+
+    # call custom function "rba-master/update_artifact", returns the custom_function_run_id
+    phantom.custom_function(custom_function='rba-master/update_artifact', parameters=parameters, name='cf_rba_master_update_artifact_1')
+
+    return
+
+def filter_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('filter_6() called')
+
+    # collect filtered artifact ids for 'if' condition 1
+    matched_artifacts_1, matched_results_1 = phantom.condition(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["filtered-data:filter_4:condition_1:cf_rba_master_normalize_lists_1:custom_function_result.data.*.object_type", "==", "artifact:*.cef.threat_object"],
+        ],
+        name="filter_6:condition_1")
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_1 or matched_results_1:
+        cf_rba_master_update_artifact_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+
+    return
+
+def cf_rba_master_update_artifact_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('cf_rba_master_update_artifact_2() called')
+    
+    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.id'])
+    literal_values_0 = [
+        [
+            "{ \"cef\": {\"automation_flag\": \"true\"}}",
+        ],
+    ]
+
+    parameters = []
+
+    for item0 in container_data_0:
+        for item1 in literal_values_0:
+            parameters.append({
+                'artifact_id': item0[0],
+                'data': item1[0],
+                'overwrite': None,
+            })
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################    
+
+    # call custom function "rba-master/update_artifact", returns the custom_function_run_id
+    phantom.custom_function(custom_function='rba-master/update_artifact', parameters=parameters, name='cf_rba_master_update_artifact_2')
+
     return
 
 def on_finish(container, summary):
