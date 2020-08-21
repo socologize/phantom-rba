@@ -241,7 +241,7 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
 def cf_rba_master_update_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('cf_rba_master_update_artifact_1() called')
     
-    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.id'])
+    filtered_custom_function_results_data_0 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id'])
     formatted_data_0 = [
         [
             phantom.get_format_data(name="format_2"),
@@ -250,7 +250,7 @@ def cf_rba_master_update_artifact_1(action=None, success=None, container=None, r
 
     parameters = []
 
-    for item0 in container_data_0:
+    for item0 in filtered_custom_function_results_data_0:
         for item1 in formatted_data_0:
             parameters.append({
                 'artifact_id': item0[0],
