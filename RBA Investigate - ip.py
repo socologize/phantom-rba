@@ -76,7 +76,7 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
         action_results=results,
         conditions=[
             ["ip_reputation_1:action_result.data.*.detected_communicating_samples.*.positives", ">=", 3],
-            ["ip_reputation_1:action_result.parameter.ip", "==", "artifact:*.cef.threat_object"],
+            ["ip_reputation_1:action_result.parameter.ip", "==", "filtered-data:filter_1:condition_1:artifact:*.cef.threat_object"],
         ],
         logical_operator='and',
         name="filter_2:condition_2")
