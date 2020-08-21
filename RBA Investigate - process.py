@@ -122,7 +122,7 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     # call connected blocks if condition 1 matched
     if matched:
         cf_rba_master_decode_base64_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-        pin_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        filter_4(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     return
@@ -130,7 +130,9 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_1() called')
 
-    phantom.pin(container=container, data="Encoded Powershell Detected", message="Risk Item", pin_type="card", pin_style="red", name=None)
+    formatted_data_1 = phantom.get_format_data(name='format_3')
+
+    phantom.pin(container=container, data=formatted_data_1, message="Possible Encoded Powershell", pin_type="card", pin_style="red", name=None)
 
     return
 
@@ -220,28 +222,6 @@ def cf_rba_master_json_serializer_1(action=None, success=None, container=None, r
 
     return
 
-def update_artifact_fields_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('update_artifact_fields_2() called')
-
-    # collect data for 'update_artifact_fields_2' call
-    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id'])
-    formatted_data_1 = phantom.get_format_data(name='format_2')
-
-    parameters = []
-    
-    # build parameters list for 'update_artifact_fields_2' call
-    for filtered_custom_function_results_item_1 in filtered_custom_function_results_data_1:
-        if filtered_custom_function_results_item_1[0]:
-            parameters.append({
-                'data': formatted_data_1,
-                'overwrite': False,
-                'artifact_id': filtered_custom_function_results_item_1[0],
-            })
-
-    phantom.act(action="update artifact fields", parameters=parameters, assets=['phantom_helper'], name="update_artifact_fields_2")
-
-    return
-
 def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_2() called')
     
@@ -255,46 +235,6 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
     phantom.format(container=container, template=template, parameters=parameters, name="format_2")
 
     cf_rba_master_update_artifact_1(container=container)
-
-    return
-
-def cf_community_debug_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('cf_community_debug_1() called')
-    
-    formatted_data_0 = [
-        [
-            phantom.get_format_data(name="format_2"),
-        ],
-    ]
-
-    parameters = []
-
-    formatted_data_0_0 = [item[0] for item in formatted_data_0]
-
-    parameters.append({
-        'input_1': formatted_data_0_0,
-        'input_2': None,
-        'input_3': None,
-        'input_4': None,
-        'input_5': None,
-        'input_6': None,
-        'input_7': None,
-        'input_8': None,
-        'input_9': None,
-        'input_10': None,
-    })
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################    
-
-    # call custom function "community/debug", returns the custom_function_run_id
-    phantom.custom_function(custom_function='community/debug', parameters=parameters, name='cf_community_debug_1')
 
     return
 
@@ -329,6 +269,40 @@ def cf_rba_master_update_artifact_1(action=None, success=None, container=None, r
 
     # call custom function "rba-master/update_artifact", returns the custom_function_run_id
     phantom.custom_function(custom_function='rba-master/update_artifact', parameters=parameters, name='cf_rba_master_update_artifact_1')
+
+    return
+
+def format_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_3() called')
+    
+    template = """Artifact {0} has possible encoded powershell"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "filtered-data:filter_4:condition_1:cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_3")
+
+    pin_1(container=container)
+
+    return
+
+def filter_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('filter_4() called')
+
+    # collect filtered artifact ids for 'if' condition 1
+    matched_artifacts_1, matched_results_1 = phantom.condition(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.extracted_string", "!=", ""],
+        ],
+        name="filter_4:condition_1")
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_1 or matched_results_1:
+        format_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
     return
 
