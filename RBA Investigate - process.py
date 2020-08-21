@@ -121,7 +121,7 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        filter_4(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        format_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     return
@@ -278,7 +278,7 @@ def format_3(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "filtered-data:filter_4:condition_1:cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id",
+        "cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_3")
@@ -293,7 +293,6 @@ def filter_4(action=None, success=None, container=None, results=None, handle=Non
     # collect filtered artifact ids for 'if' condition 1
     matched_artifacts_1, matched_results_1 = phantom.condition(
         container=container,
-        action_results=results,
         conditions=[
             ["cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.extracted_string", "!=", ""],
         ],
@@ -321,7 +320,7 @@ def cf_community_noop_1(action=None, success=None, container=None, results=None,
     ################################################################################    
 
     # call custom function "community/noop", returns the custom_function_run_id
-    phantom.custom_function(custom_function='community/noop', parameters=parameters, name='cf_community_noop_1', callback=format_3)
+    phantom.custom_function(custom_function='community/noop', parameters=parameters, name='cf_community_noop_1')
 
     return
 
