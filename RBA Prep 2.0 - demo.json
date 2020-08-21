@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "from dateutil.parser import parse\nfrom django.utils.dateparse import parse_datetime\nimport re\nimport random",
             "description": "",
-            "hash": "53cea84db90ad1af54b6ab00a0480360c285dcb2",
+            "hash": "d7ef09a38cf576a1ffe68a68de2f27fd8638f08f",
             "joint": {
                 "cells": [
                     {
@@ -4031,7 +4031,7 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 1462
+                        "z": 1464
                     },
                     {
                         "active": false,
@@ -4093,7 +4093,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def format_splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_splunk_query() called')\n    \n    template = \"\"\"index=risk risk_object=\\\"{0}\\\"\nearliest={1}\nlatest={2}  | eval source=replace(source,\\\"\\\\w+\\\\s+-\\\\s+\\\\w+\\\\s+-\\\\s+([^-]+)\\\\s+-.*\\\",\\\"\\\\1\\\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | eval source=replace(source,\\\"\\\\w+\\\\s+-\\\\s+\\\\w+\\\\s+-\\\\s+([^-]+)\\\\s+-.*\\\",\\\"\\\\1\\\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | foreach * [| eval <<FIELD>>=replace(<<FIELD>>,\\\"\\\\\\\\\\\\\\\\\\\",\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\") | eval <<FIELD>>=replace(<<FIELD>>,\\\"\\\\\\\"\\\",\\\"\\\\\\\\\\\\\\\\\\\\\\\"\\\") ]\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.risk_object\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.info_min_time\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.info_max_time\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_splunk_query\")\n\n    fetch_risk_rules(container=container)\n\n    return",
+                        "block_code": "def format_splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_splunk_query() called')\n    \n    template = \"\"\"index=risk risk_object=\\\"{0}\\\"\nearliest={1}\nlatest={2}  | eval source=replace(source,\\\"\\\\w+\\\\s+-\\\\s+\\\\w+\\\\s+-\\\\s+([^-]+)\\\\s+-.*\\\",\\\"\\\\1\\\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | eval source=replace(source,\\\"\\\\w+\\\\s+-\\\\s+\\\\w+\\\\s+-\\\\s+([^-]+)\\\\s+-.*\\\",\\\"\\\\1\\\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | foreach * [| eval <<FIELD>>=replace(<<FIELD>>,\\\"\\\\\\\"\\\",\\\"\\\\\\\\\\\\\\\\\\\\\\\"\\\") ]\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.risk_object\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.info_min_time\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.info_max_time\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_splunk_query\")\n\n    fetch_risk_rules(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -4209,11 +4209,11 @@
                         },
                         "state": "format",
                         "status": "",
-                        "template": "index=risk risk_object=\"{0}\"\nearliest={1}\nlatest={2}  | eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | foreach * [| eval <<FIELD>>=replace(<<FIELD>>,\"\\\\\\\\\",\"\\\\\\\\\\\\\\\\\") | eval <<FIELD>>=replace(<<FIELD>>,\"\\\"\",\"\\\\\\\\\\\"\") ]",
+                        "template": "index=risk risk_object=\"{0}\"\nearliest={1}\nlatest={2}  | eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\") | eval threat_object=if(isnotnull(cmdline), cmdline, threat_object) | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time | foreach * [| eval <<FIELD>>=replace(<<FIELD>>,\"\\\"\",\"\\\\\\\\\\\"\") ]",
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 1463
+                        "z": 1465
                     }
                 ]
             },
@@ -4223,7 +4223,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T15:17:53.802455+00:00",
+    "create_time": "2020-08-21T15:24:48.130137+00:00",
     "draft_mode": false,
     "labels": [
         "notable"
