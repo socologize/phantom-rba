@@ -113,7 +113,7 @@ def pin_1(action=None, success=None, container=None, results=None, handle=None, 
 
     formatted_data_1 = phantom.get_format_data(name='format_3')
 
-    phantom.pin(container=container, data=formatted_data_1, message="Possible Encoded Powershell", pin_type="card", pin_style="red", name=None)
+    phantom.pin(container=container, data=formatted_data_1, message="Encoded Powershell", pin_type="card", pin_style="red", name=None)
 
     return
 
