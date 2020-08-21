@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "a5ea0494deb2239a1be272645a8ac428ef6c5e7d",
+            "hash": "dd607252ae77d9385077c277cd3658b14141da98",
             "joint": {
                 "cells": [
                     {
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 357,
-                        "line_start": 344,
+                        "line_end": 341,
+                        "line_start": 328,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -2384,7 +2384,7 @@
                             },
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#E6984E"
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -2425,7 +2425,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -2455,8 +2455,8 @@
                             }
                         ],
                         "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "noop",
+                        "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -2547,7 +2547,7 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "warn",
+                        "status": "",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
@@ -3168,7 +3168,7 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#E6984E"
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -3207,7 +3207,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -3221,8 +3221,8 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "noop",
+                        "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -3321,7 +3321,7 @@
                             "width": 180
                         },
                         "state": "format",
-                        "status": "warn",
+                        "status": "",
                         "template": "Artifact {0} has possible encoded powershell",
                         "title": "format",
                         "type": "coa.Format",
@@ -3368,46 +3368,6 @@
                         },
                         "type": "link",
                         "z": 281
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "b76d6fd6-c746-4a88-b4b9-b430c0787396",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "05ebf957-bc5f-472b-82f1-14062d454729",
-                            "port": "out-1",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "556abfcd-6cfa-4e76-a75c-ff36fa29fa3c",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 282
                     },
                     {
                         ".scmName/text": "rba-master",
@@ -3713,7 +3673,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def filter_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('filter_4() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.extracted_string\", \"!=\", \"\"],\n        ],\n        name=\"filter_4:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        cf_community_debug_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
+                        "block_code": "def filter_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('filter_4() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.extracted_string\", \"!=\", \"\"],\n        ],\n        name=\"filter_4:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        cf_community_noop_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -3830,6 +3790,46 @@
                         "z": 287
                     },
                     {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "ee3c18fe-8988-46f5-9dfd-7a651da1b244",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "05ebf957-bc5f-472b-82f1-14062d454729",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "cfcf7875-4341-459c-92b6-897e3f8d6d49",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 288
+                    },
+                    {
                         ".scmName/text": "community",
                         "active": false,
                         "active_keys": {},
@@ -3838,13 +3838,13 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#0083FF"
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
                             },
                             ".customFunction": {
-                                "text": "debug"
+                                "text": "noop"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -3894,63 +3894,20 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def cf_community_debug_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_community_debug_1() called')\n    \n    filtered_custom_function_results_data_0 = phantom.collect2(container=container, datapath=['filtered-data:filter_4:condition_1:cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id'])\n\n    parameters = []\n\n    filtered_custom_function_results_data_0_0 = [item[0] for item in filtered_custom_function_results_data_0]\n\n    parameters.append({\n        'input_1': filtered_custom_function_results_data_0_0,\n        'input_2': None,\n        'input_3': None,\n        'input_4': None,\n        'input_5': None,\n        'input_6': None,\n        'input_7': None,\n        'input_8': None,\n        'input_9': None,\n        'input_10': None,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"community/debug\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='community/debug', parameters=parameters, name='cf_community_debug_1')\n\n    return",
+                        "block_code": "def cf_community_noop_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_community_noop_1() called')\n    \n    parameters = [{}]\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"community/noop\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='community/noop', parameters=parameters, name='cf_community_noop_1', callback=format_3)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
-                        "cfDisplayPath": "community/debug",
-                        "cfInputs": {
-                            "input_1": {
-                                "collectionType": "filtered_custom_function_results_data",
-                                "dataPath": "filtered-data:filter_4:condition_1:cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id",
-                                "paramName": "filtered_custom_function_results_data_0_0",
-                                "type": "list"
-                            },
-                            "input_10": {
-                                "dataPath": "",
-                                "type": "list"
-                            },
-                            "input_2": {
-                                "dataPath": "",
-                                "type": "list"
-                            },
-                            "input_3": {
-                                "dataPath": "",
-                                "type": "list"
-                            },
-                            "input_4": {
-                                "dataPath": "",
-                                "type": "list"
-                            },
-                            "input_5": {
-                                "dataPath": "",
-                                "type": "list"
-                            },
-                            "input_6": {
-                                "dataPath": "",
-                                "type": "list"
-                            },
-                            "input_7": {
-                                "dataPath": "",
-                                "type": "list"
-                            },
-                            "input_8": {
-                                "dataPath": "",
-                                "type": "list"
-                            },
-                            "input_9": {
-                                "dataPath": "",
-                                "type": "list"
-                            }
-                        },
+                        "cfDisplayPath": "community/noop",
+                        "cfInputs": {},
                         "color": "",
                         "connected_to_start": true,
                         "connection_name": "regex_extract_powershell_b64",
                         "connection_type": "action",
                         "currentVersion": true,
                         "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 24,
-                        "customFunction": "community/debug",
+                        "customCodeStartLine": 8,
+                        "customFunction": "community/noop",
                         "customFunctionId": null,
                         "custom_callback": "",
                         "custom_code": "",
@@ -3965,18 +3922,17 @@
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "556abfcd-6cfa-4e76-a75c-ff36fa29fa3c",
+                        "id": "cfcf7875-4341-459c-92b6-897e3f8d6d49",
                         "inPorts": [
                             "in"
                         ],
-                        "input_1-0": "filtered-data:filter_4:condition_1:cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id",
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 344,
+                        "line_end": 328,
                         "line_start": 308,
                         "message": "Configuring now",
-                        "name": "debug",
+                        "name": "noop",
                         "notes": "",
                         "number": 1,
                         "order": 15,
@@ -4036,168 +3992,18 @@
                             }
                         },
                         "position": {
-                            "x": 760,
-                            "y": -100
+                            "x": 780,
+                            "y": -160
                         },
                         "previous_function": "",
-                        "previous_name": "cf_community_debug_1",
+                        "previous_name": "cf_community_noop_1",
                         "selectedCustomFunction": {
-                            "description": "Print debug messages with the type and value of 0-10 different inputs. This is useful for checking the values of input data or the outputs of other playbook blocks.",
+                            "description": "Do nothing and return nothing. Use this if you want to do something in a custom function setup section or leave a placeholder block in a playbook. This does not sleep or wait and will return as soon as possible.",
                             "draftMode": false,
-                            "id": 1,
-                            "inputs": [
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 1,
-                                    "description": "",
-                                    "id": 1,
-                                    "input_type": "list",
-                                    "name": "input_1",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 1,
-                                    "description": "",
-                                    "id": 2,
-                                    "input_type": "list",
-                                    "name": "input_2",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 1,
-                                    "description": "",
-                                    "id": 3,
-                                    "input_type": "list",
-                                    "name": "input_3",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 1,
-                                    "description": "",
-                                    "id": 4,
-                                    "input_type": "list",
-                                    "name": "input_4",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 1,
-                                    "description": "",
-                                    "id": 5,
-                                    "input_type": "list",
-                                    "name": "input_5",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 1,
-                                    "description": "",
-                                    "id": 6,
-                                    "input_type": "list",
-                                    "name": "input_6",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 1,
-                                    "description": "",
-                                    "id": 7,
-                                    "input_type": "list",
-                                    "name": "input_7",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 1,
-                                    "description": "",
-                                    "id": 8,
-                                    "input_type": "list",
-                                    "name": "input_8",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 1,
-                                    "description": "",
-                                    "id": 9,
-                                    "input_type": "list",
-                                    "name": "input_9",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 1,
-                                    "description": "",
-                                    "id": 10,
-                                    "input_type": "list",
-                                    "name": "input_10",
-                                    "placeholder": ""
-                                }
-                            ],
-                            "name": "debug",
-                            "outputs": [
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [],
-                                    "custom_function": 1,
-                                    "data_path": "*.input_name",
-                                    "description": "The variable name used for this input, such as input_1 or input_7",
-                                    "id": 1
-                                },
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 1,
-                                    "data_path": "*.value",
-                                    "description": "The string representation of the value of this input",
-                                    "id": 2
-                                },
-                                {
-                                    "_pretty_custom_function": "debug",
-                                    "contains_type": [
-                                        ""
-                                    ],
-                                    "custom_function": 1,
-                                    "data_path": "*.types",
-                                    "description": "The string representation of the type of this input, such as \"<type 'list'>\"",
-                                    "id": 3
-                                }
-                            ],
+                            "id": 35,
+                            "inputs": [],
+                            "name": "noop",
+                            "outputs": [],
                             "playbooks": {
                                 "draft_playbooks": [],
                                 "draft_version_id": null,
@@ -4212,12 +4018,51 @@
                             "width": 180
                         },
                         "state": "repo",
-                        "status": "active",
+                        "status": "",
                         "title": "custom function",
                         "type": "coa.CustomFunctionBlock",
                         "userGeneratedCode": "    # Write your custom code here...",
                         "warn": false,
-                        "z": 288
+                        "z": 289
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "08e3e8a3-6646-4795-8019-9582acb8de40",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "cfcf7875-4341-459c-92b6-897e3f8d6d49",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "4b5dfea1-ca9f-49bf-b504-ea8527158753",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 290
                     }
                 ]
             },
@@ -4227,7 +4072,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T12:53:37.342798+00:00",
+    "create_time": "2020-08-21T12:55:21.385407+00:00",
     "draft_mode": false,
     "labels": [
         "*"
