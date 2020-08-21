@@ -69,7 +69,21 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_1 or matched_results_1:
         format_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
-        filter_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+
+    # collect filtered artifact ids for 'if' condition 2
+    matched_artifacts_2, matched_results_2 = phantom.condition(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["ip_reputation_1:action_result.data.*.detected_communicating_samples.*.positives", ">=", 3],
+            ["ip_reputation_1:action_result.parameter.ip", "==", "artifact:*.cef.threat_object"],
+        ],
+        logical_operator='and',
+        name="filter_2:condition_2")
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_2 or matched_results_2:
+        cf_rba_master_update_artifact_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_2, filtered_results=matched_results_2)
 
     return
 
@@ -98,24 +112,6 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     return
 
-def filter_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('filter_3() called')
-
-    # collect filtered artifact ids for 'if' condition 1
-    matched_artifacts_1, matched_results_1 = phantom.condition(
-        container=container,
-        action_results=results,
-        conditions=[
-            ["filtered-data:filter_2:condition_1:ip_reputation_1:action_result.parameter.ip", "==", "artifact:*.cef.threat_object"],
-        ],
-        name="filter_3:condition_1")
-
-    # call connected blocks if filtered artifacts or results
-    if matched_artifacts_1 or matched_results_1:
-        cf_rba_master_update_artifact_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
-
-    return
-
 def cf_rba_master_update_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('cf_rba_master_update_artifact_1() called')
     
@@ -128,12 +124,12 @@ def cf_rba_master_update_artifact_1(action=None, success=None, container=None, r
 
     parameters = []
 
-    for item0 in filtered_artifacts_data_0:
-        for item1 in literal_values_0:
+    for item0 in literal_values_0:
+        for item1 in filtered_artifacts_data_0:
             parameters.append({
-                'artifact_id': item0[0],
-                'data': item1[0],
+                'data': item0[0],
                 'overwrite': None,
+                'artifact_id': item1[0],
             })
     ################################################################################
     ## Custom Code Start
