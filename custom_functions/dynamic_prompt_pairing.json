@@ -1,0 +1,50 @@
+{
+    "create_time": "2020-08-21T14:13:39.724332+00:00",
+    "custom_function_id": "bd3fa05c16b54f41f8badcfbbc8ef5cacffd826b",
+    "description": "",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "input_json",
+            "placeholder": "json serializable"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "response",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "type",
+            "description": "item"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "value",
+            "description": "url, domain, sender, etc."
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "response",
+            "description": "Yes / No"
+        }
+    ],
+    "platform_version": "4.9.34514"
+}
