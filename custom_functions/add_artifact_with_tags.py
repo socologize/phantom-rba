@@ -1,4 +1,4 @@
-def add_artifact_with_tags(cef=None, tags=None, severity=None, container_id=None, label=None, name=None, **kwargs):
+def add_artifact_with_tags(cef=None, tags=None, severity=None, container_id=None, label=None, name=None, run_automation=None, **kwargs):
     """
     Adds an artifact and updates that artifact with provided tags
     
@@ -9,6 +9,7 @@ def add_artifact_with_tags(cef=None, tags=None, severity=None, container_id=None
         container_id (CEF type: phantom container id)
         label (CEF type: *)
         name (CEF type: *)
+        run_automation (CEF type: *): Defaults to False
     
     Returns a JSON-serializable object that implements the configured data paths:
         id
@@ -18,14 +19,19 @@ def add_artifact_with_tags(cef=None, tags=None, severity=None, container_id=None
     import phantom.rules as phantom
     
     outputs = {}
-    
+    if not run_automation or run_automation == 'False':
+        run_automation = False
+    elif run_automation == 'True':
+        run_automation = True
+
     success, message, artifact_id = phantom.add_artifact(
             container=container_id, raw_data={}, 
             cef_data=cef, 
             label=label,
             field_mapping=None,
             name=name, 
-            severity=severity)
+            severity=severity,
+            run_automation=run_automation)
     
     artifact_url = phantom.build_phantom_rest_url('artifact', artifact_id)
     data = {'tags': tags}
