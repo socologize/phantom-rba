@@ -19,9 +19,9 @@ def add_artifact_with_tags(cef=None, tags=None, severity=None, container_id=None
     import phantom.rules as phantom
     
     outputs = {}
-    if not run_automation or run_automation == 'False':
+    if not run_automation or run_automation.lower() == 'false':
         run_automation = False
-    elif run_automation == 'True':
+    elif run_automation.lower() == 'true':
         run_automation = True
 
     success, message, artifact_id = phantom.add_artifact(
