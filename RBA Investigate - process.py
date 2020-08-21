@@ -285,7 +285,7 @@ def format_3(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id",
+        "filtered-data:filter_4:condition_1:cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_3")
