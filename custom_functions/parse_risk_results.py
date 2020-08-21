@@ -67,35 +67,34 @@ def parse_risk_results(search_json=None, **kwargs):
             if k in cim_cef.keys():
                 artifact_json[cim_cef[k]] = artifact_json.pop(k)
 
-            # Swap risk_message for description
-            if 'risk_message' in artifact_json.keys():
-                artifact_json['description'] = artifact_json.pop('risk_message')
+        # Swap risk_message for description
+        if 'risk_message' in artifact_json.keys():
+            artifact_json['description'] = artifact_json.pop('risk_message')
 
-            # Make _time easier to read
-            if '_time' in artifact_json.keys():
-                timestring = parse(artifact_json['_time'])
-                artifact_json['_time'] = "{} {}".format(timestring.date(), timestring.time())
+        # Make _time easier to read
+        if '_time' in artifact_json.keys():
+            timestring = parse(artifact_json['_time'])
+            artifact_json['_time'] = "{} {}".format(timestring.date(), timestring.time())
 
-            # extract tags
-            if 'rule_attack_tactic_technique' in artifact_json.keys():
-                for match in re.findall('(^|\|)(\w+)\s+',artifact_json['rule_attack_tactic_technique']):
-                    tags.append(match[1])
+        # extract tags
+        if 'rule_attack_tactic_technique' in artifact_json.keys():
+            for match in re.findall('(^|\|)(\w+)\s+',artifact_json['rule_attack_tactic_technique']):
+                tags.append(match[1])
 
-            # Parse through threat_objects
-            if 'threat_object' in artifact_json.keys():
-                artifact_json['threat_object'] = re.sub(r'([\\\{\}\[\]\"])', r'\\\1', artifact_json['threat_object'])
-            #    phantom.debug(artifact_json['threat_object'])
-            
-            # Extract tags
-            if 'rule_attack_tactic_technique' in artifact_json.keys():
-                for match in re.findall('(^|\|)(\w+)\s+',artifact_json['rule_attack_tactic_technique']):
-                    tags.append(match[1])
-                tags=list(set(tags))
-            
-            # build output - source must exist
-            if 'source' in artifact_json.keys():
-                name = artifact_json.pop('source')
-                outputs.append({'artifact': {'cef': artifact_json, 'tags': tags, 'name': name}})
+        # Parse through threat_objects
+        if 'threat_object' in artifact_json.keys():
+            artifact_json['threat_object'] = json.dumps(artifact_json['threat_object'])
+
+        # Extract tags
+        if 'rule_attack_tactic_technique' in artifact_json.keys():
+            for match in re.findall('(^|\|)(\w+)\s+',artifact_json['rule_attack_tactic_technique']):
+                tags.append(match[1])
+            tags=list(set(tags))
+
+        # build output - source must exist
+        if 'source' in artifact_json.keys():
+            name = artifact_json.pop('source')
+            outputs.append({'artifact': {'cef': artifact_json, 'tags': tags, 'name': name}})
 
 
     # Return a JSON-serializable object
