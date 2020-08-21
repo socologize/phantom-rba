@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "5e16c215c038f3479e161ed1f3cc00aa526063b0",
+            "hash": "a210f37b92db6802fe75752561c2c81c4bc20aad",
             "joint": {
                 "cells": [
                     {
@@ -217,12 +217,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 316,
-                        "line_start": 303,
+                        "line_end": 348,
+                        "line_start": 335,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 14,
+                        "order": 15,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -2722,253 +2722,6 @@
                         "z": 232
                     },
                     {
-                        ".scmName/text": "rba-master",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {},
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".customFunction": {
-                                "text": "json_serializer"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".scmName": {
-                                "text": "rba-master"
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            ".title-info": {
-                                "text": ""
-                            },
-                            "g.branch image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def cf_rba_master_json_serializer_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_json_serializer_1() called')\n    \n    filtered_custom_function_results_data_0 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string'])\n    literal_values_0 = [\n        [\n            \"decodedString\",\n        ],\n    ]\n\n    parameters = []\n\n    for item0 in literal_values_0:\n        for item1 in filtered_custom_function_results_data_0:\n            parameters.append({\n                'input_key': item0[0],\n                'input_value': item1[0],\n            })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/json_serializer\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/json_serializer', parameters=parameters, name='cf_rba_master_json_serializer_1', callback=format_2)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "cfDisplayPath": "rba-master/json_serializer",
-                        "cfInputs": {
-                            "input_key": {
-                                "collectionType": "literal_values",
-                                "dataPath": "decodedString",
-                                "paramName": "item0[0]",
-                                "type": "item"
-                            },
-                            "input_value": {
-                                "collectionType": "filtered_custom_function_results_data",
-                                "dataPath": "filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string",
-                                "paramName": "item1[0]",
-                                "type": "item"
-                            }
-                        },
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "decode_base64",
-                        "connection_type": "action",
-                        "currentVersion": true,
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 21,
-                        "customFunction": "rba-master/json_serializer",
-                        "customFunctionId": null,
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "draftMode": false,
-                        "existingCF": true,
-                        "functionBlock": "custom function",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "9c754db1-8920-4905-b83a-ff7df0a60764",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "input_key-0": "decodedString",
-                        "input_value-1": "filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string",
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 223,
-                        "line_start": 190,
-                        "message": "Configuring now",
-                        "name": "json_serializer",
-                        "notes": "",
-                        "number": 1,
-                        "order": 10,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1060,
-                            "y": 220
-                        },
-                        "previous_function": "",
-                        "previous_name": "cf_rba_master_json_serializer_1",
-                        "selectedCustomFunction": {
-                            "description": "Takes a key and a value and serializes it into a json dictionary to be used wherever a pre-formatted json required",
-                            "draftMode": false,
-                            "id": 188,
-                            "inputs": [
-                                {
-                                    "_pretty_custom_function": "json_serializer",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 188,
-                                    "description": "To be used as json key",
-                                    "id": 288,
-                                    "input_type": "item",
-                                    "name": "input_key",
-                                    "placeholder": "my_dict_key"
-                                },
-                                {
-                                    "_pretty_custom_function": "json_serializer",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 188,
-                                    "description": "To be used as a json value",
-                                    "id": 289,
-                                    "input_type": "item",
-                                    "name": "input_value",
-                                    "placeholder": "my_dict_value"
-                                }
-                            ],
-                            "name": "json_serializer",
-                            "outputs": [
-                                {
-                                    "_pretty_custom_function": "json_serializer",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 188,
-                                    "data_path": "json",
-                                    "description": "json key:value",
-                                    "id": 384
-                                }
-                            ],
-                            "playbooks": {
-                                "draft_playbooks": [],
-                                "draft_version_id": null,
-                                "playbooks": []
-                            },
-                            "scmId": 11,
-                            "scmName": "rba-master"
-                        },
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "repo",
-                        "status": "",
-                        "title": "custom function",
-                        "type": "coa.CustomFunctionBlock",
-                        "userGeneratedCode": "    # Write your custom code here...",
-                        "warn": false,
-                        "z": 233
-                    },
-                    {
                         ".scmName/text": "community",
                         "active": false,
                         "active_keys": {},
@@ -3115,8 +2868,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 303,
-                        "line_start": 263,
+                        "line_end": 301,
+                        "line_start": 261,
                         "message": "Configuring now",
                         "name": "debug",
                         "notes": "",
@@ -3362,45 +3115,6 @@
                         "z": 242
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "fc58747b-9722-4ef7-9ba3-7072ebaa5710",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "acf47bf6-87c1-4f22-a4e4-4f2523267e94",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "83a671dc-d337-40b5-bb92-143d2ccd8329",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 244
-                    },
-                    {
                         "action": "update artifact fields",
                         "action_type": "generic",
                         "active": false,
@@ -3527,7 +3241,7 @@
                             },
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#5C6773"
+                                "stroke": "#E6984E"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -3571,7 +3285,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -3589,14 +3303,14 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def update_artifact_fields_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_artifact_fields_2() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_artifact_fields_2' call\n    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id'])\n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    parameters = []\n    \n    # build parameters list for 'update_artifact_fields_2' call\n    for filtered_custom_function_results_item_1 in filtered_custom_function_results_data_1:\n        if filtered_custom_function_results_item_1[0]:\n            parameters.append({\n                'data': formatted_data_1,\n                'overwrite': False,\n                'artifact_id': filtered_custom_function_results_item_1[0],\n            })\n\n    phantom.act(action=\"update artifact fields\", parameters=parameters, assets=['phantom_helper'], name=\"update_artifact_fields_2\")\n\n    return",
+                        "block_code": "def update_artifact_fields_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_artifact_fields_2() called')\n\n    # collect data for 'update_artifact_fields_2' call\n    filtered_custom_function_results_data_1 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.artifact_id'])\n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    parameters = []\n    \n    # build parameters list for 'update_artifact_fields_2' call\n    for filtered_custom_function_results_item_1 in filtered_custom_function_results_data_1:\n        if filtered_custom_function_results_item_1[0]:\n            parameters.append({\n                'data': formatted_data_1,\n                'overwrite': False,\n                'artifact_id': filtered_custom_function_results_item_1[0],\n            })\n\n    phantom.act(action=\"update artifact fields\", parameters=parameters, assets=['phantom_helper'], name=\"update_artifact_fields_2\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "json_serializer",
-                        "connection_type": "action",
+                        "connection_name": "",
+                        "connection_type": "",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -3614,7 +3328,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 247,
+                        "line_end": 245,
                         "line_start": 223,
                         "message": "Configuring now",
                         "name": "update artifact fields",
@@ -3693,11 +3407,258 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "",
+                        "status": "warn",
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": false,
                         "z": 246
+                    },
+                    {
+                        ".scmName/text": "rba-master",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".customFunction": {
+                                "text": "json_serializer"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "rba-master"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def cf_rba_master_json_serializer_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_json_serializer_1() called')\n    \n    filtered_custom_function_results_data_0 = phantom.collect2(container=container, datapath=['filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string'])\n    literal_values_0 = [\n        [\n            \"decodedString\",\n        ],\n    ]\n\n    parameters = []\n\n    for item0 in literal_values_0:\n        for item1 in filtered_custom_function_results_data_0:\n            parameters.append({\n                'input_key': item0[0],\n                'input_value': item1[0],\n            })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/json_serializer\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/json_serializer', parameters=parameters, name='cf_rba_master_json_serializer_1', callback=format_2)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "rba-master/json_serializer",
+                        "cfInputs": {
+                            "input_key": {
+                                "collectionType": "literal_values",
+                                "dataPath": "decodedString",
+                                "paramName": "item0[0]",
+                                "type": "item"
+                            },
+                            "input_value": {
+                                "collectionType": "filtered_custom_function_results_data",
+                                "dataPath": "filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string",
+                                "paramName": "item1[0]",
+                                "type": "item"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "decode_base64",
+                        "connection_type": "action",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 21,
+                        "customFunction": "rba-master/json_serializer",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "9c754db1-8920-4905-b83a-ff7df0a60764",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "input_key-0": "decodedString",
+                        "input_value-1": "filtered-data:filter_3:condition_1:cf_rba_master_decode_base64_1:custom_function_result.data.decoded_string",
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 223,
+                        "line_start": 190,
+                        "message": "Configuring now",
+                        "name": "json_serializer",
+                        "notes": "",
+                        "number": 1,
+                        "order": 10,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1060,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "cf_rba_master_json_serializer_1",
+                        "selectedCustomFunction": {
+                            "description": "Takes a key and a value and serializes it into a json dictionary to be used wherever a pre-formatted json required",
+                            "draftMode": false,
+                            "id": 188,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "json_serializer",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 188,
+                                    "description": "To be used as json key",
+                                    "id": 288,
+                                    "input_type": "item",
+                                    "name": "input_key",
+                                    "placeholder": "my_dict_key"
+                                },
+                                {
+                                    "_pretty_custom_function": "json_serializer",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 188,
+                                    "description": "To be used as a json value",
+                                    "id": 289,
+                                    "input_type": "item",
+                                    "name": "input_value",
+                                    "placeholder": "my_dict_value"
+                                }
+                            ],
+                            "name": "json_serializer",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "json_serializer",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 188,
+                                    "data_path": "json",
+                                    "description": "json key:value",
+                                    "id": 384
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": []
+                            },
+                            "scmId": 11,
+                            "scmName": "rba-master"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 248
                     },
                     {
                         "active": false,
@@ -3759,7 +3720,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"{{\\\"cef\\\": {0}}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"cf_rba_master_json_serializer_1:custom_function_result.data.json\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    update_artifact_fields_2(container=container)\n\n    return",
+                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"{{\\\"cef\\\": {0}}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"cf_rba_master_json_serializer_1:custom_function_result.data.json\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    cf_rba_master_update_artifact_1(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -3783,8 +3744,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 263,
-                        "line_start": 247,
+                        "line_end": 261,
+                        "line_start": 245,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -3869,7 +3830,323 @@
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 247
+                        "z": 249
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "8b0828f2-63d6-4e8e-a389-b659af087f82",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "acf47bf6-87c1-4f22-a4e4-4f2523267e94",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "01e1f0df-691d-4aac-89ad-8f3c93a4e227",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 250
+                    },
+                    {
+                        ".scmName/text": "rba-master",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "artifact_id-0": "artifact:*.id",
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".customFunction": {
+                                "text": "update_artifact"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "rba-master"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def cf_rba_master_update_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_update_artifact_1() called')\n    \n    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.id'])\n    formatted_data_0 = [\n        [\n            phantom.get_format_data(name=\"format_2\"),\n        ],\n    ]\n\n    parameters = []\n\n    for item0 in container_data_0:\n        for item1 in formatted_data_0:\n            parameters.append({\n                'artifact_id': item0[0],\n                'data': item1[0],\n                'overwrite': None,\n            })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/update_artifact\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/update_artifact', parameters=parameters, name='cf_rba_master_update_artifact_1')\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "rba-master/update_artifact",
+                        "cfInputs": {
+                            "artifact_id": {
+                                "collectionType": "container_data",
+                                "dataPath": "artifact:*.id",
+                                "paramName": "item0[0]",
+                                "type": "item"
+                            },
+                            "data": {
+                                "collectionType": "formatted_data",
+                                "dataPath": "format_2:formatted_data",
+                                "paramName": "item1[0]",
+                                "type": "item"
+                            },
+                            "overwrite": {
+                                "dataPath": "",
+                                "type": "item"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "json_serializer",
+                        "connection_type": "action",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 22,
+                        "customFunction": "rba-master/update_artifact",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "data-1": "format_2:formatted_data",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "01e1f0df-691d-4aac-89ad-8f3c93a4e227",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 335,
+                        "line_start": 301,
+                        "message": "Configuring now",
+                        "name": "update_artifact",
+                        "notes": "",
+                        "number": 1,
+                        "order": 14,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1540,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "cf_rba_master_update_artifact_1",
+                        "selectedCustomFunction": {
+                            "description": "Update artifact with a valid json dictionary. See Phantom Artifact REST API for valid dictionary.",
+                            "draftMode": false,
+                            "id": 443,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "update_artifact",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 443,
+                                    "description": "ID of artifact to update",
+                                    "id": 1019,
+                                    "input_type": "item",
+                                    "name": "artifact_id",
+                                    "placeholder": "artifact:id"
+                                },
+                                {
+                                    "_pretty_custom_function": "update_artifact",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 443,
+                                    "description": "JSON formatted data. See artifact REST api",
+                                    "id": 1020,
+                                    "input_type": "item",
+                                    "name": "data",
+                                    "placeholder": "{\"cef\": {JSON} }"
+                                },
+                                {
+                                    "_pretty_custom_function": "update_artifact",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 443,
+                                    "description": "Optional: Leave blank for False",
+                                    "id": 1021,
+                                    "input_type": "item",
+                                    "name": "overwrite",
+                                    "placeholder": "True or blank"
+                                }
+                            ],
+                            "name": "update_artifact",
+                            "outputs": [],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": [
+                                    {
+                                        "active": false,
+                                        "display_path": "rba-master/RBA Investigate - ip",
+                                        "draft_mode": false,
+                                        "id": 775,
+                                        "name": "RBA Investigate - ip",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "rba-master/RBA Investigate - domain",
+                                        "draft_mode": false,
+                                        "id": 776,
+                                        "name": "RBA Investigate - domain",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "rba-master/RBA Investigate - file_hash",
+                                        "draft_mode": false,
+                                        "id": 777,
+                                        "name": "RBA Investigate - file_hash",
+                                        "viewable": true
+                                    }
+                                ]
+                            },
+                            "scmId": 11,
+                            "scmName": "rba-master"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 252
                     }
                 ]
             },
@@ -3879,7 +4156,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-19T19:34:44.965923+00:00",
+    "create_time": "2020-08-21T12:41:29.526249+00:00",
     "draft_mode": false,
     "labels": [
         "*"
