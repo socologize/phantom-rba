@@ -108,22 +108,6 @@ def cf_rba_master_regex_extract_powershell_b64_1(action=None, success=None, cont
 
     return
 
-def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('decision_1() called')
-
-    # check for 'if' condition 1
-    matched = phantom.decision(
-        container=container,
-        conditions=[
-            ["cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.extracted_string", "!=", ""],
-        ])
-
-    # call connected blocks if condition 1 matched
-    if matched:
-        return
-
-    return
-
 def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_1() called')
 
@@ -299,43 +283,8 @@ def filter_4(action=None, success=None, container=None, results=None, handle=Non
 
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_1 or matched_results_1:
-        cf_community_debug_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
-
-    return
-
-def cf_community_debug_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('cf_community_debug_1() called')
-    
-    filtered_custom_function_results_data_0 = phantom.collect2(container=container, datapath=['filtered-data:filter_4:condition_1:cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id'])
-
-    parameters = []
-
-    filtered_custom_function_results_data_0_0 = [item[0] for item in filtered_custom_function_results_data_0]
-
-    parameters.append({
-        'input_1': filtered_custom_function_results_data_0_0,
-        'input_2': None,
-        'input_3': None,
-        'input_4': None,
-        'input_5': None,
-        'input_6': None,
-        'input_7': None,
-        'input_8': None,
-        'input_9': None,
-        'input_10': None,
-    })
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################    
-
-    # call custom function "community/debug", returns the custom_function_run_id
-    phantom.custom_function(custom_function='community/debug', parameters=parameters, name='cf_community_debug_1')
+        cf_rba_master_decode_base64_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+        format_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
     return
 
