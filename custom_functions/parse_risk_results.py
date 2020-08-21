@@ -83,7 +83,7 @@ def parse_risk_results(search_json=None, **kwargs):
 
             # Parse through threat_objects
             if 'threat_object' in artifact_json.keys():
-                artifact_json['threat_object'] = json.dumps(artifact_json.pop(['threat_object']))
+                artifact_json['threat_object'] = json.dumps(artifact_json.pop('threat_object'))
                 phantom.debug(artifact_json['threat_object'])
                 #phantom.debug(json.dumps(artifact_json['threat_object']))
             # Extract tags
