@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "05619d16cd6d346dcfb8e85739ce8b1c4f33d01a",
+            "hash": "aaa8697fc5544c821089aa60f80d83b4cbb408ff",
             "joint": {
                 "cells": [
                     {
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 348,
-                        "line_start": 335,
+                        "line_end": 364,
+                        "line_start": 351,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -2384,7 +2384,7 @@
                             },
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#5C6773"
+                                "stroke": "#E6984E"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -2425,7 +2425,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -2455,8 +2455,8 @@
                             }
                         ],
                         "connected_to_start": true,
-                        "connection_name": "regex_extract_powershell_b64",
-                        "connection_type": "action",
+                        "connection_name": "",
+                        "connection_type": "",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -2547,7 +2547,7 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "",
+                        "status": "warn",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
@@ -3257,205 +3257,6 @@
                         "z": 283
                     },
                     {
-                        ".scmName/text": "community",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {},
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".customFunction": {
-                                "text": "noop"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".scmName": {
-                                "text": "community"
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            ".title-info": {
-                                "text": ""
-                            },
-                            "g.branch image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def cf_community_noop_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_community_noop_1() called')\n    \n    parameters = [{}]\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"community/noop\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='community/noop', parameters=parameters, name='cf_community_noop_1')\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "cfDisplayPath": "community/noop",
-                        "cfInputs": {},
-                        "color": "",
-                        "connected_to_start": false,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "currentVersion": true,
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 8,
-                        "customFunction": "community/noop",
-                        "customFunctionId": null,
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "draftMode": false,
-                        "existingCF": true,
-                        "functionBlock": "custom function",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "cfcf7875-4341-459c-92b6-897e3f8d6d49",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 335,
-                        "line_start": 315,
-                        "message": "Configuring now",
-                        "name": "noop",
-                        "notes": "",
-                        "number": 1,
-                        "order": 15,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 780,
-                            "y": -160
-                        },
-                        "previous_function": "",
-                        "previous_name": "cf_community_noop_1",
-                        "selectedCustomFunction": {
-                            "description": "Do nothing and return nothing. Use this if you want to do something in a custom function setup section or leave a placeholder block in a playbook. This does not sleep or wait and will return as soon as possible.",
-                            "draftMode": false,
-                            "id": 35,
-                            "inputs": [],
-                            "name": "noop",
-                            "outputs": [],
-                            "playbooks": {
-                                "draft_playbooks": [],
-                                "draft_version_id": null,
-                                "playbooks": []
-                            },
-                            "scmId": 1,
-                            "scmName": "community"
-                        },
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "repo",
-                        "status": "warn",
-                        "title": "custom function",
-                        "type": "coa.CustomFunctionBlock",
-                        "userGeneratedCode": "    # Write your custom code here...",
-                        "warn": false,
-                        "z": 289
-                    },
-                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
@@ -3705,7 +3506,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def filter_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('filter_4() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id\", \"!=\", \"\"],\n        ],\n        name=\"filter_4:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        format_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
+                        "block_code": "def filter_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('filter_4() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id\", \"!=\", \"\"],\n        ],\n        name=\"filter_4:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        cf_community_debug_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -3822,52 +3623,12 @@
                         "z": 296
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "797cc6eb-ca34-4316-b873-d40d615378f6",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "05ebf957-bc5f-472b-82f1-14062d454729",
-                            "port": "out-1",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "4b5dfea1-ca9f-49bf-b504-ea8527158753",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 297
-                    },
-                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#5C6773"
+                                "stroke": "#E6984E"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -3906,7 +3667,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -3920,8 +3681,8 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "regex_extract_powershell_b64",
-                        "connection_type": "action",
+                        "connection_name": "",
+                        "connection_type": "",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -4020,12 +3781,442 @@
                             "width": 180
                         },
                         "state": "format",
-                        "status": "",
+                        "status": "warn",
                         "template": "Artifact {0} has possible encoded powershell",
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
                         "z": 298
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "a76b8085-1df0-45b2-b3c9-e6b8b022afdb",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "05ebf957-bc5f-472b-82f1-14062d454729",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "744e178b-51c5-4e86-9113-2bbb54723d66",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 299
+                    },
+                    {
+                        ".scmName/text": "community",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#0083FF"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".customFunction": {
+                                "text": "debug"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "community"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def cf_community_debug_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_community_debug_1() called')\n    \n    filtered_custom_function_results_data_0 = phantom.collect2(container=container, datapath=['filtered-data:filter_4:condition_1:cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id'])\n\n    parameters = []\n\n    filtered_custom_function_results_data_0_0 = [item[0] for item in filtered_custom_function_results_data_0]\n\n    parameters.append({\n        'input_1': filtered_custom_function_results_data_0_0,\n        'input_2': None,\n        'input_3': None,\n        'input_4': None,\n        'input_5': None,\n        'input_6': None,\n        'input_7': None,\n        'input_8': None,\n        'input_9': None,\n        'input_10': None,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"community/debug\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='community/debug', parameters=parameters, name='cf_community_debug_1')\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "community/debug",
+                        "cfInputs": {
+                            "input_1": {
+                                "collectionType": "filtered_custom_function_results_data",
+                                "dataPath": "filtered-data:filter_4:condition_1:cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id",
+                                "paramName": "filtered_custom_function_results_data_0_0",
+                                "type": "list"
+                            },
+                            "input_10": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_2": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_3": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_4": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_5": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_6": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_7": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_8": {
+                                "dataPath": "",
+                                "type": "list"
+                            },
+                            "input_9": {
+                                "dataPath": "",
+                                "type": "list"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "regex_extract_powershell_b64",
+                        "connection_type": "action",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 24,
+                        "customFunction": "community/debug",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "744e178b-51c5-4e86-9113-2bbb54723d66",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "input_1-0": "filtered-data:filter_4:condition_1:cf_rba_master_regex_extract_powershell_b64_1:custom_function_result.data.artifact_id",
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 351,
+                        "line_start": 315,
+                        "message": "Configuring now",
+                        "name": "debug",
+                        "notes": "",
+                        "number": 1,
+                        "order": 15,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 760,
+                            "y": -160
+                        },
+                        "previous_function": "",
+                        "previous_name": "cf_community_debug_1",
+                        "selectedCustomFunction": {
+                            "description": "Print debug messages with the type and value of 0-10 different inputs. This is useful for checking the values of input data or the outputs of other playbook blocks.",
+                            "draftMode": false,
+                            "id": 1,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 1,
+                                    "input_type": "list",
+                                    "name": "input_1",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 2,
+                                    "input_type": "list",
+                                    "name": "input_2",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 3,
+                                    "input_type": "list",
+                                    "name": "input_3",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 4,
+                                    "input_type": "list",
+                                    "name": "input_4",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 5,
+                                    "input_type": "list",
+                                    "name": "input_5",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 6,
+                                    "input_type": "list",
+                                    "name": "input_6",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 7,
+                                    "input_type": "list",
+                                    "name": "input_7",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 8,
+                                    "input_type": "list",
+                                    "name": "input_8",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 9,
+                                    "input_type": "list",
+                                    "name": "input_9",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "description": "",
+                                    "id": 10,
+                                    "input_type": "list",
+                                    "name": "input_10",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "name": "debug",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [],
+                                    "custom_function": 1,
+                                    "data_path": "*.input_name",
+                                    "description": "The variable name used for this input, such as input_1 or input_7",
+                                    "id": 1
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 1,
+                                    "data_path": "*.value",
+                                    "description": "The string representation of the value of this input",
+                                    "id": 2
+                                },
+                                {
+                                    "_pretty_custom_function": "debug",
+                                    "contains_type": [
+                                        ""
+                                    ],
+                                    "custom_function": 1,
+                                    "data_path": "*.types",
+                                    "description": "The string representation of the type of this input, such as \"<type 'list'>\"",
+                                    "id": 3
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": []
+                            },
+                            "scmId": 1,
+                            "scmName": "community"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "active",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 300
                     }
                 ]
             },
@@ -4035,7 +4226,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T12:57:07.615391+00:00",
+    "create_time": "2020-08-21T12:58:03.853406+00:00",
     "draft_mode": false,
     "labels": [
         "*"
