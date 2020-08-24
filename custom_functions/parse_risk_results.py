@@ -89,7 +89,7 @@ def parse_risk_results(search_json=None, **kwargs):
         
         # Add threat_object_type to threat_object field_mapping:
         if 'threat_object' in artifact_json.keys() and 'threat_object' in artifact_json.keys():
-            field_mapping['threat_object'] = artifact_json['threat_object_type']
+            field_mapping['threat_object'] = [ artifact_json['threat_object_type'] ]
             
         # Extract tags
         if 'rule_attack_tactic_technique' in artifact_json.keys():
