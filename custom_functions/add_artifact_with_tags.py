@@ -1,4 +1,4 @@
-def add_artifact_with_tags(cef=None, tags=None, severity=None, container_id=None, label=None, name=None, run_automation=None, **kwargs):
+def add_artifact_with_tags(cef=None, tags=None, severity=None, container_id=None, label=None, name=None, run_automation=None, field_mapping=None, **kwargs):
     """
     Adds an artifact and updates that artifact with provided tags
     
@@ -10,6 +10,7 @@ def add_artifact_with_tags(cef=None, tags=None, severity=None, container_id=None
         label (CEF type: *)
         name (CEF type: *)
         run_automation (CEF type: *): Defaults to False
+        field_mapping (CEF type: *): valid field_mapping json
     
     Returns a JSON-serializable object that implements the configured data paths:
         id
@@ -28,7 +29,7 @@ def add_artifact_with_tags(cef=None, tags=None, severity=None, container_id=None
             container=container_id, raw_data={}, 
             cef_data=cef, 
             label=label,
-            field_mapping=None,
+            field_mapping=field_mapping,
             name=name, 
             severity=severity,
             run_automation=run_automation)

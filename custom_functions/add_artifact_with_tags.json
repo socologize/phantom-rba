@@ -1,5 +1,5 @@
 {
-    "create_time": "2020-08-21T14:53:56.024617+00:00",
+    "create_time": "2020-08-24T18:37:23.941308+00:00",
     "custom_function_id": "29d5744e54580363e0e14c3ffb817702f3f7e4bf",
     "description": "Adds an artifact and updates that artifact with provided tags",
     "draft_mode": false,
@@ -66,6 +66,15 @@
             "input_type": "item",
             "name": "run_automation",
             "placeholder": "True or False"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "valid field_mapping json",
+            "input_type": "list",
+            "name": "field_mapping",
+            "placeholder": "{\"my_cef_field\": \"hash\"}"
         }
     ],
     "outputs": [
