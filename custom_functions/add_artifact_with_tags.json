@@ -1,5 +1,5 @@
 {
-    "create_time": "2020-08-24T18:37:23.941308+00:00",
+    "create_time": "2020-08-24T18:38:51.114462+00:00",
     "custom_function_id": "29d5744e54580363e0e14c3ffb817702f3f7e4bf",
     "description": "Adds an artifact and updates that artifact with provided tags",
     "draft_mode": false,
@@ -72,7 +72,7 @@
                 "*"
             ],
             "description": "valid field_mapping json",
-            "input_type": "list",
+            "input_type": "item",
             "name": "field_mapping",
             "placeholder": "{\"my_cef_field\": \"hash\"}"
         }
