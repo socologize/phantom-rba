@@ -27,9 +27,13 @@ def decode_base64(input_string=None, artifact_id=None, **kwargs):
             phantom.debug('padding string with "=="')
             input_string += '=='
             
-        decoded_string = b64decode(input_string).replace('\x00','')
-        outputs['decoded_string'] = decoded_string
-        outputs['artifact_id'] = artifact_id
+        try:    
+            decoded_string = b64decode(input_string).replace('\x00','')
+            outputs['decoded_string'] = decoded_string
+            outputs['artifact_id'] = artifact_id
+            
+        except Exception as e:
+            phantom.error('Uable to decode b64 string - {}'.format(e))
             
     # Return a JSON-serializable object
     assert json.dumps(outputs)  # Will raise an exception if the :outputs: object is not JSON-serializable
