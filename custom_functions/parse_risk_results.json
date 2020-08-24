@@ -1,5 +1,5 @@
 {
-    "create_time": "2020-08-21T19:47:30.037431+00:00",
+    "create_time": "2020-08-24T18:35:26.577406+00:00",
     "custom_function_id": "41624997df5e5e884f8b6c94c7fb0530dd84ee90",
     "description": "",
     "draft_mode": false,
@@ -32,6 +32,13 @@
         {
             "contains_type": [],
             "data_path": "*.artifact.name",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "*.artifact.field_mapping",
             "description": ""
         }
     ],

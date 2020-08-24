@@ -7,6 +7,7 @@ def parse_risk_results(search_json=None, **kwargs):
         *.artifact.cef (CEF type: *)
         *.artifact.tags (CEF type: *)
         *.artifact.name
+        *.artifact.field_mapping (CEF type: *)
     """
     ############################ Custom Code Goes Below This Line #################################
     import json
@@ -59,7 +60,8 @@ def parse_risk_results(search_json=None, **kwargs):
         "user": "destinationUserName", 
         "user_id": "destinationUserId", 
     }
-
+    field_mapping = {}
+    
     for artifact_json in search_json[0]:
         for k,v in artifact_json.items():
             tags = []
@@ -84,7 +86,11 @@ def parse_risk_results(search_json=None, **kwargs):
         # Run json.dumps against threat_objects if causing automation issues down the line
         # if 'threat_object' in artifact_json.keys():
         #    artifact_json['threat_object'] = json.dumps(artifact_json['threat_object'])[1:-1]
-
+        
+        # Add threat_object_type to threat_object field_mapping:
+        if 'threat_object' in artifact_json.keys() and 'threat_object' in artifact_json.keys():
+            field_mapping['threat_object'] = artifact_json['threat_object_type']
+            
         # Extract tags
         if 'rule_attack_tactic_technique' in artifact_json.keys():
             for match in re.findall('(^|\|)(\w+)\s+',artifact_json['rule_attack_tactic_technique']):
@@ -94,7 +100,7 @@ def parse_risk_results(search_json=None, **kwargs):
         # build output - source must exist
         if 'source' in artifact_json.keys():
             name = artifact_json.pop('source')
-            outputs.append({'artifact': {'cef': artifact_json, 'tags': tags, 'name': name}})
+            outputs.append({'artifact': {'cef': artifact_json, 'tags': tags, 'name': name, 'field_mapping': field_mapping}})
 
 
     # Return a JSON-serializable object
