@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "from dateutil.parser import parse\nfrom django.utils.dateparse import parse_datetime\nimport re\nimport random",
             "description": "",
-            "hash": "7f288f9f8f73b91761017419497f4a8cac945ec5",
+            "hash": "b61ccb161f9d6b6882d520299069645e80daf67c",
             "joint": {
                 "cells": [
                     {
@@ -113,12 +113,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 331,
-                        "line_start": 318,
+                        "line_end": 387,
+                        "line_start": 374,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 16,
+                        "order": 19,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -593,7 +593,7 @@
                             },
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#E6984E"
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -637,7 +637,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -759,7 +759,7 @@
                             "width": 180
                         },
                         "state": "action_assets",
-                        "status": "warn",
+                        "status": "",
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": false,
@@ -894,7 +894,7 @@
                         },
                         "position": {
                             "x": -680,
-                            "y": 80
+                            "y": 20
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -997,7 +997,7 @@
                             },
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#E6984E"
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -1038,7 +1038,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1154,7 +1154,7 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "warn",
+                        "status": "",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
@@ -1287,7 +1287,7 @@
                             },
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#E6984E"
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -1331,7 +1331,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1453,7 +1453,7 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "warn",
+                        "status": "",
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": false,
@@ -1465,7 +1465,7 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#E6984E",
+                                "stroke": "#637282",
                                 "transform": "rotate(45 30 70)"
                             },
                             ".inPorts>.port-0>.port-body": {
@@ -1523,7 +1523,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1681,10 +1681,1211 @@
                             "width": 82
                         },
                         "state": "decision",
-                        "status": "warn",
+                        "status": "",
                         "type": "coa.Decision",
                         "warn": "",
                         "z": 1430
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "4105a330-cbec-4423-98e8-2504b739cd03",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "c0f6089b-6e88-4dce-84f7-ff5706d10d97",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "75c72d04-87e0-417a-826b-3ba831c50c58",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 1436
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "af3b8966-a237-41d1-aefb-cb6c8071bbc6",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "75c72d04-87e0-417a-826b-3ba831c50c58",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "8be15a55-837c-47c3-b9fc-dbd36f5db239",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 1441
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "a1f5be11-0a26-43b7-85b4-bda9a6998a38",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "75c72d04-87e0-417a-826b-3ba831c50c58",
+                            "port": "out-2",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(2) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "f2a2bca7-5a6d-4b5d-a058-fffe4f3147a5",
+                            "port": "in",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 1443
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".playbook": {
+                                "text": "RBA Investigate"
+                            },
+                            ".scmName": {
+                                "text": "rba-master"
+                            },
+                            ".title": {
+                                "text": "Playbook"
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def playbook_rba_master_rba_master_RBA_Investigate_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_rba_master_rba_master_RBA_Investigate_1() called')\n    \n    # call playbook \"rba-master/RBA Investigate\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"rba-master/RBA Investigate\", container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "8be15a55-837c-47c3-b9fc-dbd36f5db239",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 139,
+                        "line_start": 131,
+                        "message": "Configuring now",
+                        "name": "rba-master/RBA Investigate",
+                        "notes": "",
+                        "number": 1,
+                        "order": 8,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "playbook": "rba-master/RBA Investigate",
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -360,
+                            "y": 0
+                        },
+                        "previous_function": "",
+                        "previous_name": "playbook_rba_master_rba_master_RBA_Investigate_1",
+                        "scmName": "rba-master",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "callplaybook",
+                        "status": "",
+                        "title": "Playbook",
+                        "type": "coa.CallPlaybook",
+                        "warn": false,
+                        "z": 1444
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#637282",
+                                "transform": "rotate(45 30 70)"
+                            },
+                            ".inPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".number": {
+                                "text": 6
+                            },
+                            ".outPorts>.port-0": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                },
+                                "ref-x": 83,
+                                "ref-y": 40
+                            },
+                            ".outPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".outPorts>.port-1": {
+                                "port": {
+                                    "id": "out-2",
+                                    "type": "out"
+                                },
+                                "ref-x": 41,
+                                "ref-y": 82
+                            },
+                            ".outPorts>.port-1>.port-body": {
+                                "port": {
+                                    "id": "out-2",
+                                    "type": "out"
+                                }
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def decision_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_6() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        conditions=[\n            [\"artifact:*.label\", \"==\", \"risk_rule\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        playbook_rba_master_rba_master_RBA_Investigate_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    filter_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "hasElse": true,
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "75c72d04-87e0-417a-826b-3ba831c50c58",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 321,
+                        "line_start": 301,
+                        "name": "decision",
+                        "notes": "",
+                        "number": 6,
+                        "order": 15,
+                        "outPorts": [
+                            "out-1",
+                            "out-2"
+                        ],
+                        "outputs": [
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "==",
+                                        "data_type": "",
+                                        "param": "artifact:*.label",
+                                        "value": "risk_rule"
+                                    }
+                                ],
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "==",
+                                        "data_type": "",
+                                        "param": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "display": "Else",
+                                "logic": "and",
+                                "type": "else"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -540,
+                            "y": 0
+                        },
+                        "previous_function": "",
+                        "previous_name": "decision_6",
+                        "show_number": true,
+                        "size": {
+                            "height": 82,
+                            "width": 82
+                        },
+                        "state": "decision",
+                        "status": "",
+                        "type": "coa.Decision",
+                        "warn": "",
+                        "z": 1446
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "set severity",
+                        "attrs": {
+                            ".api": {
+                                "text": "set container high"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def set_container_high(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('set_container_high() called')\n\n    phantom.set_severity(container=container, severity=\"High\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [
+                            {
+                                "key": "set-severity",
+                                "setSeveritySeverity": "High"
+                            }
+                        ],
+                        "connected_to_start": true,
+                        "connection_name": "update artifact sev high",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "set container high",
+                        "delay": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "6393c3e7-2f6f-4859-97ad-9b1d8630e3a1",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 124,
+                        "line_start": 117,
+                        "message": "Configuring now",
+                        "name": "set severity",
+                        "notes": "",
+                        "number": 7,
+                        "order": 6,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 140,
+                            "y": 360
+                        },
+                        "previous_function": "",
+                        "previous_name": "set_container_high",
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 1450
+                    },
+                    {
+                        "action": "update artifact fields",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "artifact_id": "artifact:*.id",
+                            "data": "{\"label\":\"splunk\",\"severity\":\"medium\"}",
+                            "overwrite": "True"
+                        },
+                        "angle": 0,
+                        "app": "",
+                        "appid": "",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "update artifact fields",
+                                "actions": [
+                                    "no op",
+                                    "set current phase",
+                                    "update task",
+                                    "modify indicator tag",
+                                    "get indicator",
+                                    "update list",
+                                    "get action result",
+                                    "create container",
+                                    "import container",
+                                    "export container",
+                                    "deflate item",
+                                    "add artifact",
+                                    "find listitem",
+                                    "add listitem",
+                                    "find artifacts",
+                                    "update artifact tags",
+                                    "add workbook",
+                                    "add note",
+                                    "update artifact",
+                                    "update artifact fields",
+                                    "get user",
+                                    "list playbooks",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Phantom",
+                                "app_version": "2.1.42",
+                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                                "asset_name": "phantom",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "artifact_id": "artifact:*.id",
+                                    "data": "{\"label\":\"splunk\",\"severity\":\"medium\"}",
+                                    "overwrite": "True"
+                                },
+                                "has_app": true,
+                                "id": 8,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantom_helper",
+                                "output": [
+                                    {
+                                        "column_name": "Status",
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.artifact_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.overwrite",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Message",
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    }
+                                ],
+                                "parameters": {
+                                    "artifact_id": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "artifact_id",
+                                        "key": "artifact_id",
+                                        "primary": true,
+                                        "required": true
+                                    },
+                                    "data": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "update data (json formatted)",
+                                        "key": "data",
+                                        "required": true
+                                    },
+                                    "overwrite": {
+                                        "data_type": "boolean",
+                                        "default": null,
+                                        "description": "overwrite existing",
+                                        "key": "overwrite",
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "Phantom",
+                                "product_vendor": "Phantom",
+                                "targets": "8",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "update artifact sev med"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def update_artifact_sev_med(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_artifact_sev_med() called')\n\n    # collect data for 'update_artifact_sev_med' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.id', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'update_artifact_sev_med' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'data': \"{\\\"label\\\":\\\"splunk\\\",\\\"severity\\\":\\\"medium\\\"}\",\n                'overwrite': True,\n                'artifact_id': container_item[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"update artifact fields\", parameters=parameters, assets=['phantom_helper'], callback=set_container_med, name=\"update_artifact_sev_med\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "update artifact sev med",
+                        "delay": "0",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "d262f354-515d-4371-991f-6a174c7767a6",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 208,
+                        "line_start": 185,
+                        "message": "Configuring now",
+                        "name": "update artifact fields",
+                        "notes": "",
+                        "number": 3,
+                        "order": 11,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -100,
+                            "y": 560
+                        },
+                        "previous_function": "",
+                        "previous_name": "update_artifact_sev_med",
+                        "required_params": {
+                            "artifact_id": true,
+                            "data": true
+                        },
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 1451
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "1f42326e-f087-4d5c-a778-2b72a223491e",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "e505f475-6c6b-4d69-a8ef-b9f58e1570df",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "174e693b-ecba-4482-92e9-25cc401a1d4c",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 1452
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773",
+                                "transform": "rotate(45 30 70)"
+                            },
+                            ".inPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".number": {
+                                "text": 1
+                            },
+                            ".outPorts>.port-0": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                },
+                                "ref-x": 83,
+                                "ref-y": 40
+                            },
+                            ".outPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def filter_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('filter_1() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        conditions=[\n            [\"artifact:*.cef.event_id\", \"!=\", \"\"],\n        ],\n        name=\"filter_1:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        format_splunk_query(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n        decision_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n        decision_7(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "f2a2bca7-5a6d-4b5d-a058-fffe4f3147a5",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 227,
+                        "line_start": 208,
+                        "name": "filter",
+                        "notes": "",
+                        "number": 1,
+                        "order": 12,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "outputs": [
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "!=",
+                                        "data_type": "",
+                                        "param": "artifact:*.cef.event_id",
+                                        "value": ""
+                                    }
+                                ],
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -460,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "filter_1",
+                        "show_number": true,
+                        "size": {
+                            "height": 82,
+                            "width": 82
+                        },
+                        "state": "filter",
+                        "status": "",
+                        "type": "coa.Filter",
+                        "warn": false,
+                        "z": 1456
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "179a1989-777a-4950-836a-3a01898d2a9f",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "f2a2bca7-5a6d-4b5d-a058-fffe4f3147a5",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "3475015c-04bb-4793-99c4-c4e06c7288fa",
+                            "port": "in",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 1457
                     },
                     {
                         ".scmName/text": "rba-master",
@@ -1796,8 +2997,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 252,
-                        "line_start": 225,
+                        "line_end": 254,
+                        "line_start": 227,
                         "message": "Configuring now",
                         "name": "parse_risk_results",
                         "notes": "",
@@ -1864,20 +3065,19 @@
                         },
                         "previous_function": "",
                         "previous_name": "cf_rba_master_parse_risk_results_1",
-                        "search_json-0": "fetch_risk_rules:action_result.data",
                         "selectedCustomFunction": {
                             "description": "",
                             "draftMode": false,
-                            "id": 358,
+                            "id": 468,
                             "inputs": [
                                 {
                                     "_pretty_custom_function": "parse_risk_results",
                                     "contains_type": [
                                         "*"
                                     ],
-                                    "custom_function": 358,
+                                    "custom_function": 468,
                                     "description": "",
-                                    "id": 682,
+                                    "id": 1074,
                                     "input_type": "list",
                                     "name": "search_json",
                                     "placeholder": "search_results.data"
@@ -1890,34 +3090,61 @@
                                     "contains_type": [
                                         "*"
                                     ],
-                                    "custom_function": 358,
+                                    "custom_function": 468,
                                     "data_path": "*.artifact.cef",
                                     "description": "",
-                                    "id": 1168
+                                    "id": 1252
                                 },
                                 {
                                     "_pretty_custom_function": "parse_risk_results",
                                     "contains_type": [
                                         "*"
                                     ],
-                                    "custom_function": 358,
+                                    "custom_function": 468,
                                     "data_path": "*.artifact.tags",
                                     "description": "",
-                                    "id": 1169
+                                    "id": 1253
                                 },
                                 {
                                     "_pretty_custom_function": "parse_risk_results",
                                     "contains_type": [],
-                                    "custom_function": 358,
+                                    "custom_function": 468,
                                     "data_path": "*.artifact.name",
                                     "description": "",
-                                    "id": 1170
+                                    "id": 1254
+                                },
+                                {
+                                    "_pretty_custom_function": "parse_risk_results",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 468,
+                                    "data_path": "*.artifact.field_mapping",
+                                    "description": "",
+                                    "id": 1255
                                 }
                             ],
                             "playbooks": {
                                 "draft_playbooks": [],
                                 "draft_version_id": null,
-                                "playbooks": []
+                                "playbooks": [
+                                    {
+                                        "active": false,
+                                        "display_path": "rba-master/RBA Prep 2.0 - demo",
+                                        "draft_mode": false,
+                                        "id": 816,
+                                        "name": "RBA Prep 2.0 - demo",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "rba-master/RBA Prep 2.0",
+                                        "draft_mode": false,
+                                        "id": 807,
+                                        "name": "RBA Prep 2.0",
+                                        "viewable": true
+                                    }
+                                ]
                             },
                             "scmId": 11,
                             "scmName": "rba-master"
@@ -1933,7 +3160,379 @@
                         "type": "coa.CustomFunctionBlock",
                         "userGeneratedCode": "    # Write your custom code here...",
                         "warn": false,
-                        "z": 1432
+                        "z": 1458
+                    },
+                    {
+                        ".scmName/text": "rba-master",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".customFunction": {
+                                "text": "add_artifact_with_tags"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "rba-master"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def cf_rba_master_add_artifact_with_tags_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_add_artifact_with_tags_1() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.cef', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.tags', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.name', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.field_mapping'], action_results=results )\n    container_property_0 = [\n        [\n            container.get(\"id\"),\n        ],\n    ]\n    literal_values_0 = [\n        [\n            \"informational\",\n            \"risk_rule\",\n            \"True\",\n        ],\n    ]\n\n    parameters = []\n\n    for item0 in custom_function_result_0:\n        for item1 in literal_values_0:\n            for item2 in container_property_0:\n                parameters.append({\n                    'cef': item0[0],\n                    'tags': item0[1],\n                    'severity': item1[0],\n                    'container_id': item2[0],\n                    'label': item1[1],\n                    'name': item0[2],\n                    'run_automation': item1[2],\n                    'field_mapping': item0[3],\n                })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/add_artifact_with_tags\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/add_artifact_with_tags', parameters=parameters, name='cf_rba_master_add_artifact_with_tags_1')\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "rba-master/add_artifact_with_tags",
+                        "cfInputs": {
+                            "cef": {
+                                "collectionType": "custom_function_result",
+                                "dataPath": "cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.cef",
+                                "paramName": "item0[0]",
+                                "type": "item"
+                            },
+                            "container_id": {
+                                "collectionType": "container_property",
+                                "dataPath": "container:id",
+                                "paramName": "item2[0]",
+                                "type": "item"
+                            },
+                            "field_mapping": {
+                                "collectionType": "custom_function_result",
+                                "dataPath": "cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.field_mapping",
+                                "paramName": "item0[3]",
+                                "type": "item"
+                            },
+                            "label": {
+                                "collectionType": "literal_values",
+                                "dataPath": "risk_rule",
+                                "paramName": "item1[1]",
+                                "type": "item"
+                            },
+                            "name": {
+                                "collectionType": "custom_function_result",
+                                "dataPath": "cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.name",
+                                "paramName": "item0[2]",
+                                "type": "item"
+                            },
+                            "run_automation": {
+                                "collectionType": "literal_values",
+                                "dataPath": "True",
+                                "paramName": "item1[2]",
+                                "type": "item"
+                            },
+                            "severity": {
+                                "collectionType": "literal_values",
+                                "dataPath": "informational",
+                                "paramName": "item1[0]",
+                                "type": "item"
+                            },
+                            "tags": {
+                                "collectionType": "custom_function_result",
+                                "dataPath": "cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.tags",
+                                "paramName": "item0[1]",
+                                "type": "item"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "parse_risk_results",
+                        "connection_type": "action",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 35,
+                        "customFunction": "rba-master/add_artifact_with_tags",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "field_mapping-7": "cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.field_mapping",
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "e505f475-6c6b-4d69-a8ef-b9f58e1570df",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 301,
+                        "line_start": 254,
+                        "message": "Configuring now",
+                        "name": "add_artifact_with_tags",
+                        "notes": "",
+                        "number": 1,
+                        "order": 14,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 420,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "cf_rba_master_add_artifact_with_tags_1",
+                        "selectedCustomFunction": {
+                            "description": "Adds an artifact and updates that artifact with provided tags",
+                            "draftMode": false,
+                            "id": 469,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "add_artifact_with_tags",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 469,
+                                    "description": "",
+                                    "id": 1075,
+                                    "input_type": "item",
+                                    "name": "cef",
+                                    "placeholder": "artifact.cef"
+                                },
+                                {
+                                    "_pretty_custom_function": "add_artifact_with_tags",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 469,
+                                    "description": "",
+                                    "id": 1076,
+                                    "input_type": "item",
+                                    "name": "tags",
+                                    "placeholder": "artifact.tags"
+                                },
+                                {
+                                    "_pretty_custom_function": "add_artifact_with_tags",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 469,
+                                    "description": "",
+                                    "id": 1077,
+                                    "input_type": "item",
+                                    "name": "severity",
+                                    "placeholder": "\"informational\""
+                                },
+                                {
+                                    "_pretty_custom_function": "add_artifact_with_tags",
+                                    "contains_type": [
+                                        "phantom container id"
+                                    ],
+                                    "custom_function": 469,
+                                    "description": "",
+                                    "id": 1078,
+                                    "input_type": "item",
+                                    "name": "container_id",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "add_artifact_with_tags",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 469,
+                                    "description": "",
+                                    "id": 1079,
+                                    "input_type": "item",
+                                    "name": "label",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "add_artifact_with_tags",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 469,
+                                    "description": "",
+                                    "id": 1080,
+                                    "input_type": "item",
+                                    "name": "name",
+                                    "placeholder": "artifact.name"
+                                },
+                                {
+                                    "_pretty_custom_function": "add_artifact_with_tags",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 469,
+                                    "description": "Defaults to False",
+                                    "id": 1081,
+                                    "input_type": "item",
+                                    "name": "run_automation",
+                                    "placeholder": "True or False"
+                                },
+                                {
+                                    "_pretty_custom_function": "add_artifact_with_tags",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 469,
+                                    "description": "valid field_mapping json",
+                                    "id": 1082,
+                                    "input_type": "item",
+                                    "name": "field_mapping",
+                                    "placeholder": "{\"my_cef_field\": [\"hash\"]}"
+                                }
+                            ],
+                            "name": "add_artifact_with_tags",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "add_artifact_with_tags",
+                                    "contains_type": [],
+                                    "custom_function": 469,
+                                    "data_path": "id",
+                                    "description": "",
+                                    "id": 1256
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": [
+                                    {
+                                        "active": false,
+                                        "display_path": "rba-master/RBA Prep 2.0 - demo",
+                                        "draft_mode": false,
+                                        "id": 816,
+                                        "name": "RBA Prep 2.0 - demo",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "rba-master/RBA Prep 2.0",
+                                        "draft_mode": false,
+                                        "id": 807,
+                                        "name": "RBA Prep 2.0",
+                                        "viewable": true
+                                    }
+                                ]
+                            },
+                            "scmId": 11,
+                            "scmName": "rba-master"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 1459
                     },
                     {
                         "action": "run query",
@@ -2344,1176 +3943,7 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 1433
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "4105a330-cbec-4423-98e8-2504b739cd03",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "c0f6089b-6e88-4dce-84f7-ff5706d10d97",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "75c72d04-87e0-417a-826b-3ba831c50c58",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 1436
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "af3b8966-a237-41d1-aefb-cb6c8071bbc6",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "75c72d04-87e0-417a-826b-3ba831c50c58",
-                            "port": "out-1",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "8be15a55-837c-47c3-b9fc-dbd36f5db239",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 1441
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "a1f5be11-0a26-43b7-85b4-bda9a6998a38",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "75c72d04-87e0-417a-826b-3ba831c50c58",
-                            "port": "out-2",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(2) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "f2a2bca7-5a6d-4b5d-a058-fffe4f3147a5",
-                            "port": "in",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 1443
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".playbook": {
-                                "text": "RBA Investigate"
-                            },
-                            ".scmName": {
-                                "text": "rba-master"
-                            },
-                            ".title": {
-                                "text": "Playbook"
-                            },
-                            "g.branch image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def playbook_rba_master_rba_master_RBA_Investigate_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_rba_master_rba_master_RBA_Investigate_1() called')\n    \n    # call playbook \"rba-master/RBA Investigate\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"rba-master/RBA Investigate\", container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "8be15a55-837c-47c3-b9fc-dbd36f5db239",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 139,
-                        "line_start": 131,
-                        "message": "Configuring now",
-                        "name": "rba-master/RBA Investigate",
-                        "notes": "",
-                        "number": 1,
-                        "order": 8,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "playbook": "rba-master/RBA Investigate",
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": -380,
-                            "y": 60
-                        },
-                        "previous_function": "",
-                        "previous_name": "playbook_rba_master_rba_master_RBA_Investigate_1",
-                        "scmName": "rba-master",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "callplaybook",
-                        "status": "",
-                        "title": "Playbook",
-                        "type": "coa.CallPlaybook",
-                        "warn": false,
-                        "z": 1444
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#637282",
-                                "transform": "rotate(45 30 70)"
-                            },
-                            ".inPorts>.port-0>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".number": {
-                                "text": 6
-                            },
-                            ".outPorts>.port-0": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                },
-                                "ref-x": 83,
-                                "ref-y": 40
-                            },
-                            ".outPorts>.port-0>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".outPorts>.port-1": {
-                                "port": {
-                                    "id": "out-2",
-                                    "type": "out"
-                                },
-                                "ref-x": 41,
-                                "ref-y": 82
-                            },
-                            ".outPorts>.port-1>.port-body": {
-                                "port": {
-                                    "id": "out-2",
-                                    "type": "out"
-                                }
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def decision_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_6() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        conditions=[\n            [\"artifact:*.label\", \"==\", \"risk_rule\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        playbook_rba_master_rba_master_RBA_Investigate_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    filter_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "hasElse": true,
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "75c72d04-87e0-417a-826b-3ba831c50c58",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 318,
-                        "line_start": 298,
-                        "name": "decision",
-                        "notes": "",
-                        "number": 6,
-                        "order": 15,
-                        "outPorts": [
-                            "out-1",
-                            "out-2"
-                        ],
-                        "outputs": [
-                            {
-                                "conditions": [
-                                    {
-                                        "comparison": "==",
-                                        "data_type": "",
-                                        "param": "artifact:*.label",
-                                        "value": "risk_rule"
-                                    }
-                                ],
-                                "display": "If",
-                                "logic": "and",
-                                "type": "if"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "comparison": "==",
-                                        "data_type": "",
-                                        "param": "",
-                                        "value": ""
-                                    }
-                                ],
-                                "display": "Else",
-                                "logic": "and",
-                                "type": "else"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": -540,
-                            "y": 60
-                        },
-                        "previous_function": "",
-                        "previous_name": "decision_6",
-                        "show_number": true,
-                        "size": {
-                            "height": 82,
-                            "width": 82
-                        },
-                        "state": "decision",
-                        "status": "",
-                        "type": "coa.Decision",
-                        "warn": "",
-                        "z": 1446
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "api": "set severity",
-                        "attrs": {
-                            ".api": {
-                                "text": "set container med"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def set_container_med(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('set_container_med() called')\n\n    phantom.set_severity(container=container, severity=\"Medium\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [
-                            {
-                                "key": "set-severity",
-                                "setSeveritySeverity": "Medium"
-                            }
-                        ],
-                        "connected_to_start": false,
-                        "connection_name": "update artifact sev med",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "set container med",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "8290075a-5801-4a84-ac98-d6e4e258d3c7",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 131,
-                        "line_start": 124,
-                        "message": "Configuring now",
-                        "name": "set severity",
-                        "notes": "",
-                        "number": 8,
-                        "order": 7,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 140,
-                            "y": 560
-                        },
-                        "previous_function": "",
-                        "previous_name": "set_container_med",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "warn",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 1447
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "api": "set severity",
-                        "attrs": {
-                            ".api": {
-                                "text": "set container high"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def set_container_high(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('set_container_high() called')\n\n    phantom.set_severity(container=container, severity=\"High\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [
-                            {
-                                "key": "set-severity",
-                                "setSeveritySeverity": "High"
-                            }
-                        ],
-                        "connected_to_start": true,
-                        "connection_name": "update artifact sev high",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "set container high",
-                        "delay": "",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "6393c3e7-2f6f-4859-97ad-9b1d8630e3a1",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 124,
-                        "line_start": 117,
-                        "message": "Configuring now",
-                        "name": "set severity",
-                        "notes": "",
-                        "number": 7,
-                        "order": 6,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 140,
-                            "y": 360
-                        },
-                        "previous_function": "",
-                        "previous_name": "set_container_high",
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "warn",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 1450
-                    },
-                    {
-                        "action": "update artifact fields",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "artifact_id": "artifact:*.id",
-                            "data": "{\"label\":\"splunk\",\"severity\":\"medium\"}",
-                            "overwrite": "True"
-                        },
-                        "angle": 0,
-                        "app": "",
-                        "appid": "",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "update artifact fields",
-                                "actions": [
-                                    "no op",
-                                    "set current phase",
-                                    "update task",
-                                    "modify indicator tag",
-                                    "get indicator",
-                                    "update list",
-                                    "get action result",
-                                    "create container",
-                                    "import container",
-                                    "export container",
-                                    "deflate item",
-                                    "add artifact",
-                                    "find listitem",
-                                    "add listitem",
-                                    "find artifacts",
-                                    "update artifact tags",
-                                    "add workbook",
-                                    "add note",
-                                    "update artifact",
-                                    "update artifact fields",
-                                    "get user",
-                                    "list playbooks",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "Phantom",
-                                "app_version": "2.1.42",
-                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                                "asset_name": "phantom",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "artifact_id": "artifact:*.id",
-                                    "data": "{\"label\":\"splunk\",\"severity\":\"medium\"}",
-                                    "overwrite": "True"
-                                },
-                                "has_app": true,
-                                "id": 8,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "phantom_helper",
-                                "output": [
-                                    {
-                                        "column_name": "Status",
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.artifact_id",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.overwrite",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Message",
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    }
-                                ],
-                                "parameters": {
-                                    "artifact_id": {
-                                        "data_type": "numeric",
-                                        "default": null,
-                                        "description": "artifact_id",
-                                        "key": "artifact_id",
-                                        "primary": true,
-                                        "required": true
-                                    },
-                                    "data": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "update data (json formatted)",
-                                        "key": "data",
-                                        "required": true
-                                    },
-                                    "overwrite": {
-                                        "data_type": "boolean",
-                                        "default": null,
-                                        "description": "overwrite existing",
-                                        "key": "overwrite",
-                                        "required": false
-                                    }
-                                },
-                                "product_name": "Phantom",
-                                "product_vendor": "Phantom",
-                                "targets": "8",
-                                "type": "information"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "update artifact sev med"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def update_artifact_sev_med(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_artifact_sev_med() called')\n\n    # collect data for 'update_artifact_sev_med' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.id', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'update_artifact_sev_med' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'data': \"{\\\"label\\\":\\\"splunk\\\",\\\"severity\\\":\\\"medium\\\"}\",\n                'overwrite': True,\n                'artifact_id': container_item[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"update artifact fields\", parameters=parameters, assets=['phantom_helper'], callback=set_container_med, name=\"update_artifact_sev_med\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "update artifact sev med",
-                        "delay": "0",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "d262f354-515d-4371-991f-6a174c7767a6",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 208,
-                        "line_start": 185,
-                        "message": "Configuring now",
-                        "name": "update artifact fields",
-                        "notes": "",
-                        "number": 3,
-                        "order": 11,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": -100,
-                            "y": 560
-                        },
-                        "previous_function": "",
-                        "previous_name": "update_artifact_sev_med",
-                        "required_params": {
-                            "artifact_id": true,
-                            "data": true
-                        },
-                        "reviewer": "",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "action_assets",
-                        "status": "warn",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 1451
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "1f42326e-f087-4d5c-a778-2b72a223491e",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "e505f475-6c6b-4d69-a8ef-b9f58e1570df",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "174e693b-ecba-4482-92e9-25cc401a1d4c",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 1452
+                        "z": 1460
                     },
                     {
                         "active": false,
@@ -3695,7 +4125,47 @@
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 1453
+                        "z": 1461
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "0b202100-c3c7-468d-8ca5-3530eb182bfd",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "f2a2bca7-5a6d-4b5d-a058-fffe4f3147a5",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "2486076c-cc06-4cea-a7ce-28bebbaaba4f",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 1462
                     },
                     {
                         "active": false,
@@ -3703,7 +4173,7 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#5C6773",
+                                "stroke": "#637282",
                                 "transform": "rotate(45 30 70)"
                             },
                             ".inPorts>.port-0>.port-body": {
@@ -3713,7 +4183,7 @@
                                 }
                             },
                             ".number": {
-                                "text": 1
+                                "text": 7
                             },
                             ".outPorts>.port-0": {
                                 "port": {
@@ -3735,17 +4205,11 @@
                             "g.error": {
                                 "opacity": 0
                             },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
                             "g.notes": {
                                 "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
                             }
                         },
-                        "block_code": "def filter_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('filter_1() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        conditions=[\n            [\"artifact:*.cef.event_id\", \"!=\", \"\"],\n        ],\n        name=\"filter_1:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        format_splunk_query(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
+                        "block_code": "def decision_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_7() called')\n    \n    name_value = container.get('name', None)\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        conditions=[\n            [\"filtered-data:filter_1:condition_1:artifact:*.cef.risk_object\", \"==\", name_value],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        format_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -3757,23 +4221,24 @@
                         "custom_join": "",
                         "custom_name": "",
                         "description": "",
+                        "hasElse": false,
                         "has_custom": false,
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "f2a2bca7-5a6d-4b5d-a058-fffe4f3147a5",
+                        "id": "2486076c-cc06-4cea-a7ce-28bebbaaba4f",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 225,
-                        "line_start": 208,
-                        "name": "filter",
+                        "line_end": 340,
+                        "line_start": 321,
+                        "name": "decision",
                         "notes": "",
-                        "number": 1,
-                        "order": 12,
+                        "number": 7,
+                        "order": 16,
                         "outPorts": [
                             "out-1"
                         ],
@@ -3781,10 +4246,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "comparison": "!=",
+                                        "comparison": "==",
                                         "data_type": "",
-                                        "param": "artifact:*.cef.event_id",
-                                        "value": ""
+                                        "param": "filtered-data:filter_1:condition_1:artifact:*.cef.risk_object",
+                                        "value": "container:name"
                                     }
                                 ],
                                 "display": "If",
@@ -3845,27 +4310,103 @@
                             }
                         },
                         "position": {
-                            "x": -460,
-                            "y": 220
+                            "x": -240,
+                            "y": 100
                         },
                         "previous_function": "",
-                        "previous_name": "filter_1",
+                        "previous_name": "decision_7",
                         "show_number": true,
                         "size": {
                             "height": 82,
                             "width": 82
                         },
-                        "state": "filter",
+                        "state": "decision",
                         "status": "",
-                        "type": "coa.Filter",
-                        "warn": false,
-                        "z": 1454
+                        "type": "coa.Decision",
+                        "warn": "",
+                        "z": 1464
                     },
                     {
-                        ".scmName/text": "rba-master",
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "70fa570a-8aab-4664-bdf3-cfa21ef69a40",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "2486076c-cc06-4cea-a7ce-28bebbaaba4f",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "17e39dd1-782b-438c-91af-539bb7eca771",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 1465
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "77ce42e8-3c05-4939-acd7-525826beebbd",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "17e39dd1-782b-438c-91af-539bb7eca771",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "d44e5503-ce86-4cb4-acb2-12c25053bfb5",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 1467
+                    },
+                    {
                         "active": false,
-                        "active_keys": {},
-                        "active_values": {},
                         "angle": 0,
                         "attrs": {
                             ".background": {
@@ -3875,8 +4416,8 @@
                             ".color-band": {
                                 "fill": "#3C444D"
                             },
-                            ".customFunction": {
-                                "text": "add_artifact_with_tags"
+                            ".functionBlock": {
+                                "text": "custom function 1"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -3904,16 +4445,189 @@
                                     "type": "out"
                                 }
                             },
-                            ".scmName": {
-                                "text": "rba-master"
-                            },
                             ".title": {
                                 "text": "custom function"
                             },
-                            ".title-info": {
-                                "text": ""
+                            "g.delete": {
+                                "display": "none"
                             },
-                            "g.branch image": {
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn_grey.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def custom_function_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('custom_function_1() called')\n    \n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    phantom.debug(phantom.update(container, json.loads(formatted_data_1)))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "customCodeEndLineOffset": 4,
+                        "customCodeStartLine": 8,
+                        "custom_callback": "",
+                        "custom_code": "def custom_function_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('custom_function_1() called')\n    \n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    phantom.debug(phantom.update(container, json.loads(formatted_data_1)))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    return",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "d44e5503-ce86-4cb4-acb2-12c25053bfb5",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "legacy": true,
+                        "line_end": 374,
+                        "line_start": 357,
+                        "message": "Configuring now",
+                        "name": "custom function",
+                        "notes": "",
+                        "number": 1,
+                        "order": 18,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "outputVariables": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": ""
+                            }
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "format_2:formatted_data"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 180,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "custom_function_1",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "custom function",
+                        "status": "deprecating",
+                        "title": "custom function",
+                        "type": "coa.FunctionBlock",
+                        "userGeneratedCode": "\n    phantom.debug(phantom.update(container, json.loads(formatted_data_1)))\n\n",
+                        "warn": false,
+                        "z": 1468
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "set severity",
+                        "attrs": {
+                            ".api": {
+                                "text": "set container med"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
                                 "opacity": 1
                             },
                             "g.delete": {
@@ -3927,93 +4641,48 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
-                        "block_code": "def cf_rba_master_add_artifact_with_tags_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_add_artifact_with_tags_1() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.cef', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.tags', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.name'], action_results=results )\n    container_property_0 = [\n        [\n            container.get(\"id\"),\n        ],\n    ]\n    literal_values_0 = [\n        [\n            \"informational\",\n            \"risk_rule\",\n            \"True\",\n        ],\n    ]\n\n    parameters = []\n\n    for item0 in custom_function_result_0:\n        for item1 in literal_values_0:\n            for item2 in container_property_0:\n                parameters.append({\n                    'cef': item0[0],\n                    'tags': item0[1],\n                    'severity': item1[0],\n                    'container_id': item2[0],\n                    'label': item1[1],\n                    'name': item0[2],\n                    'run_automation': item1[2],\n                })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/add_artifact_with_tags\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/add_artifact_with_tags', parameters=parameters, name='cf_rba_master_add_artifact_with_tags_1')\n\n    return",
+                        "block_code": "def set_container_med(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('set_container_med() called')\n\n    phantom.set_severity(container=container, severity=\"Medium\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
-                        "callsback": true,
-                        "cfDisplayPath": "rba-master/add_artifact_with_tags",
-                        "cfInputs": {
-                            "cef": {
-                                "collectionType": "custom_function_result",
-                                "dataPath": "cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.cef",
-                                "paramName": "item0[0]",
-                                "type": "item"
-                            },
-                            "container_id": {
-                                "collectionType": "container_property",
-                                "dataPath": "container:id",
-                                "paramName": "item2[0]",
-                                "type": "item"
-                            },
-                            "label": {
-                                "collectionType": "literal_values",
-                                "dataPath": "risk_rule",
-                                "paramName": "item1[1]",
-                                "type": "item"
-                            },
-                            "name": {
-                                "collectionType": "custom_function_result",
-                                "dataPath": "cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.name",
-                                "paramName": "item0[2]",
-                                "type": "item"
-                            },
-                            "run_automation": {
-                                "collectionType": "literal_values",
-                                "dataPath": "True",
-                                "paramName": "item1[2]",
-                                "type": "item"
-                            },
-                            "severity": {
-                                "collectionType": "literal_values",
-                                "dataPath": "informational",
-                                "paramName": "item1[0]",
-                                "type": "item"
-                            },
-                            "tags": {
-                                "collectionType": "custom_function_result",
-                                "dataPath": "cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.tags",
-                                "paramName": "item0[1]",
-                                "type": "item"
-                            }
-                        },
+                        "callsback": false,
                         "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "parse_risk_results",
+                        "configured": [
+                            {
+                                "key": "set-severity",
+                                "setSeveritySeverity": "Medium"
+                            }
+                        ],
+                        "connected_to_start": false,
+                        "connection_name": "update artifact sev med",
                         "connection_type": "action",
-                        "currentVersion": true,
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 34,
-                        "customFunction": "rba-master/add_artifact_with_tags",
-                        "customFunctionId": null,
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
+                        "custom_name": "set container med",
                         "description": "",
-                        "draftMode": false,
-                        "existingCF": true,
-                        "functionBlock": "custom function",
                         "has_custom": false,
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "e505f475-6c6b-4d69-a8ef-b9f58e1570df",
+                        "id": "8290075a-5801-4a84-ac98-d6e4e258d3c7",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 298,
-                        "line_start": 252,
+                        "line_end": 131,
+                        "line_start": 124,
                         "message": "Configuring now",
-                        "name": "add_artifact_with_tags",
+                        "name": "set severity",
                         "notes": "",
-                        "number": 1,
-                        "order": 14,
+                        "number": 8,
+                        "order": 7,
                         "outPorts": [
                             "out"
                         ],
@@ -4070,150 +4739,193 @@
                             }
                         },
                         "position": {
-                            "x": 420,
-                            "y": 220
+                            "x": 140,
+                            "y": 560
                         },
                         "previous_function": "",
-                        "previous_name": "cf_rba_master_add_artifact_with_tags_1",
-                        "run_automation-6": "True",
-                        "selectedCustomFunction": {
-                            "description": "Adds an artifact and updates that artifact with provided tags",
-                            "draftMode": false,
-                            "id": 446,
-                            "inputs": [
-                                {
-                                    "_pretty_custom_function": "add_artifact_with_tags",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 446,
-                                    "description": "",
-                                    "id": 1031,
-                                    "input_type": "item",
-                                    "name": "cef",
-                                    "placeholder": "artifact.cef"
-                                },
-                                {
-                                    "_pretty_custom_function": "add_artifact_with_tags",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 446,
-                                    "description": "",
-                                    "id": 1032,
-                                    "input_type": "item",
-                                    "name": "tags",
-                                    "placeholder": "artifact.tags"
-                                },
-                                {
-                                    "_pretty_custom_function": "add_artifact_with_tags",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 446,
-                                    "description": "",
-                                    "id": 1033,
-                                    "input_type": "item",
-                                    "name": "severity",
-                                    "placeholder": "\"informational\""
-                                },
-                                {
-                                    "_pretty_custom_function": "add_artifact_with_tags",
-                                    "contains_type": [
-                                        "phantom container id"
-                                    ],
-                                    "custom_function": 446,
-                                    "description": "",
-                                    "id": 1034,
-                                    "input_type": "item",
-                                    "name": "container_id",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "add_artifact_with_tags",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 446,
-                                    "description": "",
-                                    "id": 1035,
-                                    "input_type": "item",
-                                    "name": "label",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "add_artifact_with_tags",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 446,
-                                    "description": "",
-                                    "id": 1036,
-                                    "input_type": "item",
-                                    "name": "name",
-                                    "placeholder": "artifact.name"
-                                },
-                                {
-                                    "_pretty_custom_function": "add_artifact_with_tags",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 446,
-                                    "description": "Defaults to False",
-                                    "id": 1037,
-                                    "input_type": "item",
-                                    "name": "run_automation",
-                                    "placeholder": "True or False"
-                                }
-                            ],
-                            "name": "add_artifact_with_tags",
-                            "outputs": [
-                                {
-                                    "_pretty_custom_function": "add_artifact_with_tags",
-                                    "contains_type": [],
-                                    "custom_function": 446,
-                                    "data_path": "id",
-                                    "description": "",
-                                    "id": 1192
-                                }
-                            ],
-                            "playbooks": {
-                                "draft_playbooks": [],
-                                "draft_version_id": null,
-                                "playbooks": [
-                                    {
-                                        "active": false,
-                                        "display_path": "rba-master/RBA Prep 2.0",
-                                        "draft_mode": false,
-                                        "id": 804,
-                                        "name": "RBA Prep 2.0",
-                                        "viewable": true
-                                    },
-                                    {
-                                        "active": true,
-                                        "display_path": "rba-master/RBA Prep 2.0 - demo",
-                                        "draft_mode": false,
-                                        "id": 806,
-                                        "name": "RBA Prep 2.0 - demo",
-                                        "viewable": true
-                                    }
-                                ]
-                            },
-                            "scmId": 11,
-                            "scmName": "rba-master"
-                        },
+                        "previous_name": "set_container_med",
                         "show_number": false,
                         "size": {
                             "height": 100,
                             "width": 180
                         },
-                        "state": "repo",
+                        "state": "api",
                         "status": "",
-                        "title": "custom function",
-                        "type": "coa.CustomFunctionBlock",
-                        "userGeneratedCode": "    # Write your custom code here...",
+                        "title": "API",
+                        "type": "coa.API",
                         "warn": false,
-                        "z": 1455
+                        "z": 1469
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".format": {
+                                "text": "format 2"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_error.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"{{\\\"name\\\": \\\"{0} {1}\\\" }}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:name\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.risk_object\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    custom_function_1(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "17e39dd1-782b-438c-91af-539bb7eca771",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 357,
+                        "line_start": 340,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 2,
+                        "order": 17,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "container:name"
+                            },
+                            {
+                                "position": 1,
+                                "type": "",
+                                "value": "filtered-data:filter_1:condition_1:artifact:*.cef.risk_object"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -100,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_2",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "{{\"name\": \"{0} {1}\" }}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 1470
                     }
                 ]
             },
@@ -4223,7 +4935,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T14:57:18.320343+00:00",
+    "create_time": "2020-08-25T13:34:40.716174+00:00",
     "draft_mode": false,
     "labels": [
         "events",

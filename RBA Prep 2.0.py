@@ -219,6 +219,8 @@ def filter_1(action=None, success=None, container=None, results=None, handle=Non
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_1 or matched_results_1:
         format_splunk_query(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+        decision_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+        decision_7(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
     return
 
@@ -252,7 +254,7 @@ def cf_rba_master_parse_risk_results_1(action=None, success=None, container=None
 def cf_rba_master_add_artifact_with_tags_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('cf_rba_master_add_artifact_with_tags_1() called')
     
-    custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.cef', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.tags', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.name'], action_results=results )
+    custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.cef', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.tags', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.name', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.field_mapping'], action_results=results )
     container_property_0 = [
         [
             container.get("id"),
@@ -279,6 +281,7 @@ def cf_rba_master_add_artifact_with_tags_1(action=None, success=None, container=
                     'label': item1[1],
                     'name': item0[2],
                     'run_automation': item1[2],
+                    'field_mapping': item0[3],
                 })
     ################################################################################
     ## Custom Code Start
@@ -312,6 +315,59 @@ def decision_6(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks for 'else' condition 2
     filter_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+
+    return
+
+def decision_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('decision_7() called')
+    
+    name_value = container.get('name', None)
+
+    # check for 'if' condition 1
+    matched = phantom.decision(
+        container=container,
+        conditions=[
+            ["filtered-data:filter_1:condition_1:artifact:*.cef.risk_object", "==", name_value],
+        ])
+
+    # call connected blocks if condition 1 matched
+    if matched:
+        format_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        return
+
+    return
+
+def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_2() called')
+    
+    template = """{{\"name\": \"{0} {1}\" }}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "container:name",
+        "filtered-data:filter_1:condition_1:artifact:*.cef.risk_object",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_2")
+
+    custom_function_1(container=container)
+
+    return
+
+def custom_function_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('custom_function_1() called')
+    
+    formatted_data_1 = phantom.get_format_data(name='format_2')
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    phantom.debug(phantom.update(container, json.loads(formatted_data_1)))
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
 
     return
 
