@@ -27,7 +27,8 @@ def format_splunk_query(action=None, success=None, container=None, results=None,
     phantom.debug('format_splunk_query() called')
     
     template = """index=risk risk_object=\"{0}\"
-| where (_time >={1}+21600 AND _time<={2}+21600)
+earliest={1}
+latest={2} 
 |  eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\")
 | stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time"""
 
@@ -254,7 +255,7 @@ def cf_rba_master_parse_risk_results_1(action=None, success=None, container=None
 def cf_rba_master_add_artifact_with_tags_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('cf_rba_master_add_artifact_with_tags_1() called')
     
-    custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.cef', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.tags', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.name', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.field_mapping'], action_results=results )
+    custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.cef', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.name', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.tags', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.field_mapping'], action_results=results )
     container_property_0 = [
         [
             container.get("id"),
@@ -262,8 +263,8 @@ def cf_rba_master_add_artifact_with_tags_1(action=None, success=None, container=
     ]
     literal_values_0 = [
         [
-            "informational",
             "risk_rule",
+            "informational",
             "True",
         ],
     ]
@@ -275,13 +276,13 @@ def cf_rba_master_add_artifact_with_tags_1(action=None, success=None, container=
             for item2 in container_property_0:
                 parameters.append({
                     'cef': item0[0],
-                    'tags': item0[1],
-                    'severity': item1[0],
+                    'name': item0[1],
+                    'tags': item0[2],
+                    'label': item1[0],
+                    'severity': item1[1],
                     'container_id': item2[0],
-                    'label': item1[1],
-                    'name': item0[2],
-                    'run_automation': item1[2],
                     'field_mapping': item0[3],
+                    'run_automation': item1[2],
                 })
     ################################################################################
     ## Custom Code Start

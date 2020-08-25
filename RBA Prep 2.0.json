@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "from dateutil.parser import parse\nfrom django.utils.dateparse import parse_datetime\nimport re\nimport random",
             "description": "",
-            "hash": "b61ccb161f9d6b6882d520299069645e80daf67c",
+            "hash": "27fb539bdcc8a33d66bc782fab85fa7f88562c90",
             "joint": {
                 "cells": [
                     {
@@ -113,8 +113,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 387,
-                        "line_start": 374,
+                        "line_end": 388,
+                        "line_start": 375,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -680,8 +680,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 185,
-                        "line_start": 162,
+                        "line_end": 186,
+                        "line_start": 163,
                         "message": "Configuring now",
                         "name": "update artifact fields",
                         "notes": "",
@@ -1080,8 +1080,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 74,
-                        "line_start": 67,
+                        "line_end": 75,
+                        "line_start": 68,
                         "message": "Configuring now",
                         "name": "set severity",
                         "notes": "",
@@ -1374,8 +1374,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 162,
-                        "line_start": 139,
+                        "line_end": 163,
+                        "line_start": 140,
                         "message": "Configuring now",
                         "name": "update artifact fields",
                         "notes": "",
@@ -1559,8 +1559,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 117,
-                        "line_start": 74,
+                        "line_end": 118,
+                        "line_start": 75,
                         "name": "decision",
                         "notes": "",
                         "number": 2,
@@ -1897,8 +1897,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 139,
-                        "line_start": 131,
+                        "line_end": 140,
+                        "line_start": 132,
                         "message": "Configuring now",
                         "name": "rba-master/RBA Investigate",
                         "notes": "",
@@ -2062,8 +2062,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 321,
-                        "line_start": 301,
+                        "line_end": 322,
+                        "line_start": 302,
                         "name": "decision",
                         "notes": "",
                         "number": 6,
@@ -2263,8 +2263,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 124,
-                        "line_start": 117,
+                        "line_end": 125,
+                        "line_start": 118,
                         "message": "Configuring now",
                         "name": "set severity",
                         "notes": "",
@@ -2558,8 +2558,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 208,
-                        "line_start": 185,
+                        "line_end": 209,
+                        "line_start": 186,
                         "message": "Configuring now",
                         "name": "update artifact fields",
                         "notes": "",
@@ -2753,8 +2753,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 227,
-                        "line_start": 208,
+                        "line_end": 228,
+                        "line_start": 209,
                         "name": "filter",
                         "notes": "",
                         "number": 1,
@@ -2997,8 +2997,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 254,
-                        "line_start": 227,
+                        "line_end": 255,
+                        "line_start": 228,
                         "message": "Configuring now",
                         "name": "parse_risk_results",
                         "notes": "",
@@ -3230,7 +3230,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def cf_rba_master_add_artifact_with_tags_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_add_artifact_with_tags_1() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.cef', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.tags', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.name', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.field_mapping'], action_results=results )\n    container_property_0 = [\n        [\n            container.get(\"id\"),\n        ],\n    ]\n    literal_values_0 = [\n        [\n            \"informational\",\n            \"risk_rule\",\n            \"True\",\n        ],\n    ]\n\n    parameters = []\n\n    for item0 in custom_function_result_0:\n        for item1 in literal_values_0:\n            for item2 in container_property_0:\n                parameters.append({\n                    'cef': item0[0],\n                    'tags': item0[1],\n                    'severity': item1[0],\n                    'container_id': item2[0],\n                    'label': item1[1],\n                    'name': item0[2],\n                    'run_automation': item1[2],\n                    'field_mapping': item0[3],\n                })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/add_artifact_with_tags\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/add_artifact_with_tags', parameters=parameters, name='cf_rba_master_add_artifact_with_tags_1')\n\n    return",
+                        "block_code": "def cf_rba_master_add_artifact_with_tags_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_add_artifact_with_tags_1() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.cef', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.name', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.tags', 'cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.field_mapping'], action_results=results )\n    container_property_0 = [\n        [\n            container.get(\"id\"),\n        ],\n    ]\n    literal_values_0 = [\n        [\n            \"risk_rule\",\n            \"informational\",\n            \"True\",\n        ],\n    ]\n\n    parameters = []\n\n    for item0 in custom_function_result_0:\n        for item1 in literal_values_0:\n            for item2 in container_property_0:\n                parameters.append({\n                    'cef': item0[0],\n                    'name': item0[1],\n                    'tags': item0[2],\n                    'label': item1[0],\n                    'severity': item1[1],\n                    'container_id': item2[0],\n                    'field_mapping': item0[3],\n                    'run_automation': item1[2],\n                })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/add_artifact_with_tags\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/add_artifact_with_tags', parameters=parameters, name='cf_rba_master_add_artifact_with_tags_1')\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -3257,13 +3257,13 @@
                             "label": {
                                 "collectionType": "literal_values",
                                 "dataPath": "risk_rule",
-                                "paramName": "item1[1]",
+                                "paramName": "item1[0]",
                                 "type": "item"
                             },
                             "name": {
                                 "collectionType": "custom_function_result",
                                 "dataPath": "cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.name",
-                                "paramName": "item0[2]",
+                                "paramName": "item0[1]",
                                 "type": "item"
                             },
                             "run_automation": {
@@ -3275,13 +3275,13 @@
                             "severity": {
                                 "collectionType": "literal_values",
                                 "dataPath": "informational",
-                                "paramName": "item1[0]",
+                                "paramName": "item1[1]",
                                 "type": "item"
                             },
                             "tags": {
                                 "collectionType": "custom_function_result",
                                 "dataPath": "cf_rba_master_parse_risk_results_1:custom_function_result.data.*.artifact.tags",
-                                "paramName": "item0[1]",
+                                "paramName": "item0[2]",
                                 "type": "item"
                             }
                         },
@@ -3315,8 +3315,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 301,
-                        "line_start": 254,
+                        "line_end": 302,
+                        "line_start": 255,
                         "message": "Configuring now",
                         "name": "add_artifact_with_tags",
                         "notes": "",
@@ -3861,8 +3861,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 67,
-                        "line_start": 47,
+                        "line_end": 68,
+                        "line_start": 48,
                         "message": "Configuring now",
                         "name": "run query",
                         "notes": "",
@@ -3946,188 +3946,6 @@
                         "z": 1460
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".format": {
-                                "text": "format splunk query"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def format_splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_splunk_query() called')\n    \n    template = \"\"\"index=risk risk_object=\\\"{0}\\\"\n| where (_time >={1}+21600 AND _time<={2}+21600)\n|  eval source=replace(source,\\\"\\\\w+\\\\s+-\\\\s+\\\\w+\\\\s+-\\\\s+([^-]+)\\\\s+-.*\\\",\\\"\\\\1\\\")\n| stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.risk_object\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.info_min_time\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.info_max_time\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_splunk_query\")\n\n    fetch_risk_rules(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "format splunk query",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "79b6e543-2c17-486b-9f2f-9ce8d092ce77",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 36,
-                        "line_end": 47,
-                        "line_start": 26,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 1,
-                        "order": 2,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "filtered-data:filter_1:condition_1:artifact:*.cef.risk_object"
-                            },
-                            {
-                                "position": 1,
-                                "type": "",
-                                "value": "filtered-data:filter_1:condition_1:artifact:*.cef.info_min_time"
-                            },
-                            {
-                                "position": 2,
-                                "type": "",
-                                "value": "filtered-data:filter_1:condition_1:artifact:*.cef.info_max_time"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": -300,
-                            "y": 220
-                        },
-                        "previous_function": "",
-                        "previous_name": "format_splunk_query",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "index=risk risk_object=\"{0}\"\n| where (_time >={1}+21600 AND _time<={2}+21600)\n|  eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\")\n| stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 1461
-                    },
-                    {
                         "attrs": {
                             ".connection": {
                                 "stroke": "#818D99",
@@ -4207,6 +4025,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def decision_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_7() called')\n    \n    name_value = container.get('name', None)\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        conditions=[\n            [\"filtered-data:filter_1:condition_1:artifact:*.cef.risk_object\", \"==\", name_value],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        format_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    return",
@@ -4233,8 +4054,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 340,
-                        "line_start": 321,
+                        "line_end": 341,
+                        "line_start": 322,
                         "name": "decision",
                         "notes": "",
                         "number": 7,
@@ -4459,6 +4280,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def custom_function_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('custom_function_1() called')\n    \n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    phantom.debug(phantom.update(container, json.loads(formatted_data_1)))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    return",
@@ -4476,7 +4300,7 @@
                         "custom_name": "",
                         "description": "",
                         "functionBlock": "custom function",
-                        "has_custom": false,
+                        "has_custom": true,
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
@@ -4488,8 +4312,8 @@
                         "join_optional": [],
                         "join_start": 1,
                         "legacy": true,
-                        "line_end": 374,
-                        "line_start": 357,
+                        "line_end": 375,
+                        "line_start": 358,
                         "message": "Configuring now",
                         "name": "custom function",
                         "notes": "",
@@ -4676,8 +4500,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 131,
-                        "line_start": 124,
+                        "line_end": 132,
+                        "line_start": 125,
                         "message": "Configuring now",
                         "name": "set severity",
                         "notes": "",
@@ -4797,6 +4621,9 @@
                             ".title": {
                                 "text": "format"
                             },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -4808,6 +4635,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"{{\\\"name\\\": \\\"{0} {1}\\\" }}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:name\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.risk_object\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    custom_function_1(container=container)\n\n    return",
@@ -4834,8 +4664,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 357,
-                        "line_start": 340,
+                        "line_end": 358,
+                        "line_start": 341,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -4926,6 +4756,188 @@
                         "type": "coa.Format",
                         "warn": false,
                         "z": 1470
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".format": {
+                                "text": "format splunk query"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def format_splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_splunk_query() called')\n    \n    template = \"\"\"index=risk risk_object=\\\"{0}\\\"\nearliest={1}\nlatest={2} \n|  eval source=replace(source,\\\"\\\\w+\\\\s+-\\\\s+\\\\w+\\\\s+-\\\\s+([^-]+)\\\\s+-.*\\\",\\\"\\\\1\\\")\n| stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.risk_object\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.info_min_time\",\n        \"filtered-data:filter_1:condition_1:artifact:*.cef.info_max_time\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_splunk_query\")\n\n    fetch_risk_rules(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "format splunk query",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "79b6e543-2c17-486b-9f2f-9ce8d092ce77",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 36,
+                        "line_end": 48,
+                        "line_start": 26,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 1,
+                        "order": 2,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "filtered-data:filter_1:condition_1:artifact:*.cef.risk_object"
+                            },
+                            {
+                                "position": 1,
+                                "type": "",
+                                "value": "filtered-data:filter_1:condition_1:artifact:*.cef.info_min_time"
+                            },
+                            {
+                                "position": 2,
+                                "type": "",
+                                "value": "filtered-data:filter_1:condition_1:artifact:*.cef.info_max_time"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -300,
+                            "y": 220
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_splunk_query",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "index=risk risk_object=\"{0}\"\nearliest={1}\nlatest={2} \n|  eval source=replace(source,\"\\w+\\s+-\\s+\\w+\\s+-\\s+([^-]+)\\s+-.*\",\"\\1\")\n| stats earliest(_time) as _time values(*) as * by source, threat_object | fields - user_* src_user_* src_* dest_* dest_user_* info_* search_* splunk_* tag* risk_modifier* risk_rule* sourcetype timestamp index next_cron_time",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 1471
                     }
                 ]
             },
@@ -4935,7 +4947,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-25T13:34:40.716174+00:00",
+    "create_time": "2020-08-25T13:56:20.588451+00:00",
     "draft_mode": false,
     "labels": [
         "events",
