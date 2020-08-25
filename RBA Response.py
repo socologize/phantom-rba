@@ -42,7 +42,9 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
     phantom.debug('prompt_1() called')
     
     # set user variable to a user or role. Defaults to "admin" if no user present
-    user = container.get('owner_name', 'admin')
+    user = container.get('owner_name')
+    if not user:
+        user = 'admin'
     
     # message variables for phantom.prompt call
     message = """The following items were identified as malicious. Please review the evidence and decide which items you would like to take action on (Yes/No)."""
@@ -123,8 +125,8 @@ def cf_rba_master_dynamic_prompt_pairing_1(action=None, success=None, container=
     
     legacy_custom_function_result_0 = [
         [
-            json.loads(phantom.get_run_data(key="get_run_data:output")),
             json.loads(phantom.get_run_data(key="get_run_data:responses")),
+            json.loads(phantom.get_run_data(key="get_run_data:output")),
         ],
     ]
 
@@ -132,8 +134,8 @@ def cf_rba_master_dynamic_prompt_pairing_1(action=None, success=None, container=
 
     for item0 in legacy_custom_function_result_0:
         parameters.append({
-            'input_json': item0[0],
-            'response': item0[1],
+            'response': item0[0],
+            'input_json': item0[1],
         })
     ################################################################################
     ## Custom Code Start

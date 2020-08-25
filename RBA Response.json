@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "import urlparse\nimport datetime",
             "description": "",
-            "hash": "3a6892ea2825c07116451db44c1f5a553df92a0b",
+            "hash": "807d855bed837b0fd8c003b370ad92a70560421c",
             "joint": {
                 "cells": [
                     {
@@ -346,22 +346,22 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def cf_rba_master_dynamic_prompt_pairing_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_dynamic_prompt_pairing_1() called')\n    \n    legacy_custom_function_result_0 = [\n        [\n            json.loads(phantom.get_run_data(key=\"get_run_data:output\")),\n            json.loads(phantom.get_run_data(key=\"get_run_data:responses\")),\n        ],\n    ]\n\n    parameters = []\n\n    for item0 in legacy_custom_function_result_0:\n        parameters.append({\n            'input_json': item0[0],\n            'response': item0[1],\n        })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    parameters = []\n    \n    responses = legacy_custom_function_result_0[0][1][0]\n    input_json = json.loads(legacy_custom_function_result_0[0][0])\n    incrementer = 0\n    for item in input_json:\n        parameters.append({\n            'input_json': item,\n            'response': responses[incrementer]\n        })\n        incrementer +=1\n        \n    ####\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/dynamic_prompt_pairing\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/dynamic_prompt_pairing', parameters=parameters, name='cf_rba_master_dynamic_prompt_pairing_1', callback=cf_rba_master_dynamic_prompt_pairing_1_callback)\n\n    return",
+                        "block_code": "def cf_rba_master_dynamic_prompt_pairing_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_rba_master_dynamic_prompt_pairing_1() called')\n    \n    legacy_custom_function_result_0 = [\n        [\n            json.loads(phantom.get_run_data(key=\"get_run_data:responses\")),\n            json.loads(phantom.get_run_data(key=\"get_run_data:output\")),\n        ],\n    ]\n\n    parameters = []\n\n    for item0 in legacy_custom_function_result_0:\n        parameters.append({\n            'response': item0[0],\n            'input_json': item0[1],\n        })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    parameters = []\n    \n    responses = legacy_custom_function_result_0[0][1][0]\n    input_json = json.loads(legacy_custom_function_result_0[0][0])\n    incrementer = 0\n    for item in input_json:\n        parameters.append({\n            'input_json': item,\n            'response': responses[incrementer]\n        })\n        incrementer +=1\n        \n    ####\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"rba-master/dynamic_prompt_pairing\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='rba-master/dynamic_prompt_pairing', parameters=parameters, name='cf_rba_master_dynamic_prompt_pairing_1', callback=cf_rba_master_dynamic_prompt_pairing_1_callback)\n\n    return",
                         "callback_code": "def cf_rba_master_dynamic_prompt_pairing_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('cf_rba_master_dynamic_prompt_pairing_1_callback() called')\n    \n    filter_6(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n    filter_7(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n    filter_8(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
-                        "callback_start": 165,
+                        "callback_start": 167,
                         "callsback": true,
                         "cfDisplayPath": "rba-master/dynamic_prompt_pairing",
                         "cfInputs": {
                             "input_json": {
                                 "collectionType": "legacy_custom_function_result",
                                 "dataPath": "get_run_data:custom_function:output",
-                                "paramName": "item0[0]",
+                                "paramName": "item0[1]",
                                 "type": "item"
                             },
                             "response": {
                                 "collectionType": "legacy_custom_function_result",
                                 "dataPath": "get_run_data:custom_function:responses",
-                                "paramName": "item0[1]",
+                                "paramName": "item0[0]",
                                 "type": "item"
                             }
                         },
@@ -395,8 +395,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 174,
-                        "line_start": 121,
+                        "line_end": 176,
+                        "line_start": 123,
                         "message": "Configuring now",
                         "name": "dynamic_prompt_pairing",
                         "notes": "",
@@ -669,6 +669,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def filter_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('filter_6() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"cf_rba_master_dynamic_prompt_pairing_1:custom_function_result.data.type\", \"==\", \"ip\"],\n            [\"cf_rba_master_dynamic_prompt_pairing_1:custom_function_result.data.response\", \"==\", \"Yes\"],\n        ],\n        logical_operator='and',\n        name=\"filter_6:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        format_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
@@ -694,8 +697,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 194,
-                        "line_start": 174,
+                        "line_end": 196,
+                        "line_start": 176,
                         "name": "filter",
                         "notes": "",
                         "number": 6,
@@ -790,7 +793,7 @@
                         "state": "filter",
                         "status": "",
                         "type": "coa.Filter",
-                        "warn": "",
+                        "warn": false,
                         "z": 486
                     },
                     {
@@ -916,6 +919,9 @@
                             ".title": {
                                 "text": "API"
                             },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -927,6 +933,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def add_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_1() called')\n\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    phantom.comment(container=container, comment=formatted_data_1)\n\n    return",
@@ -959,8 +968,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 203,
-                        "line_start": 194,
+                        "line_end": 205,
+                        "line_start": 196,
                         "message": "Configuring now",
                         "name": "add comment",
                         "notes": "",
@@ -1111,8 +1120,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 121,
-                        "line_start": 104,
+                        "line_end": 123,
+                        "line_start": 106,
                         "name": "decision",
                         "notes": "",
                         "number": 2,
@@ -1288,7 +1297,7 @@
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
-                        "connected_to_start": false,
+                        "connected_to_start": true,
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
@@ -1307,8 +1316,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 322,
-                        "line_start": 309,
+                        "line_end": 324,
+                        "line_start": 311,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -1545,6 +1554,9 @@
                             ".title": {
                                 "text": "API"
                             },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -1553,6 +1565,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def add_comment_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_3() called')\n\n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    phantom.comment(container=container, comment=formatted_data_1)\n\n    return",
@@ -1585,8 +1600,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 264,
-                        "line_start": 255,
+                        "line_end": 266,
+                        "line_start": 257,
                         "message": "Configuring now",
                         "name": "add comment",
                         "notes": "",
@@ -1706,6 +1721,9 @@
                             ".title": {
                                 "text": "format"
                             },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -1714,6 +1732,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"Domain \\\"{0}\\\" would have been blocked. No blocking asset configured.\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"filtered-data:filter_7:condition_1:cf_rba_master_dynamic_prompt_pairing_1:custom_function_result.data.value\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    add_comment_3(container=container)\n\n    return",
@@ -1740,8 +1761,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 255,
-                        "line_start": 239,
+                        "line_end": 257,
+                        "line_start": 241,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -1868,6 +1889,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def filter_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('filter_7() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"cf_rba_master_dynamic_prompt_pairing_1:custom_function_result.data.type\", \"==\", \"domain\"],\n            [\"cf_rba_master_dynamic_prompt_pairing_1:custom_function_result.data.response\", \"==\", \"Yes\"],\n        ],\n        logical_operator='and',\n        name=\"filter_7:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        format_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
@@ -1893,8 +1917,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 239,
-                        "line_start": 219,
+                        "line_end": 241,
+                        "line_start": 221,
                         "name": "filter",
                         "notes": "",
                         "number": 7,
@@ -1989,7 +2013,7 @@
                         "state": "filter",
                         "status": "",
                         "type": "coa.Filter",
-                        "warn": "",
+                        "warn": false,
                         "z": 521
                     },
                     {
@@ -2033,6 +2057,9 @@
                             ".title": {
                                 "text": "format"
                             },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -2044,6 +2071,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_1() called')\n    \n    template = \"\"\"IP \\\"{0}\\\" would have been blocked. No blocking asset configured.\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"filtered-data:filter_6:condition_1:cf_rba_master_dynamic_prompt_pairing_1:custom_function_result.data.value\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_1\")\n\n    add_comment_1(container=container)\n\n    return",
@@ -2070,8 +2100,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 219,
-                        "line_start": 203,
+                        "line_end": 221,
+                        "line_start": 205,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -2237,6 +2267,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def filter_8(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('filter_8() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"cf_rba_master_dynamic_prompt_pairing_1:custom_function_result.data.type\", \"==\", \"file_hash\"],\n            [\"cf_rba_master_dynamic_prompt_pairing_1:custom_function_result.data.response\", \"==\", \"Yes\"],\n        ],\n        logical_operator='and',\n        name=\"filter_8:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        format_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
@@ -2262,8 +2295,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 284,
-                        "line_start": 264,
+                        "line_end": 286,
+                        "line_start": 266,
                         "name": "filter",
                         "notes": "",
                         "number": 8,
@@ -2358,7 +2391,7 @@
                         "state": "filter",
                         "status": "",
                         "type": "coa.Filter",
-                        "warn": "",
+                        "warn": false,
                         "z": 524
                     },
                     {
@@ -2442,6 +2475,9 @@
                             ".title": {
                                 "text": "format"
                             },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -2450,6 +2486,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def format_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_3() called')\n    \n    template = \"\"\"File_hash \\\"{0}\\\" would have been blocked. No blocking asset configured.\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"filtered-data:filter_8:condition_1:cf_rba_master_dynamic_prompt_pairing_1:custom_function_result.data.value\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_3\")\n\n    add_comment_4(container=container)\n\n    return",
@@ -2476,8 +2515,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 300,
-                        "line_start": 284,
+                        "line_end": 302,
+                        "line_start": 286,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -2647,6 +2686,9 @@
                             ".title": {
                                 "text": "API"
                             },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -2655,6 +2697,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def add_comment_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_4() called')\n\n    formatted_data_1 = phantom.get_format_data(name='format_3')\n\n    phantom.comment(container=container, comment=formatted_data_1)\n\n    return",
@@ -2687,8 +2732,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 309,
-                        "line_start": 300,
+                        "line_end": 311,
+                        "line_start": 302,
                         "message": "Configuring now",
                         "name": "add comment",
                         "notes": "",
@@ -2928,7 +2973,7 @@
                         "state": "filter",
                         "status": "",
                         "type": "coa.Filter",
-                        "warn": "",
+                        "warn": false,
                         "z": 530
                     },
                     {
@@ -3017,8 +3062,8 @@
                         "join_optional": [],
                         "join_start": 106,
                         "legacy": true,
-                        "line_end": 104,
-                        "line_start": 75,
+                        "line_end": 106,
+                        "line_start": 77,
                         "message": "Configuring now",
                         "name": "custom function",
                         "notes": "",
@@ -3179,7 +3224,7 @@
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
-                        "custom_code": "def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('prompt_1() called')\n    \n    # set user variable to a user or role. Defaults to \"admin\" if no user present\n    user = container.get('owner_name', 'admin')\n    \n    # message variables for phantom.prompt call\n    message = \"\"\"The following items were identified as malicious. Please review the evidence and decide which items you would like to take action on (Yes/No).\"\"\"\n    threat_object = [item[0] for item in phantom.collect2(container=container, datapath=['filtered-data:filter_1:condition_1:artifact:*.cef.threat_object'])]\n    threat_object_type = [item[0] for item in phantom.collect2(container=container, datapath=['filtered-data:filter_1:condition_1:artifact:*.cef.threat_object_type'])]\n\n    # dynamic response builder\n    response_types = []\n    pairings = []\n    for thr_obj,thr_obj_type in zip(threat_object,threat_object_type):\n          if thr_obj:\n                response_types.append({\n                    \"prompt\": \"Block {}\".format(thr_obj),\n                    \"options\": {\n                        \"type\": \"list\",\n                        \"choices\": [\n                            \"Yes\",\n                            \"No\",\n                        ]\n                    },\n                })\n                pairings.append({thr_obj_type: thr_obj})\n    \n    phantom.save_run_data(value=json.dumps(pairings), key='pairings', auto=True)\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_1\", response_types=response_types, callback=get_run_data)\n\n    return",
+                        "custom_code": "def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('prompt_1() called')\n    \n    # set user variable to a user or role. Defaults to \"admin\" if no user present\n    user = container.get('owner_name')\n    if not user:\n        user = 'admin'\n    \n    # message variables for phantom.prompt call\n    message = \"\"\"The following items were identified as malicious. Please review the evidence and decide which items you would like to take action on (Yes/No).\"\"\"\n    threat_object = [item[0] for item in phantom.collect2(container=container, datapath=['filtered-data:filter_1:condition_1:artifact:*.cef.threat_object'])]\n    threat_object_type = [item[0] for item in phantom.collect2(container=container, datapath=['filtered-data:filter_1:condition_1:artifact:*.cef.threat_object_type'])]\n\n    # dynamic response builder\n    response_types = []\n    pairings = []\n    for thr_obj,thr_obj_type in zip(threat_object,threat_object_type):\n          if thr_obj:\n                response_types.append({\n                    \"prompt\": \"Block {}\".format(thr_obj),\n                    \"options\": {\n                        \"type\": \"list\",\n                        \"choices\": [\n                            \"Yes\",\n                            \"No\",\n                        ]\n                    },\n                })\n                pairings.append({thr_obj_type: thr_obj})\n    \n    phantom.save_run_data(value=json.dumps(pairings), key='pairings', auto=True)\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_1\", response_types=response_types, callback=get_run_data)\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "description": "",
@@ -3194,7 +3239,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 75,
+                        "line_end": 77,
                         "line_start": 41,
                         "message": "The following items were identified as malicious. Please review the Report Card and decide which items you would like to take action on (Yes/No).",
                         "name": "prompt",
@@ -3309,7 +3354,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T14:40:24.493835+00:00",
+    "create_time": "2020-08-25T13:44:41.586301+00:00",
     "draft_mode": false,
     "labels": [
         "*"
